@@ -19,6 +19,13 @@
 #include <xc.h>
 #include "pic16f887.h"
 #include "config.h"
+#include "activateSelectedRelay.h"
+#include "isr.h"
+#include "spiWrite.h"
+#include "white_space.h"
+#include "write_volume.h"
+
+
 #define _XTAL_FREQ 500000                               // Used by the XC8 delay_ms(x) macro
 
 #define INPUT_MAX 3

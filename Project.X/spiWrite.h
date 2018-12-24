@@ -1,3 +1,6 @@
+#ifndef SPIWRITE
+#define SPIWRITE
+
 void spiWrite(char data) // Write data to SPI bus
 {
     SSPBUF = data; // write var data todisplay
@@ -10,3 +13,5 @@ void spiWrite(char data) // Write data to SPI bus
     
     
 }
+
+#endif

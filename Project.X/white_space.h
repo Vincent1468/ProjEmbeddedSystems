@@ -1,3 +1,6 @@
+#ifndef WHITESPACE
+#define WHITESPACE
+
 void white_space(char aantal_spaces) {
 
     for(int kolom = 0; kolom < aantal_spaces; kolom++)
@@ -8,3 +11,5 @@ void white_space(char aantal_spaces) {
         }
     } 
 }
+
+#endif

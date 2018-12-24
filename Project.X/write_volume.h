@@ -1,3 +1,6 @@
+#ifndef WRITEVOLUME
+#define WRITEVOLUME
+
 void write_volume(char volume)
 {
     if (volume < 10)
@@ -18,8 +21,10 @@ void write_volume(char volume)
                
             for(int x=0; x < 5; x++)
             {  
-                spiWrite(lookupofz[volume][volume][x]);
+                spiWrite(font[1][x]);
             }
     
     PORTCbits.RC4 = 1; // latch naar register
 }
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef ISR
+#define ISR
 void __interrupt() isr()
 {    
     if (INTCONbits.RBIF) {
@@ -30,4 +32,6 @@ void __interrupt() isr()
         _inputUpdateRequired = 1;
         INTCONbits.RBIF = 0;
     }
-    
+}
+
+#endif

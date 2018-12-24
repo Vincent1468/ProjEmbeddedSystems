@@ -2515,8 +2515,11 @@ extern __bank0 __bit __timeout;
 
 # 1 "./config.h" 1
 
+
+
 void config()
 {
+
     OSCCON = 0b00111000;
 
 
@@ -2563,7 +2566,7 @@ void config()
     TRISCbits.TRISC1 = 0;
 
     PORTC = 0x00;
-# 64 "./config.h"
+# 67 "./config.h"
     INTCONbits.RBIE = 1;
 
     IOCBbits.IOCB4 = 1;
@@ -2583,19 +2586,159 @@ void config()
     _lastB = PORTBbits.RB5;
 }
 # 21 "main.c" 2
-# 38 "main.c"
-const char lookupofz[10][2][5] = {
-    {{0}, {0x3E, 0x51, 0x49, 0x45, 0x3E}},
-    {{1}, {0x00, 0x42, 0x7F, 0x40, 0x00}},
-    {{2}, {0x42, 0x61, 0x51, 0x49, 0x46}},
-    {{3}, {0x21, 0x41, 0x45, 0x4B, 0x31}},
-    {{4}, {0x18, 0x14, 0x12, 0x7F, 0x10}},
-    {{5}, {0x27, 0x45, 0x45, 0x45, 0x39}},
-    {{6}, {0x3C, 0x4A, 0x49, 0x49, 0x30}},
-    {{7}, {0x01, 0x71, 0x09, 0x05, 0x03}},
-    {{8}, {0x36, 0x49, 0x49, 0x49, 0x36}},
-    {{9}, {0x06, 0x49, 0x49, 0x29, 0x1E}},
-};
+
+# 1 "./activateSelectedRelay.h" 1
+
+
+void activateSelectedRelay()
+{ if (!_inputUpdateRequired) return;
+
+    PORTA = 0x0F;
+
+
+    switch (_selectedInput) {
+        case 0:
+            PORTA = ~0x01;
+            break;
+        case 1:
+            PORTA = ~0x02;
+            break;
+        case 2:
+            PORTA = ~0x04;
+            break;
+        case 3:
+            PORTA = ~0x08;
+            break;
+        default:
+            PORTA = ~0x01;
+            break;
+    }
+
+    _inputUpdateRequired = 0;
+}
+# 22 "main.c" 2
+
+# 1 "./isr.h" 1
+
+
+void __attribute__((picinterrupt(""))) isr()
+{
+    if (INTCONbits.RBIF) {
+
+        int portA = PORTBbits.RB4;
+        int portB = PORTBbits.RB5;
+
+        if (_lastA != portA) {
+            if (_lastA == _lastB) {
+                if (_selectedInput < INPUT_MAX) {
+                    _selectedInput++;
+                } else {
+                    _selectedInput = INPUT_MIN;
+                }
+            }
+        }
+
+        if (_lastB != portB) {
+            if (_lastA == _lastB) {
+                if (_selectedInput > INPUT_MIN) {
+                    _selectedInput--;
+                } else {
+                    _selectedInput = INPUT_MAX;
+                }
+            }
+        }
+
+        _lastA = portA;
+        _lastB = portB;
+        _inputUpdateRequired = 1;
+        INTCONbits.RBIF = 0;
+    }
+}
+# 23 "main.c" 2
+
+# 1 "./spiWrite.h" 1
+
+
+
+void spiWrite(char data)
+{
+    SSPBUF = data;
+
+
+    while(!SSPSTATbits.BF)
+    {
+
+    }
+
+
+}
+# 24 "main.c" 2
+
+# 1 "./white_space.h" 1
+
+
+
+void white_space(char aantal_spaces) {
+
+    for(int kolom = 0; kolom < aantal_spaces; kolom++)
+    {
+        for(int rij = 0; rij < 5; rij++)
+        {
+            spiWrite(font[0][rij]);
+        }
+    }
+}
+# 25 "main.c" 2
+
+# 1 "./write_volume.h" 1
+
+
+
+void write_volume(char volume)
+{
+    if (volume < 10)
+    {
+        white_space(7);
+
+        for(int x=0; x < 5; x++)
+            {
+                spiWrite(font[36][x]);
+            }
+
+
+    }
+
+    if (volume >= 10)
+
+        white_space(6);
+
+            for(int x=0; x < 5; x++)
+            {
+                spiWrite(font[1][x]);
+            }
+
+    PORTCbits.RC4 = 1;
+}
+# 26 "main.c" 2
+
+
+
+
+
+
+
+
+char _inputUpdateRequired;
+unsigned short _selectedInput;
+unsigned short _lastA, _lastB;
+
+unsigned char data = 0xFF;
+char display = 1;
+
+void spiWrite(char);
+void white_space(char);
+void write_volume(char);
+
 
 const int font[][5] = {
     {0x3E, 0x51, 0x49, 0x45, 0x3E},
@@ -2638,82 +2781,6 @@ const int font[][5] = {
  };
 
 
-char _inputUpdateRequired;
-unsigned short _selectedInput;
-unsigned short _lastA, _lastB;
-
-unsigned char data = 0xFF;
-char display = 1;
-
-void spiWrite(char);
-void white_space(char);
-void write_volume(char);
-
-
-void activateSelectedRelay()
-{ if (!_inputUpdateRequired) return;
-
-    PORTA = 0x0F;
-
-
-    switch (_selectedInput) {
-        case 0:
-            PORTA = ~0x01;
-            break;
-        case 1:
-            PORTA = ~0x02;
-            break;
-        case 2:
-            PORTA = ~0x04;
-            break;
-        case 3:
-            PORTA = ~0x08;
-            break;
-        default:
-            PORTA = ~0x01;
-            break;
-    }
-
-    _inputUpdateRequired = 0;
-}
-
-
-void __attribute__((picinterrupt(""))) isr()
-{
-    if (INTCONbits.RBIF) {
-
-        int portA = PORTBbits.RB4;
-        int portB = PORTBbits.RB5;
-
-        if (_lastA != portA) {
-            if (_lastA == _lastB) {
-                if (_selectedInput < 3) {
-                    _selectedInput++;
-                } else {
-                    _selectedInput = 0;
-                }
-            }
-        }
-
-        if (_lastB != portB) {
-            if (_lastA == _lastB) {
-                if (_selectedInput > 0) {
-                    _selectedInput--;
-                } else {
-                    _selectedInput = 3;
-                }
-            }
-        }
-
-        _lastA = portA;
-        _lastB = portB;
-        _inputUpdateRequired = 1;
-        INTCONbits.RBIF = 0;
-    }
-
-
-
-}
 
 void main(void)
 {
@@ -2724,7 +2791,7 @@ void main(void)
 
     TRISD = 0x00;
     TRISC = 0x00;
-# 220 "main.c"
+# 139 "main.c"
     PORTCbits.RC2 = 1;
     PORTCbits.RC6 = 0;
     PORTCbits.RC4 = 1;
@@ -2767,54 +2834,4 @@ void main(void)
     }
 
     return;
-}
-
-void white_space(char aantal_spaces) {
-
-    for(int kolom = 0; kolom < aantal_spaces; kolom++)
-    {
-        for(int rij = 0; rij < 5; rij++)
-        {
-            spiWrite(font[0][rij]);
-        }
-    }
-}
-
-void write_volume(char volume)
-{
-    if (volume < 10)
-    {
-        white_space(7);
-
-        for(int x=0; x < 5; x++)
-            {
-                spiWrite(font[36][x]);
-            }
-
-
-    }
-
-    if (volume >= 10)
-
-        white_space(6);
-
-            for(int x=0; x < 5; x++)
-            {
-                spiWrite(lookupofz[volume][volume][x]);
-            }
-
-    PORTCbits.RC4 = 1;
-}
-
-void spiWrite(char data)
-{
-    SSPBUF = data;
-
-
-    while(!SSPSTATbits.BF)
-    {
-
-    }
-
-
 }

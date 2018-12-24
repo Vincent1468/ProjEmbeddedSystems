@@ -1,6 +1,9 @@
+#ifndef CONFIG
+#define CONFIG
 
 void config()
 {
+    
     OSCCON = 0b00111000;      // 500KHz clock speed, change if needed
 
     //
@@ -79,3 +82,5 @@ void config()
     _lastA = PORTBbits.RB4;
     _lastB = PORTBbits.RB5;
 }
+
+#endif
