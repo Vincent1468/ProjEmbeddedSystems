@@ -3,7 +3,17 @@
 
 void config()
 {
-    
+        char _inputUpdateRequired;
+        unsigned short _selectedInput;
+        unsigned short _lastA, _lastB;
+
+        unsigned char data = 0xFF;
+        char display = 1;
+
+        void spiWrite(char);
+        void white_space(char);
+        void write_volume(char);
+        
     OSCCON = 0b00111000;      // 500KHz clock speed, change if needed
 
     //

@@ -31,16 +31,7 @@
 #define INPUT_MAX 3
 #define INPUT_MIN 0
 
-char _inputUpdateRequired;
-unsigned short _selectedInput;
-unsigned short _lastA, _lastB;
 
-unsigned char data = 0xFF;
-char display = 1;
-
-void spiWrite(char);
-void white_space(char);
-void write_volume(char);
 
 
 const int font[][5] = {

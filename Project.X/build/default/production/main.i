@@ -2519,6 +2519,16 @@ extern __bank0 __bit __timeout;
 
 void config()
 {
+        char _inputUpdateRequired;
+        unsigned short _selectedInput;
+        unsigned short _lastA, _lastB;
+
+        unsigned char data = 0xFF;
+        char display = 1;
+
+        void spiWrite(char);
+        void white_space(char);
+        void write_volume(char);
 
     OSCCON = 0b00111000;
 
@@ -2566,7 +2576,7 @@ void config()
     TRISCbits.TRISC1 = 0;
 
     PORTC = 0x00;
-# 67 "./config.h"
+# 77 "./config.h"
     INTCONbits.RBIE = 1;
 
     IOCBbits.IOCB4 = 1;
@@ -2720,26 +2730,7 @@ void write_volume(char volume)
     PORTCbits.RC4 = 1;
 }
 # 26 "main.c" 2
-
-
-
-
-
-
-
-
-char _inputUpdateRequired;
-unsigned short _selectedInput;
-unsigned short _lastA, _lastB;
-
-unsigned char data = 0xFF;
-char display = 1;
-
-void spiWrite(char);
-void white_space(char);
-void write_volume(char);
-
-
+# 37 "main.c"
 const int font[][5] = {
     {0x3E, 0x51, 0x49, 0x45, 0x3E},
     {0x00, 0x42, 0x7F, 0x40, 0x00},
@@ -2791,7 +2782,7 @@ void main(void)
 
     TRISD = 0x00;
     TRISC = 0x00;
-# 139 "main.c"
+# 130 "main.c"
     PORTCbits.RC2 = 1;
     PORTCbits.RC6 = 0;
     PORTCbits.RC4 = 1;
