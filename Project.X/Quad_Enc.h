@@ -1,5 +1,6 @@
 #ifndef SELECTEDRELAY
 #define SELECTEDRELAY
+
 void activateSelectedRelay()
 {    if (!_inputUpdateRequired) return;
     

@@ -4,12 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>config.h</itemPath>
-      <itemPath>activateSelectedRelay.h</itemPath>
-      <itemPath>isr.h</itemPath>
-      <itemPath>white_space.h</itemPath>
-      <itemPath>write_volume.h</itemPath>
-      <itemPath>spiWrite.h</itemPath>
+      <itemPath>Display.h</itemPath>
+      <itemPath>Quad_Enc.h</itemPath>
+      <itemPath>Config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
