@@ -19,7 +19,7 @@
 #include <xc.h>
 #include "pic16f887.h"
 #include "Config.h"
-#include "Quad_Enc.h"
+#include "Input.h"
 #include "isr.h"
 #include "spiWrite.h"
 #include "white_space.h"

@@ -1,4 +1,4 @@
-# 1 "Display.c"
+# 1 "Input.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,19 +6,18 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Display.c" 2
-# 1 "./Display.h" 1
+# 1 "Input.c" 2
+# 1 "./Input.h" 1
 
 
 
-extern const int font[][5];
+extern char _inputUpdateRequired;
 
-void white_space(char aantal_spaces);
+extern unsigned short _selectedInput;
+extern unsigned short _lastA, _lastB;
 
-void write_volume(char volume);
-
-void spiWrite(char data);
-# 1 "Display.c" 2
+void activateSelectedRelay(void);
+# 1 "Input.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
@@ -2504,55 +2503,33 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 2 "Display.c" 2
+# 2 "Input.c" 2
 
 
 
-void white_space(char aantal_spaces) {
+void activateSelectedRelay()
+{ if (!_inputUpdateRequired) return;
 
-    for(int kolom = 0; kolom < aantal_spaces; kolom++)
-    {
-        for(int rij = 0; rij < 5; rij++)
-        {
-            spiWrite(font[0][rij]);
-        }
-    }
-}
-
-void write_volume(char volume)
-{
-    if (volume < 10)
-    {
-        white_space(7);
-
-        for(int x=0; x < 5; x++)
-            {
-                spiWrite(font[36][x]);
-            }
+    PORTA = 0x0F;
 
 
-    }
-
-    if (volume >= 10)
-
-        white_space(6);
-
-            for(int x=0; x < 5; x++)
-            {
-                spiWrite(font[1][x]);
-            }
-
-    PORTCbits.RC4 = 1;
-}
-
-void spiWrite(char data)
-{
-    SSPBUF = data;
-
-    while(!SSPSTATbits.BF)
-    {
-
+    switch (_selectedInput) {
+        case 0:
+            PORTA = ~0x01;
+            break;
+        case 1:
+            PORTA = ~0x02;
+            break;
+        case 2:
+            PORTA = ~0x04;
+            break;
+        case 3:
+            PORTA = ~0x08;
+            break;
+        default:
+            PORTA = ~0x01;
+            break;
     }
 
-
+    _inputUpdateRequired = 0;
 }

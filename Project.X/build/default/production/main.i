@@ -2517,119 +2517,35 @@ extern __bank0 __bit __timeout;
 
 
 
-void config()
-{
-        char _inputUpdateRequired;
-        unsigned short _selectedInput;
-        unsigned short _lastA, _lastB;
 
-        unsigned char data = 0xFF;
-        char display = 1;
+extern char _inputUpdateRequired;
+extern unsigned short _selectedInput;
+extern unsigned short _lastA, _lastB;
 
-        void spiWrite(char);
-        void white_space(char);
-        void write_volume(char);
+extern unsigned char data;
+extern char display;
 
-    OSCCON = 0b00111000;
+extern void spiWrite(char);
+extern void white_space(char);
+extern void write_volume(char);
 
-
-
-
-
-
-    TRISAbits.TRISA0 = 0;
-    TRISAbits.TRISA1 = 0;
-    TRISAbits.TRISA2 = 0;
-    TRISAbits.TRISA3 = 0;
-
-    PORTA = 0x0F;
-
-
-
-
-
-
-    TRISBbits.TRISB4 = 1;
-    TRISBbits.TRISB5 = 1;
-
-    ANSELHbits.ANS11 = 0;
-    ANSELHbits.ANS13 = 0;
-
-
-
-
-
-    TRISEbits.TRISE0 = 1;
-    ANSELbits.ANS5 = 1;
-
-
-
-
-    TRISBbits.TRISB0 = 1;
-    ANSELHbits.ANS11 = 0;
-
-
-
-
-
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-
-    PORTC = 0x00;
-# 77 "./Config.h"
-    INTCONbits.RBIE = 1;
-
-    IOCBbits.IOCB4 = 1;
-    IOCBbits.IOCB5 = 1;
-
-    INTCONbits.GIE = 1;
-
-
-
-
-
-
-
-    _inputUpdateRequired = 1;
-    _selectedInput = 0;
-    _lastA = PORTBbits.RB4;
-    _lastB = PORTBbits.RB5;
-}
+void config(void);
 # 21 "main.c" 2
 
-# 1 "./Quad_Enc.h" 1
+# 1 "./Input.h" 1
 
 
 
-void activateSelectedRelay()
-{ if (!_inputUpdateRequired) return;
+extern char _inputUpdateRequired;
 
-    PORTA = 0x0F;
+extern unsigned short _selectedInput;
+extern unsigned short _lastA, _lastB;
 
-
-    switch (_selectedInput) {
-        case 0:
-            PORTA = ~0x01;
-            break;
-        case 1:
-            PORTA = ~0x02;
-            break;
-        case 2:
-            PORTA = ~0x04;
-            break;
-        case 3:
-            PORTA = ~0x08;
-            break;
-        default:
-            PORTA = ~0x01;
-            break;
-    }
-
-    _inputUpdateRequired = 0;
-}
+void activateSelectedRelay(void);
 # 22 "main.c" 2
 
 # 1 "./isr.h" 1
+
 
 
 void __attribute__((picinterrupt(""))) isr()
