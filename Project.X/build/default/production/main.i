@@ -2513,7 +2513,7 @@ extern __bank0 __bit __timeout;
 # 19 "main.c" 2
 
 
-# 1 "./config.h" 1
+# 1 "./Config.h" 1
 
 
 
@@ -2576,7 +2576,7 @@ void config()
     TRISCbits.TRISC1 = 0;
 
     PORTC = 0x00;
-# 77 "./config.h"
+# 77 "./Config.h"
     INTCONbits.RBIE = 1;
 
     IOCBbits.IOCB4 = 1;
@@ -2597,7 +2597,8 @@ void config()
 }
 # 21 "main.c" 2
 
-# 1 "./activateSelectedRelay.h" 1
+# 1 "./Quad_Enc.h" 1
+
 
 
 void activateSelectedRelay()
@@ -2825,4 +2826,38 @@ void main(void)
     }
 
     return;
+}
+
+void __attribute__((picinterrupt(""))) isr()
+{
+    if (INTCONbits.RBIF) {
+
+        int portA = PORTBbits.RB4;
+        int portB = PORTBbits.RB5;
+
+        if (_lastA != portA) {
+            if (_lastA == _lastB) {
+                if (_selectedInput < 3) {
+                    _selectedInput++;
+                } else {
+                    _selectedInput = 0;
+                }
+            }
+        }
+
+        if (_lastB != portB) {
+            if (_lastA == _lastB) {
+                if (_selectedInput > 0) {
+                    _selectedInput--;
+                } else {
+                    _selectedInput = 3;
+                }
+            }
+        }
+
+        _lastA = portA;
+        _lastB = portB;
+        _inputUpdateRequired = 1;
+        INTCONbits.RBIF = 0;
+    }
 }
