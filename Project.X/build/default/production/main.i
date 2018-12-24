@@ -2513,6 +2513,21 @@ extern __bank0 __bit __timeout;
 # 19 "main.c" 2
 
 
+# 1 "./main.h" 1
+
+
+
+int portA;
+
+int portB;
+
+extern unsigned short _selectedInput;
+
+extern unsigned short _lastA, _lastB;
+
+void __attribute__((picinterrupt(""))) isr();
+# 21 "main.c" 2
+
 # 1 "./Config.h" 1
 
 
@@ -2530,7 +2545,7 @@ extern void white_space(char);
 extern void write_volume(char);
 
 void config(void);
-# 21 "main.c" 2
+# 22 "main.c" 2
 
 # 1 "./Input.h" 1
 
@@ -2542,7 +2557,7 @@ extern unsigned short _selectedInput;
 extern unsigned short _lastA, _lastB;
 
 void activateSelectedRelay(void);
-# 22 "main.c" 2
+# 23 "main.c" 2
 
 # 1 "./Display.h" 1
 
@@ -2555,7 +2570,7 @@ void white_space(char aantal_spaces);
 void write_volume(char volume);
 
 void spiWrite(char data);
-# 23 "main.c" 2
+# 24 "main.c" 2
 
 
 
@@ -2566,13 +2581,14 @@ void spiWrite(char data);
 void main(void)
 {
     config();
+    activateSelectedRelay();
     SSPCON = 0b00100000;
     SSPSTAT = 0b01000000;
 
 
     TRISD = 0x00;
     TRISC = 0x00;
-# 81 "main.c"
+# 83 "main.c"
     PORTCbits.RC2 = 1;
     PORTCbits.RC6 = 0;
     PORTCbits.RC4 = 1;

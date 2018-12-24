@@ -18,6 +18,7 @@
 
 #include <xc.h>
 #include "pic16f887.h"
+#include "main.h"
 #include "Config.h"
 #include "Input.h"
 #include "Display.h"
@@ -30,6 +31,7 @@
 void main(void) 
 {   
     config();
+    activateSelectedRelay();
     SSPCON = 0b00100000;
     SSPSTAT = 0b01000000;
     

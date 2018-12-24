@@ -8,6 +8,7 @@
       <itemPath>Config.h</itemPath>
       <itemPath>Input.h</itemPath>
       <itemPath>Font.h</itemPath>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
