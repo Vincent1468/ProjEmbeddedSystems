@@ -31,7 +31,6 @@
 void main(void) 
 {   
     config();
-    activateSelectedRelay();
     SSPCON = 0b00100000;
     SSPSTAT = 0b01000000;
     

@@ -2517,9 +2517,9 @@ extern __bank0 __bit __timeout;
 
 
 
-int portA;
+extern int portA;
 
-int portB;
+extern int portB;
 
 extern unsigned short _selectedInput;
 
@@ -2581,14 +2581,13 @@ void spiWrite(char data);
 void main(void)
 {
     config();
-    activateSelectedRelay();
     SSPCON = 0b00100000;
     SSPSTAT = 0b01000000;
 
 
     TRISD = 0x00;
     TRISC = 0x00;
-# 83 "main.c"
+# 82 "main.c"
     PORTCbits.RC2 = 1;
     PORTCbits.RC6 = 0;
     PORTCbits.RC4 = 1;

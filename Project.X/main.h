@@ -1,9 +1,9 @@
 #ifndef _MAIN_
 #define _MAIN_
 
-int portA;
+extern int portA;
 
-int portB;
+extern int portB;
 
 extern unsigned short _selectedInput;
 

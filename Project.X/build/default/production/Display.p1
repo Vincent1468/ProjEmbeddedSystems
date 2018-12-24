@@ -287,7 +287,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 [v F1273 `Ci ~T0 @X0 -> 5 `i t ]
 "4 ./Font.h
-[; ;./Font.h: 4: const int font[][5] = {
+[; ;./Font.h: 4: extern const int font[][5] = {
 [v _font `F1273 ~T0 @X0 -> 37 `i e ]
 [i _font
 :U ..

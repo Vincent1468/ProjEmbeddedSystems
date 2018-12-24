@@ -19,11 +19,9 @@
 [v _write_volume write_volume `(v  1 e 1 0 ]
 "43
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-"5 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\Input.c
-[v _activateSelectedRelay activateSelectedRelay `(v  1 e 1 0 ]
 "31 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"127
+"126
 [v _isr isr `II(v  1 e 1 0 ]
 "4 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X/Font.h
 [v _font font `DC[37][5]i  1 e 370 0 ]
@@ -36,7 +34,7 @@
 [v __lastB _lastB `us  1 e 2 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S103 . 1 `uc 1 RB0 1 0 :1:0 
+[s S99 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -46,11 +44,11 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S112 . 1 `S103 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES112  1 e 1 @6 ]
+[u S108 . 1 `S99 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES108  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S34 . 1 `uc 1 RC0 1 0 :1:0 
+[s S30 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -60,9 +58,9 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S43 . 1 `S34 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES43  1 e 1 @7 ]
-[s S71 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S39 . 1 `S30 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES39  1 e 1 @7 ]
+[s S67 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -72,18 +70,18 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S80 . 1 `uc 1 . 1 0 :2:0 
+[s S76 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S85 . 1 `S71 1 . 1 0 `S80 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES85  1 e 1 @11 ]
+[u S81 . 1 `S67 1 . 1 0 `S76 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES81  1 e 1 @11 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S296 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S290 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -93,9 +91,9 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S305 . 1 `S296 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES305  1 e 1 @133 ]
-[s S318 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S299 . 1 `S290 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES299  1 e 1 @133 ]
+[s S312 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -105,11 +103,11 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S327 . 1 `S318 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES327  1 e 1 @134 ]
+[u S321 . 1 `S312 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES321  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S390 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S384 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -119,23 +117,23 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S399 . 1 `S390 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES399  1 e 1 @135 ]
+[u S393 . 1 `S384 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES393  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S356 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S350 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S361 . 1 `S356 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES361  1 e 1 @137 ]
+[u S355 . 1 `S350 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES355  1 e 1 @137 ]
 "1862
 [v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S181 . 1 `uc 1 BF 1 0 :1:0 
+[s S175 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -145,43 +143,43 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S190 . 1 `uc 1 . 1 0 :2:0 
+[s S184 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S195 . 1 `uc 1 . 1 0 :2:0 
+[s S189 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S201 . 1 `uc 1 . 1 0 :2:0 
+[s S195 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S206 . 1 `uc 1 . 1 0 :2:0 
+[s S200 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S211 . 1 `uc 1 . 1 0 :2:0 
+[s S205 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S216 . 1 `uc 1 . 1 0 :2:0 
+[s S210 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S221 . 1 `S181 1 . 1 0 `S190 1 . 1 0 `S195 1 . 1 0 `S201 1 . 1 0 `S206 1 . 1 0 `S211 1 . 1 0 `S216 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES221  1 e 1 @148 ]
-[s S430 . 1 `uc 1 IOCB 1 0 :8:0 
+[u S215 . 1 `S175 1 . 1 0 `S184 1 . 1 0 `S189 1 . 1 0 `S195 1 . 1 0 `S200 1 . 1 0 `S205 1 . 1 0 `S210 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES215  1 e 1 @148 ]
+[s S424 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2436
-[s S432 . 1 `uc 1 IOCB0 1 0 :1:0 
+[s S426 . 1 `uc 1 IOCB0 1 0 :1:0 
 `uc 1 IOCB1 1 0 :1:1 
 `uc 1 IOCB2 1 0 :1:2 
 `uc 1 IOCB3 1 0 :1:3 
@@ -190,9 +188,9 @@
 `uc 1 IOCB6 1 0 :1:6 
 `uc 1 IOCB7 1 0 :1:7 
 ]
-[u S441 . 1 `S430 1 . 1 0 `S432 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES441  1 e 1 @150 ]
-[s S369 . 1 `uc 1 ANS0 1 0 :1:0 
+[u S435 . 1 `S424 1 . 1 0 `S426 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES435  1 e 1 @150 ]
+[s S363 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -202,9 +200,9 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S378 . 1 `S369 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES378  1 e 1 @392 ]
-[s S339 . 1 `uc 1 ANS8 1 0 :1:0 
+[u S372 . 1 `S363 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES372  1 e 1 @392 ]
+[s S333 . 1 `uc 1 ANS8 1 0 :1:0 
 `uc 1 ANS9 1 0 :1:1 
 `uc 1 ANS10 1 0 :1:2 
 `uc 1 ANS11 1 0 :1:3 
@@ -212,14 +210,14 @@
 `uc 1 ANS13 1 0 :1:5 
 ]
 "3464
-[u S346 . 1 `S339 1 . 1 0 ]
-[v _ANSELHbits ANSELHbits `VES346  1 e 1 @393 ]
+[u S340 . 1 `S333 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES340  1 e 1 @393 ]
 "31 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"107
+"106
 [v main@volume volume `uc  1 a 1 18 ]
-"125
+"124
 } 0
 "17 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\Display.c
 [v _write_volume write_volume `(v  1 e 1 0 ]
@@ -228,7 +226,7 @@
 "23
 [v write_volume@x x `i  1 a 2 11 ]
 "35
-[v write_volume@x_280 x `i  1 a 2 13 ]
+[v write_volume@x_274 x `i  1 a 2 13 ]
 "17
 [v write_volume@volume volume `uc  1 a 1 wreg ]
 "19
@@ -274,17 +272,12 @@
 [v config@_inputUpdateRequired _inputUpdateRequired `uc  1 a 1 9 ]
 "95
 } 0
-"5 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\Input.c
-[v _activateSelectedRelay activateSelectedRelay `(v  1 e 1 0 ]
-{
-"30
-} 0
-"127 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\main.c
+"126 C:\Users\Niek\Documents\GitHub\ProjEmbeddedSystems\Project.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"132
-[v isr@portB portB `i  1 a 2 7 ]
 "131
+[v isr@portB portB `i  1 a 2 7 ]
+"130
 [v isr@portA portA `i  1 a 2 5 ]
-"159
+"158
 } 0
