@@ -18,34 +18,23 @@
 
 #include <xc.h>
 #include "pic16f887.h"
+#include "config.h"
 #define _XTAL_FREQ 500000                               // Used by the XC8 delay_ms(x) macro
 
 #define INPUT_MAX 3
 #define INPUT_MIN 0
-/*
-#define 0 font[0][5]
-#define 1 font[1][5]
-#define 2 font[2][5]
-#define 3 font[3][5]
-#define 4 font[4][5]
-#define 5 font[5][5]
-#define 6 font[6][5]
-#define 7 font[7][5]
-#define 8 font[8][5]
-#define 9 font[9][5]
-*/
-const char lookupofz[10][2][5] = {
-    {{0}, {0x3E, 0x51, 0x49, 0x45, 0x3E}},  // 0
-    {{1}, {0x00, 0x42, 0x7F, 0x40, 0x00}},  // 1
-    {{2}, {0x42, 0x61, 0x51, 0x49, 0x46}},  // 2
-    {{3}, {0x21, 0x41, 0x45, 0x4B, 0x31}},  // 3
-    {{4}, {0x18, 0x14, 0x12, 0x7F, 0x10}},  // 4
-    {{5}, {0x27, 0x45, 0x45, 0x45, 0x39}},  // 5
-    {{6}, {0x3C, 0x4A, 0x49, 0x49, 0x30}},  // 6
-    {{7}, {0x01, 0x71, 0x09, 0x05, 0x03}},  // 7
-    {{8}, {0x36, 0x49, 0x49, 0x49, 0x36}},  // 8
-    {{9}, {0x06, 0x49, 0x49, 0x29, 0x1E}},  // 9
-};
+
+char _inputUpdateRequired;
+unsigned short _selectedInput;
+unsigned short _lastA, _lastB;
+
+unsigned char data = 0xFF;
+char display = 1;
+
+void spiWrite(char);
+void white_space(char);
+void write_volume(char);
+
 
 const int font[][5] = {
     {0x3E, 0x51, 0x49, 0x45, 0x3E},// 0
@@ -88,164 +77,6 @@ const int font[][5] = {
  }; 
 
 
-char _inputUpdateRequired;
-unsigned short _selectedInput;
-unsigned short _lastA, _lastB;
-
-unsigned char data = 0xFF;
-char display = 1;
-
-void spiWrite(char);
-void white_space(char);
-void write_volume(char);
-// Set registers and stuff
-void config()
-{
-    OSCCON = 0b00111000;      // 500KHz clock speed, change if needed
-
-    //
-    // OUTPUTS
-    //
-    
-    // Set relays as output 
-    TRISAbits.TRISA0 = 0; // Set relay 1 (RA0) as output
-    TRISAbits.TRISA1 = 0; // Set relay 2 (RA1) as output
-    TRISAbits.TRISA2 = 0; // Set relay 3 (RA2) as output
-    TRISAbits.TRISA3 = 0; // Set relay 4 (RA3) as output       
-    
-    PORTA = 0x0F; // Clear port A
-       
-    //
-    // ENCODER
-    //
-    
-    // Set encoder as input
-    TRISBbits.TRISB4 = 1;
-    TRISBbits.TRISB5 = 1;
-    // Set as DIGITAL input
-    ANSELHbits.ANS11 = 0;
-    ANSELHbits.ANS13 = 0;
-       
-    
-    //
-    // POTMETER
-    //
-    TRISEbits.TRISE0 = 1; // Set potmeter as input
-    ANSELbits.ANS5 = 1; // ANALOG input
-    
-    //
-    // IR RECEIVER
-    //
-    TRISBbits.TRISB0 = 1; // Set as input
-    ANSELHbits.ANS11 = 0; // DIGITAL input
-    
-    //
-    // VOLUME MOTOR
-    //
-    
-    TRISCbits.TRISC0 = 0; // Output
-    TRISCbits.TRISC1 = 0; // Output
-    
-    PORTC = 0x00; // Set motor OFF
-    
-   
-    //
-    
-    
-    
-    // PORTD = 0x00; // Set all display to OFF
-    //PORTC = 0x00; // ^
-    
-    
-    //
-    // INTERRUPTS
-    //   
-    
-    INTCONbits.RBIE = 1; // Enable PORTB interrupts
-
-    IOCBbits.IOCB4 = 1; // Enable interrupt on RB4
-    IOCBbits.IOCB5 = 1; // Enable interrupt on RB5
-    
-    INTCONbits.GIE = 1; // Enable global interrupts
-
-
-    
-    //
-    // Default values
-    //
-    
-    _inputUpdateRequired = 1;
-    _selectedInput = 0;
-    _lastA = PORTBbits.RB4;
-    _lastB = PORTBbits.RB5;
-}
-
-
-void activateSelectedRelay()
-{
-    if (!_inputUpdateRequired) return;
-    
-    PORTA = 0x0F; // Clear port A
-
-    
-    switch (_selectedInput) {
-        case 0:
-            PORTA = ~0x01;
-            break;        
-        case 1:
-            PORTA = ~0x02;
-            break;
-        case 2:
-            PORTA = ~0x04;
-            break;
-        case 3:
-            PORTA = ~0x08;
-            break;
-        default:
-            PORTA = ~0x01; // RA0 (relay 1) default
-            break;
-    }
-    
-    _inputUpdateRequired = 0;
-}
-
-
-void __interrupt() isr()
-{    
-    if (INTCONbits.RBIF) {
-       
-        int portA = PORTBbits.RB4;
-        int portB = PORTBbits.RB5;
-
-        if (_lastA != portA) { // Interrupt rotary port A
-            if (_lastA == _lastB) {
-                if (_selectedInput < INPUT_MAX) {
-                    _selectedInput++;
-                } else {
-                    _selectedInput = INPUT_MIN;
-                }
-            }
-        }
-
-        if (_lastB != portB) { // Interrupt rotary port B
-            if (_lastA == _lastB) {
-                if (_selectedInput > INPUT_MIN) {
-                    _selectedInput--;
-                } else {
-                    _selectedInput = INPUT_MAX;
-                }
-            }
-        }
-        
-        _lastA = portA;
-        _lastB = portB;
-        _inputUpdateRequired = 1;
-        INTCONbits.RBIF = 0;
-    }
-    
-       
-    
-}
 
 void main(void) 
 {   
@@ -340,54 +171,4 @@ void main(void)
     }
    
     return;
-}
-
-void white_space(char aantal_spaces) {
-
-    for(int kolom = 0; kolom < aantal_spaces; kolom++)
-    {
-        for(int rij = 0; rij < 5; rij++)
-        {  
-            spiWrite(font[0][rij]);
-        }
-    } 
-}
-
-void write_volume(char volume)
-{
-    if (volume < 10)
-    {
-        white_space(7);
-        
-        for(int x=0; x < 5; x++)
-            {  
-                spiWrite(font[36][x]);
-            }
-        
-        // PORTCbits.RC4 = 1; // latch naar register
-    }
-    
-    if (volume >= 10)
-        
-        white_space(6);
-               
-            for(int x=0; x < 5; x++)
-            {  
-                spiWrite(lookupofz[volume][volume][x]);
-            }
-    
-    PORTCbits.RC4 = 1; // latch naar register
-}
-
-void spiWrite(char data) // Write data to SPI bus
-{
-    SSPBUF = data; // write var data todisplay
-    
-    
-    while(!SSPSTATbits.BF) // check if register is empty from bits
-    {
-    
-    }
-    
-    
 }
