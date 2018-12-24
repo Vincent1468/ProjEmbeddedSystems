@@ -7,4 +7,5 @@ extern unsigned short _selectedInput;
 extern unsigned short _lastA, _lastB;
 
 void activateSelectedRelay(void);
+
 #endif

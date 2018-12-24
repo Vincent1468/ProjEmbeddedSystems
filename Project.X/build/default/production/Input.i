@@ -2508,10 +2508,10 @@ extern __bank0 __bit __timeout;
 
 
 void activateSelectedRelay()
-{ if (!_inputUpdateRequired) return;
+{
+    if (!_inputUpdateRequired) return;
 
     PORTA = 0x0F;
-
 
     switch (_selectedInput) {
         case 0:

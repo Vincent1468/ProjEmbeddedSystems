@@ -246,15 +246,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Input.c: 5: void activateSelectedRelay()
 [v _activateSelectedRelay `(v ~T0 @X0 1 ef ]
 "6
-[; ;Input.c: 6: { if (!_inputUpdateRequired) return;
+[; ;Input.c: 6: {
 {
 [e :U _activateSelectedRelay ]
 [f ]
+"7
+[; ;Input.c: 7:     if (!_inputUpdateRequired) return;
 [e $ ! ! != -> __inputUpdateRequired `i -> 0 `i 139  ]
 [e $UE 138  ]
 [e :U 139 ]
-"8
-[; ;Input.c: 8:     PORTA = 0x0F;
+"9
+[; ;Input.c: 9:     PORTA = 0x0F;
 [e = _PORTA -> -> 15 `i `uc ]
 "11
 [; ;Input.c: 11:     switch (_selectedInput) {

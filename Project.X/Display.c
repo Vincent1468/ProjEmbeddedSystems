@@ -1,6 +1,7 @@
 #include "Display.h"
 #include <xc.h>
 #include "pic16f887.h"
+#include "Font.h"
 
 void white_space(char aantal_spaces) {
 

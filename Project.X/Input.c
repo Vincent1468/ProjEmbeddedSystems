@@ -3,10 +3,10 @@
 #include "pic16f887.h"
 
 void activateSelectedRelay()
-{    if (!_inputUpdateRequired) return;
+{    
+    if (!_inputUpdateRequired) return;
     
     PORTA = 0x0F; // Clear port A
-
     
     switch (_selectedInput) {
         case 0:
