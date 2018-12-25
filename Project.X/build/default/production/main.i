@@ -2514,18 +2514,6 @@ extern __bank0 __bit __timeout;
 
 
 # 1 "./main.h" 1
-
-
-
-extern int portA;
-
-extern int portB;
-
-extern unsigned short _selectedInput;
-
-extern unsigned short _lastA, _lastB;
-
-void __attribute__((picinterrupt(""))) isr();
 # 21 "main.c" 2
 
 # 1 "./Config.h" 1
@@ -2630,38 +2618,4 @@ void main(void)
     }
 
     return;
-}
-
-void __attribute__((picinterrupt(""))) isr()
-{
-    if (INTCONbits.RBIF) {
-
-        int portA = PORTBbits.RB4;
-        int portB = PORTBbits.RB5;
-
-        if (_lastA != portA) {
-            if (_lastA == _lastB) {
-                if (_selectedInput < 3) {
-                    _selectedInput++;
-                } else {
-                    _selectedInput = 0;
-                }
-            }
-        }
-
-        if (_lastB != portB) {
-            if (_lastA == _lastB) {
-                if (_selectedInput > 0) {
-                    _selectedInput--;
-                } else {
-                    _selectedInput = 3;
-                }
-            }
-        }
-
-        _lastA = portA;
-        _lastB = portB;
-        _inputUpdateRequired = 1;
-        INTCONbits.RBIF = 0;
-    }
 }

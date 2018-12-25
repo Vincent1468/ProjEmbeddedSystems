@@ -8,15 +8,6 @@
 # 2 "<built-in>" 2
 # 1 "Input.c" 2
 # 1 "./Input.h" 1
-
-
-
-extern char _inputUpdateRequired;
-
-extern unsigned short _selectedInput;
-extern unsigned short _lastA, _lastB;
-
-void activateSelectedRelay(void);
 # 1 "Input.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
@@ -2505,31 +2496,3 @@ extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
 # 2 "Input.c" 2
 
-
-
-void activateSelectedRelay()
-{
-    if (!_inputUpdateRequired) return;
-
-    PORTA = 0x0F;
-
-    switch (_selectedInput) {
-        case 0:
-            PORTA = ~0x01;
-            break;
-        case 1:
-            PORTA = ~0x02;
-            break;
-        case 2:
-            PORTA = ~0x04;
-            break;
-        case 3:
-            PORTA = ~0x08;
-            break;
-        default:
-            PORTA = ~0x01;
-            break;
-    }
-
-    _inputUpdateRequired = 0;
-}

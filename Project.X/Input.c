@@ -1,7 +1,7 @@
 #include "Input.h"
 #include <xc.h>
 #include "pic16f887.h"
-
+/*
 void activateSelectedRelay()
 {    
     if (!_inputUpdateRequired) return;
@@ -28,3 +28,4 @@ void activateSelectedRelay()
     
     _inputUpdateRequired = 0;
 }
+*/

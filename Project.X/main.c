@@ -122,7 +122,7 @@ void main(void)
    
     return;
 }
-
+/*
 void __interrupt() isr()
 {    
     if (INTCONbits.RBIF) {
@@ -156,3 +156,4 @@ void __interrupt() isr()
         INTCONbits.RBIF = 0;
     }
 }
+ */
