@@ -26,16 +26,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "307
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 307: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
 [v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
-"10 ./Display.h
-[; ;./Display.h: 10: void spiWrite(char data);
+"11 ./Display.h
+[; ;./Display.h: 11: void spiWrite(char data);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"8
-[; ;./Display.h: 8: void write_volume(char volume);
-[v _write_volume `(v ~T0 @X0 0 ef1`uc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
+"7 ./Display.h
+[; ;./Display.h: 7: void white_space(char aantal_spaces);
+[v _white_space `(v ~T0 @X0 0 ef1`uc ]
 "2 main.c
 [; ;main.c: 2: 
 [p x FOSC = INTRC_CLKOUT ]
@@ -368,38 +368,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 106:     char volume = 1;
 [v _volume `uc ~T0 @X0 1 a ]
 [e = _volume -> -> 1 `i `uc ]
-"109
-[; ;main.c: 109:     while(1){
-[e :U 140 ]
-{
+"108
+[; ;main.c: 108:     _delay((unsigned long)((3000)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 "110
-[; ;main.c: 110:     PORTCbits.RC7 = 0;
-[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:     PORTCbits.RC4 = 0;
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"112
-[; ;main.c: 112:     write_volume(0);
-[e ( _write_volume (1 -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:     PORTCbits.RC4 = 1;
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 110:      white_space(1);
+[e ( _white_space (1 -> -> 1 `i `uc ]
+"114
+[; ;main.c: 114:     while(1)
+[e :U 140 ]
 "116
-[; ;main.c: 116:     _delay((unsigned long)((2000)*(500000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-"118
-[; ;main.c: 118:     volume++;
-[e ++ _volume -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121:     }
+[; ;main.c: 116:     {
+{
+"119
+[; ;main.c: 119:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"123
-[; ;main.c: 123:     return;
+"121
+[; ;main.c: 121:     return;
 [e $UE 138  ]
-"124
-[; ;main.c: 124: }
+"122
+[; ;main.c: 122: }
 [e :UE 138 ]
 }

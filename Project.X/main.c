@@ -104,18 +104,16 @@ void main(void)
     
     
     char volume = 1;
-   
     
-    while(1){
-    PORTCbits.RC7 = 0; // write to dot register
-    PORTCbits.RC4 = 0; // set in luistermodus
-    write_volume(0);
+    __delay_ms(3000);
     
-    
-    PORTCbits.RC4 = 1;
-    __delay_ms(2000);
-    
-    volume++;
+     white_space(1);
+     
+     //PORTCbits.RC4 = 1; // latch naar register
+     
+    while(1)
+        
+    {
    
     
     }

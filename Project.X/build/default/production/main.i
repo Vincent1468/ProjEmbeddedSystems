@@ -2536,18 +2536,10 @@ void config(void);
 # 22 "main.c" 2
 
 # 1 "./Input.h" 1
-
-
-
-extern char _inputUpdateRequired;
-
-extern unsigned short _selectedInput;
-extern unsigned short _lastA, _lastB;
-
-void activateSelectedRelay(void);
 # 23 "main.c" 2
 
 # 1 "./Display.h" 1
+
 
 
 
@@ -2602,17 +2594,15 @@ void main(void)
 
     char volume = 1;
 
+    _delay((unsigned long)((3000)*(500000/4000.0)));
 
-    while(1){
-    PORTCbits.RC7 = 0;
-    PORTCbits.RC4 = 0;
-    write_volume(0);
+     white_space(1);
 
 
-    PORTCbits.RC4 = 1;
-    _delay((unsigned long)((2000)*(500000/4000.0)));
 
-    volume++;
+    while(1)
+
+    {
 
 
     }

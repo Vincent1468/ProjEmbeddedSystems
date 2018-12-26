@@ -11,6 +11,7 @@
 
 
 
+
 extern const int font[][5];
 
 void white_space(char aantal_spaces);
@@ -2559,22 +2560,25 @@ void white_space(char aantal_spaces) {
     {
         for(int rij = 0; rij < 5; rij++)
         {
-            spiWrite(font[0][rij]);
+            spiWrite(font[1][rij]);
         }
+
     }
 }
 
 void write_volume(char volume)
 {
-    if (volume < 10)
+    if (volume <= 9)
     {
         white_space(7);
 
-        for(int x=0; x < 5; x++)
-            {
-                spiWrite(font[36][x]);
-            }
 
+
+        for(int rij=0; rij < 5; rij++)
+            {
+                spiWrite(font[volume][rij]);
+            }
+        _delay((unsigned long)((5)*(500000/4000.0)));
 
     }
 
@@ -2586,8 +2590,8 @@ void write_volume(char volume)
             {
                 spiWrite(font[1][x]);
             }
+    _delay((unsigned long)((5)*(500000/4000.0)));
 
-    PORTCbits.RC4 = 1;
 }
 
 void spiWrite(char data)

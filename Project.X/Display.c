@@ -9,22 +9,25 @@ void white_space(char aantal_spaces) {
     {
         for(int rij = 0; rij < 5; rij++)
         {  
-            spiWrite(font[0][rij]);
+            spiWrite(font[1][rij]);
         }
+      
     } 
 }
 
 void write_volume(char volume)
 {
-    if (volume < 10)
+    if (volume <= 9)
     {
         white_space(7);
         
-        for(int x=0; x < 5; x++)
-            {  
-                spiWrite(font[36][x]);
-            }
         
+         
+        for(int rij=0; rij < 5; rij++)
+            {  
+                spiWrite(font[volume][rij]);
+            }
+        __delay_ms(5);
         // PORTCbits.RC4 = 1; // latch naar register
     }
     
@@ -36,8 +39,8 @@ void write_volume(char volume)
             {  
                 spiWrite(font[1][x]);
             }
+    __delay_ms(5);
     
-    PORTCbits.RC4 = 1; // latch naar register
 }
 
 void spiWrite(char data) // Write data to SPI bus
