@@ -1,4 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"166 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"234
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 234:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"233
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 233: typedef union {
+[u S7 `S8 1 ]
+[n S7 . . ]
+"245
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -233,3 +247,206 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
+"21 ./Globals.h
+[; ;./Globals.h: 21: char _inputUpdateRequired = 0;
+[v __inputUpdateRequired `uc ~T0 @X0 1 e ]
+[i __inputUpdateRequired
+-> -> 0 `i `uc
+]
+"22
+[; ;./Globals.h: 22: unsigned short _selectedInput;
+[v __selectedInput `us ~T0 @X0 1 e ]
+"23
+[; ;./Globals.h: 23: unsigned short _lastA, _lastB;
+[v __lastA `us ~T0 @X0 1 e ]
+[v __lastB `us ~T0 @X0 1 e ]
+"27
+[; ;./Globals.h: 27: int volume = 0;
+[v _volume `i ~T0 @X0 1 e ]
+[i _volume
+-> 0 `i
+]
+"3 Input.c
+[; ;Input.c: 3: void activateSelectedRelay()
+[v _activateSelectedRelay `(v ~T0 @X0 1 ef ]
+"4
+[; ;Input.c: 4: {
+{
+[e :U _activateSelectedRelay ]
+[f ]
+"5
+[; ;Input.c: 5:     if (!_inputUpdateRequired) return;
+[e $ ! ! != -> __inputUpdateRequired `i -> 0 `i 139  ]
+[e $UE 138  ]
+[e :U 139 ]
+"7
+[; ;Input.c: 7:     PORTA = 0x0F;
+[e = _PORTA -> -> 15 `i `uc ]
+"9
+[; ;Input.c: 9:     switch (_selectedInput) {
+[e $U 141  ]
+{
+"10
+[; ;Input.c: 10:         case 0:
+[e :U 142 ]
+"11
+[; ;Input.c: 11:             PORTA = ~0x01;
+[e = _PORTA -> ~ -> 1 `i `uc ]
+"12
+[; ;Input.c: 12:             break;
+[e $U 140  ]
+"13
+[; ;Input.c: 13:         case 1:
+[e :U 143 ]
+"14
+[; ;Input.c: 14:             PORTA = ~0x02;
+[e = _PORTA -> ~ -> 2 `i `uc ]
+"15
+[; ;Input.c: 15:             break;
+[e $U 140  ]
+"16
+[; ;Input.c: 16:         case 2:
+[e :U 144 ]
+"17
+[; ;Input.c: 17:             PORTA = ~0x04;
+[e = _PORTA -> ~ -> 4 `i `uc ]
+"18
+[; ;Input.c: 18:             break;
+[e $U 140  ]
+"19
+[; ;Input.c: 19:         case 3:
+[e :U 145 ]
+"20
+[; ;Input.c: 20:             PORTA = ~0x08;
+[e = _PORTA -> ~ -> 8 `i `uc ]
+"21
+[; ;Input.c: 21:             break;
+[e $U 140  ]
+"22
+[; ;Input.c: 22:         default:
+[e :U 146 ]
+"23
+[; ;Input.c: 23:             PORTA = ~0x01;
+[e = _PORTA -> ~ -> 1 `i `uc ]
+"24
+[; ;Input.c: 24:             break;
+[e $U 140  ]
+"25
+[; ;Input.c: 25:     }
+}
+[e $U 140  ]
+[e :U 141 ]
+[e [\ -> __selectedInput `ui , $ -> -> 0 `i `ui 142
+ , $ -> -> 1 `i `ui 143
+ , $ -> -> 2 `i `ui 144
+ , $ -> -> 3 `i `ui 145
+ 146 ]
+[e :U 140 ]
+"27
+[; ;Input.c: 27:     _inputUpdateRequired = 0;
+[e = __inputUpdateRequired -> -> 0 `i `uc ]
+"28
+[; ;Input.c: 28: }
+[e :UE 138 ]
+}
+"30
+[; ;Input.c: 30: void handle_rotary()
+[v _handle_rotary `(v ~T0 @X0 1 ef ]
+"31
+[; ;Input.c: 31: {
+{
+[e :U _handle_rotary ]
+[f ]
+"32
+[; ;Input.c: 32:         int portA = PORTBbits.RB4;
+[v _portA `i ~T0 @X0 1 a ]
+[e = _portA -> . . _PORTBbits 0 4 `i ]
+"33
+[; ;Input.c: 33:         int portB = PORTBbits.RB5;
+[v _portB `i ~T0 @X0 1 a ]
+[e = _portB -> . . _PORTBbits 0 5 `i ]
+"35
+[; ;Input.c: 35:         if (_lastA != portA) {
+[e $ ! != -> __lastA `ui -> _portA `ui 148  ]
+{
+"36
+[; ;Input.c: 36:             if (_lastA == _lastB) {
+[e $ ! == -> __lastA `ui -> __lastB `ui 149  ]
+{
+"37
+[; ;Input.c: 37:                 if (_selectedInput < 3) {
+[e $ ! < -> __selectedInput `ui -> -> 3 `i `ui 150  ]
+{
+"38
+[; ;Input.c: 38:                     _selectedInput++;
+[e ++ __selectedInput -> -> 1 `i `us ]
+"39
+[; ;Input.c: 39:                 } else {
+}
+[e $U 151  ]
+[e :U 150 ]
+{
+"40
+[; ;Input.c: 40:                     _selectedInput = 0;
+[e = __selectedInput -> -> 0 `i `us ]
+"41
+[; ;Input.c: 41:                 }
+}
+[e :U 151 ]
+"42
+[; ;Input.c: 42:             }
+}
+[e :U 149 ]
+"43
+[; ;Input.c: 43:         }
+}
+[e :U 148 ]
+"45
+[; ;Input.c: 45:         if (_lastB != portB) {
+[e $ ! != -> __lastB `ui -> _portB `ui 152  ]
+{
+"46
+[; ;Input.c: 46:             if (_lastA == _lastB) {
+[e $ ! == -> __lastA `ui -> __lastB `ui 153  ]
+{
+"47
+[; ;Input.c: 47:                 if (_selectedInput > 0) {
+[e $ ! > -> __selectedInput `ui -> -> 0 `i `ui 154  ]
+{
+"48
+[; ;Input.c: 48:                     _selectedInput--;
+[e -- __selectedInput -> -> 1 `i `us ]
+"49
+[; ;Input.c: 49:                 } else {
+}
+[e $U 155  ]
+[e :U 154 ]
+{
+"50
+[; ;Input.c: 50:                     _selectedInput = 3;
+[e = __selectedInput -> -> 3 `i `us ]
+"51
+[; ;Input.c: 51:                 }
+}
+[e :U 155 ]
+"52
+[; ;Input.c: 52:             }
+}
+[e :U 153 ]
+"53
+[; ;Input.c: 53:         }
+}
+[e :U 152 ]
+"55
+[; ;Input.c: 55:         _lastA = portA;
+[e = __lastA -> _portA `us ]
+"56
+[; ;Input.c: 56:         _lastB = portB;
+[e = __lastB -> _portB `us ]
+"57
+[; ;Input.c: 57:         _inputUpdateRequired = 1;
+[e = __inputUpdateRequired -> -> 1 `i `uc ]
+"58
+[; ;Input.c: 58: }
+[e :UE 147 ]
+}

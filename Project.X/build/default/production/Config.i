@@ -10,22 +10,8 @@
 # 1 "./Config.h" 1
 
 
-
-
-extern char _inputUpdateRequired;
-extern unsigned short _selectedInput;
-extern unsigned short _lastA, _lastB;
-
-extern unsigned char data;
-extern char display;
-
-extern void spiWrite(char);
-extern void white_space(char);
-extern void write_volume(char);
-
-void config(void);
-# 1 "Config.c" 2
-
+# 1 "./Globals.h" 1
+# 12 "./Globals.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2510,23 +2496,197 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 2 "Config.c" 2
+# 12 "./Globals.h" 2
+# 21 "./Globals.h"
+char _inputUpdateRequired = 0;
+unsigned short _selectedInput;
+unsigned short _lastA, _lastB;
 
+
+
+int volume = 0;
+# 3 "./Config.h" 2
+
+# 1 "./Display.h" 1
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 3 "./Display.h" 2
+
+
+
+# 1 "./Font.h" 1
+
+
+
+const int font[][5] = {
+    {0x3E, 0x51, 0x49, 0x45, 0x3E},
+    {0x00, 0x42, 0x7F, 0x40, 0x00},
+    {0x42, 0x61, 0x51, 0x49, 0x46},
+    {0x21, 0x41, 0x45, 0x4B, 0x31},
+    {0x18, 0x14, 0x12, 0x7F, 0x10},
+    {0x27, 0x45, 0x45, 0x45, 0x39},
+    {0x3C, 0x4A, 0x49, 0x49, 0x30},
+    {0x01, 0x71, 0x09, 0x05, 0x03},
+    {0x36, 0x49, 0x49, 0x49, 0x36},
+    {0x06, 0x49, 0x49, 0x29, 0x1E},
+    {0x7E, 0x11, 0x11, 0x11, 0x7E},
+    {0x7F, 0x49, 0x49, 0x49, 0x36},
+    {0x3E, 0x41, 0x41, 0x41, 0x22},
+    {0x7F, 0x41, 0x41, 0x22, 0x1C},
+    {0x7F, 0x49, 0x49, 0x49, 0x41},
+    {0x7F, 0x09, 0x09, 0x01, 0x01},
+    {0x3E, 0x41, 0x41, 0x51, 0x32},
+    {0x7F, 0x08, 0x08, 0x08, 0x7F},
+    {0x00, 0x41, 0x7F, 0x41, 0x00},
+    {0x20, 0x40, 0x41, 0x3F, 0x01},
+    {0x7F, 0x08, 0x14, 0x22, 0x41},
+    {0x7F, 0x40, 0x40, 0x40, 0x40},
+    {0x7F, 0x02, 0x04, 0x02, 0x7F},
+    {0x7F, 0x04, 0x08, 0x10, 0x7F},
+    {0x3E, 0x41, 0x41, 0x41, 0x3E},
+    {0x7F, 0x09, 0x09, 0x09, 0x06},
+    {0x3E, 0x41, 0x51, 0x21, 0x5E},
+    {0x7F, 0x09, 0x19, 0x29, 0x46},
+    {0x46, 0x49, 0x49, 0x49, 0x31},
+    {0x01, 0x01, 0x7F, 0x01, 0x01},
+    {0x3F, 0x40, 0x40, 0x40, 0x3F},
+    {0x1F, 0x20, 0x40, 0x20, 0x1F},
+    {0x7F, 0x20, 0x18, 0x20, 0x7F},
+    {0x63, 0x14, 0x08, 0x14, 0x63},
+    {0x03, 0x04, 0x78, 0x04, 0x03},
+    {0x61, 0x51, 0x49, 0x45, 0x43},
+    {0x00, 0x00, 0x00, 0x00, 0x00},
+ };
+# 6 "./Display.h" 2
+
+
+char _selectedDisplay;
+
+void display_init();
+
+
+void white_space(char aantal_spaces);
+
+void write_volume(char volume);
+
+
+void update_volume();
+
+
+void write_text(char* text);
+void write_char(char c);
+void write_font(int fontPos);
+
+void display_write_start();
+void display_write_end();
+
+void spiWrite(char data);
+# 4 "./Config.h" 2
+
+
+void config(void);
+# 1 "Config.c" 2
 
 
 void config()
 {
-        char _inputUpdateRequired;
-        unsigned short _selectedInput;
-        unsigned short _lastA, _lastB;
-
-        unsigned char data = 0xFF;
-        char display = 1;
-
-        void spiWrite(char);
-        void white_space(char);
-        void write_volume(char);
-
     OSCCON = 0b00111000;
 
 
@@ -2573,7 +2733,12 @@ void config()
     TRISCbits.TRISC1 = 0;
 
     PORTC = 0x00;
-# 78 "Config.c"
+
+
+
+
+
+
     INTCONbits.RBIE = 1;
 
     IOCBbits.IOCB4 = 1;
@@ -2582,6 +2747,10 @@ void config()
     INTCONbits.GIE = 1;
 
 
+
+
+
+    display_init();
 
 
 

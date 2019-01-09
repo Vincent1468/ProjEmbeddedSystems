@@ -1,20 +1,7 @@
 #include "Config.h"
-#include <xc.h>
-#include "pic16f887.h"
 
 void config()
-{
-        char _inputUpdateRequired;
-        unsigned short _selectedInput;
-        unsigned short _lastA, _lastB;
-
-        unsigned char data = 0xFF;
-        char display = 1;
-
-        void spiWrite(char);
-        void white_space(char);
-        void write_volume(char);
-        
+{        
     OSCCON = 0b00111000;      // 500KHz clock speed, change if needed
 
     //
@@ -61,15 +48,7 @@ void config()
     TRISCbits.TRISC1 = 0; // Output
     
     PORTC = 0x00; // Set motor OFF
-    
-   
-    //
-    
-    
-    
-    // PORTD = 0x00; // Set all display to OFF
-    //PORTC = 0x00; // ^
-    
+        
     
     //
     // INTERRUPTS
@@ -82,7 +61,11 @@ void config()
     
     INTCONbits.GIE = 1; // Enable global interrupts
 
-
+    
+    //
+    // DISPLAYS
+    //      
+    display_init();
     
     //
     // Default values

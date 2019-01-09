@@ -1,49 +1,100 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"11 ./Display.h
-[; ;./Display.h: 11: void spiWrite(char data);
+"850 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 850: extern volatile unsigned char SSPCON __attribute__((address(0x014)));
+[v _SSPCON `Vuc ~T0 @X0 0 e@20 ]
+"2177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2177: extern volatile unsigned char SSPSTAT __attribute__((address(0x094)));
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@148 ]
+"1602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"1540
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"358
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 358:     struct {
+[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S13 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 357: typedef union {
+[u S12 `S13 1 ]
+[n S12 . . ]
+"369
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS12 ~T0 @X0 0 e@8 ]
+"296
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 296:     struct {
+[s S11 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S11 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"295
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 295: typedef union {
+[u S10 `S11 1 ]
+[n S10 . . ]
+"307
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 307: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
+[v _PORTCbits `VS10 ~T0 @X0 0 e@7 ]
+"28 ./Display.h
+[; ;./Display.h: 28: void spiWrite(char data);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-[v F1264 `(v ~T0 @X0 1 tf1`ul ]
+[v F1313 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF1264 ~T0 @X0 0 e ]
+[v __delay `JF1313 ~T0 @X0 0 e ]
 [p i __delay ]
+"21 ./Display.h
+[; ;./Display.h: 21: void write_text(char* text);
+[v _write_text `(v ~T0 @X0 0 ef1`*uc ]
+"23
+[; ;./Display.h: 23: void write_font(int fontPos);
+[v _write_font `(v ~T0 @X0 0 ef1`i ]
+"194 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"22 ./Display.h
+[; ;./Display.h: 22: void write_char(char c);
+[v _write_char `(v ~T0 @X0 0 ef1`uc ]
+"25
+[; ;./Display.h: 25: void display_write_start();
+[v _display_write_start `(v ~T0 @X0 0 e? ]
+"26
+[; ;./Display.h: 26: void display_write_end();
+[v _display_write_end `(v ~T0 @X0 0 e? ]
 "843 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
 "2183
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2183:     struct {
-[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S82 . BF UA R_nW S P D_nA CKE SMP ]
+[s S83 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . BF UA R_nW S P D_nA CKE SMP ]
 "2193
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2193:     struct {
-[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S83 . . R . D ]
+[s S84 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S84 . . R . D ]
 "2199
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2199:     struct {
-[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+[s S85 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S85 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
 "2206
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2206:     struct {
-[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S85 . . nW . nA ]
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nW . nA ]
 "2212
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2212:     struct {
-[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S86 . . nWRITE . nADDRESS ]
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . nWRITE . nADDRESS ]
 "2218
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2218:     struct {
-[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S87 . . R_W . D_A ]
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . R_W . D_A ]
 "2224
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2224:     struct {
-[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S88 . . READ_WRITE . DATA_ADDRESS ]
+[s S89 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S89 . . READ_WRITE . DATA_ADDRESS ]
 "2182
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2182: typedef union {
-[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
-[n S81 . . . . . . . . ]
+[u S82 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 `S89 1 ]
+[n S82 . . . . . . . . ]
 "2231
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
-[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+[v _SSPSTATbits `VS82 ~T0 @X0 0 e@148 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -278,10 +329,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-[v F1273 `Ci ~T0 @X0 -> 5 `i t ]
+"21 ./Globals.h
+[; ;./Globals.h: 21: char _inputUpdateRequired = 0;
+[v __inputUpdateRequired `uc ~T0 @X0 1 e ]
+[i __inputUpdateRequired
+-> -> 0 `i `uc
+]
+"22
+[; ;./Globals.h: 22: unsigned short _selectedInput;
+[v __selectedInput `us ~T0 @X0 1 e ]
+"23
+[; ;./Globals.h: 23: unsigned short _lastA, _lastB;
+[v __lastA `us ~T0 @X0 1 e ]
+[v __lastB `us ~T0 @X0 1 e ]
+"27
+[; ;./Globals.h: 27: int volume = 0;
+[v _volume `i ~T0 @X0 1 e ]
+[i _volume
+-> 0 `i
+]
+[v F1327 `Ci ~T0 @X0 -> 5 `i t ]
 "4 ./Font.h
-[; ;./Font.h: 4: extern const int font[][5] = {
-[v _font `F1273 ~T0 @X0 -> 37 `i e ]
+[; ;./Font.h: 4: const int font[][5] = {
+[v _font `F1327 ~T0 @X0 -> 37 `i e ]
 [i _font
 :U ..
 :U ..
@@ -545,173 +615,546 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"6 Display.c
-[; ;Display.c: 6: void white_space(char aantal_spaces) {
+"8 ./Display.h
+[; ;./Display.h: 8: char _selectedDisplay;
+[v __selectedDisplay `uc ~T0 @X0 1 e ]
+"26 Display.c
+[; ;Display.c: 26: void display_init()
+[v _display_init `(v ~T0 @X0 1 ef ]
+"27
+[; ;Display.c: 27: {
+{
+[e :U _display_init ]
+[f ]
+"30
+[; ;Display.c: 30:     SSPCON = 0b00100000;
+[e = _SSPCON -> -> 32 `i `uc ]
+"31
+[; ;Display.c: 31:     SSPSTAT = 0b01000000;
+[e = _SSPSTAT -> -> 64 `i `uc ]
+"34
+[; ;Display.c: 34:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"35
+[; ;Display.c: 35:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+"38
+[; ;Display.c: 38:     PORTDbits.RD2 = 1;
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+"39
+[; ;Display.c: 39:     PORTDbits.RD6 = 0;
+[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
+"40
+[; ;Display.c: 40:     PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+"41
+[; ;Display.c: 41:     PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"44
+[; ;Display.c: 44:     PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+"45
+[; ;Display.c: 45:     PORTDbits.RD4 = 0;
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+"46
+[; ;Display.c: 46:     spiWrite(0b01001111);
+[e ( _spiWrite (1 -> -> 79 `i `uc ]
+"47
+[; ;Display.c: 47:     PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+"50
+[; ;Display.c: 50:     PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+"51
+[; ;Display.c: 51:     PORTDbits.RD4 = 0;
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+"52
+[; ;Display.c: 52:     spiWrite(0b10000001);
+[e ( _spiWrite (1 -> -> 129 `i `uc ]
+"53
+[; ;Display.c: 53:     PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+"57
+[; ;Display.c: 57:     PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+"61
+[; ;Display.c: 61:     PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"62
+[; ;Display.c: 62:     PORTCbits.RC6 = 0;
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+"63
+[; ;Display.c: 63:     PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"64
+[; ;Display.c: 64:     PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"66
+[; ;Display.c: 66:     PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"67
+[; ;Display.c: 67:     PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"68
+[; ;Display.c: 68:     spiWrite(0b01001010);
+[e ( _spiWrite (1 -> -> 74 `i `uc ]
+"70
+[; ;Display.c: 70:     PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"72
+[; ;Display.c: 72:     PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"73
+[; ;Display.c: 73:     PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"75
+[; ;Display.c: 75:     spiWrite(0b10000001);
+[e ( _spiWrite (1 -> -> 129 `i `uc ]
+"76
+[; ;Display.c: 76:     PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"79
+[; ;Display.c: 79:     PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"82
+[; ;Display.c: 82:     _selectedDisplay = 0;
+[e = __selectedDisplay -> -> 0 `i `uc ]
+"84
+[; ;Display.c: 84: }
+[e :UE 139 ]
+}
+"89
+[; ;Display.c: 89: void white_space(char aantal_spaces) {
 [v _white_space `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _white_space ]
 [v _aantal_spaces `uc ~T0 @X0 1 r1 ]
 [f ]
-"8
-[; ;Display.c: 8:     for(int kolom = 0; kolom < aantal_spaces; kolom++)
+"91
+[; ;Display.c: 91:     for(int kolom = 0; kolom < aantal_spaces; kolom++)
 {
 [v _kolom `i ~T0 @X0 1 a ]
 [e = _kolom -> 0 `i ]
-[e $U 142  ]
-[e :U 139 ]
-"9
-[; ;Display.c: 9:     {
+[e $U 144  ]
+[e :U 141 ]
+"92
+[; ;Display.c: 92:     {
 {
-"10
-[; ;Display.c: 10:         for(int rij = 0; rij < 5; rij++)
+"93
+[; ;Display.c: 93:         for(int rij = 0; rij < 5; rij++)
 {
 [v _rij `i ~T0 @X0 1 a ]
 [e = _rij -> 0 `i ]
-[e $ < _rij -> 5 `i 143  ]
-[e $U 144  ]
-[e :U 143 ]
-"11
-[; ;Display.c: 11:         {
+[e $ < _rij -> 5 `i 145  ]
+[e $U 146  ]
+[e :U 145 ]
+"94
+[; ;Display.c: 94:         {
 {
-"12
-[; ;Display.c: 12:             spiWrite(font[1][rij]);
+"95
+[; ;Display.c: 95:             spiWrite(font[1][rij]);
 [e ( _spiWrite (1 -> *U + &U *U + &U _font * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _rij `ui `ux -> -> # *U &U *U + &U _font * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux `uc ]
-"13
-[; ;Display.c: 13:         }
+"96
+[; ;Display.c: 96:         }
 }
 [e ++ _rij -> 1 `i ]
-[e $ < _rij -> 5 `i 143  ]
-[e :U 144 ]
+[e $ < _rij -> 5 `i 145  ]
+[e :U 146 ]
 }
-"15
-[; ;Display.c: 15:     }
+"98
+[; ;Display.c: 98:     }
 }
 [e ++ _kolom -> 1 `i ]
+[e :U 144 ]
+[e $ < _kolom -> _aantal_spaces `i 141  ]
 [e :U 142 ]
-[e $ < _kolom -> _aantal_spaces `i 139  ]
-[e :U 140 ]
 }
-"16
-[; ;Display.c: 16: }
-[e :UE 138 ]
+"99
+[; ;Display.c: 99: }
+[e :UE 140 ]
 }
-"18
-[; ;Display.c: 18: void write_volume(char volume)
+"102
+[; ;Display.c: 102: void write_volume(char volume)
 [v _write_volume `(v ~T0 @X0 1 ef1`uc ]
-"19
-[; ;Display.c: 19: {
+"103
+[; ;Display.c: 103: {
 {
 [e :U _write_volume ]
-"18
-[; ;Display.c: 18: void write_volume(char volume)
+"102
+[; ;Display.c: 102: void write_volume(char volume)
 [v _volume `uc ~T0 @X0 1 r1 ]
-"19
-[; ;Display.c: 19: {
+"103
+[; ;Display.c: 103: {
 [f ]
-"20
-[; ;Display.c: 20:     if (volume <= 9)
-[e $ ! <= -> _volume `i -> 9 `i 147  ]
-"21
-[; ;Display.c: 21:     {
+"104
+[; ;Display.c: 104:     if (volume <= 9)
+[e $ ! <= -> _volume `i -> 9 `i 149  ]
+"105
+[; ;Display.c: 105:     {
 {
-"22
-[; ;Display.c: 22:         white_space(7);
+"106
+[; ;Display.c: 106:         white_space(7);
 [e ( _white_space (1 -> -> 7 `i `uc ]
-"26
-[; ;Display.c: 26:         for(int rij=0; rij < 5; rij++)
+"110
+[; ;Display.c: 110:         for(int rij=0; rij < 5; rij++)
 {
 [v _rij `i ~T0 @X0 1 a ]
 [e = _rij -> 0 `i ]
-[e $ < _rij -> 5 `i 148  ]
-[e $U 149  ]
-[e :U 148 ]
-"27
-[; ;Display.c: 27:             {
+[e $ < _rij -> 5 `i 150  ]
+[e $U 151  ]
+[e :U 150 ]
+"111
+[; ;Display.c: 111:             {
 {
-"28
-[; ;Display.c: 28:                 spiWrite(font[volume][rij]);
+"112
+[; ;Display.c: 112:                 spiWrite(font[volume][rij]);
 [e ( _spiWrite (1 -> *U + &U *U + &U _font * -> _volume `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _rij `ui `ux -> -> # *U &U *U + &U _font * -> _volume `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux `uc ]
-"29
-[; ;Display.c: 29:             }
+"113
+[; ;Display.c: 113:             }
 }
 [e ++ _rij -> 1 `i ]
-[e $ < _rij -> 5 `i 148  ]
-[e :U 149 ]
-}
-"30
-[; ;Display.c: 30:         _delay((unsigned long)((5)*(500000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-"32
-[; ;Display.c: 32:     }
-}
-[e :U 147 ]
-"34
-[; ;Display.c: 34:     if (volume >= 10)
-[e $ ! >= -> _volume `i -> 10 `i 151  ]
-"36
-[; ;Display.c: 36:         white_space(6);
-[e ( _white_space (1 -> -> 6 `i `uc ]
+[e $ < _rij -> 5 `i 150  ]
 [e :U 151 ]
-"38
-[; ;Display.c: 38:             for(int x=0; x < 5; x++)
+}
+"114
+[; ;Display.c: 114:         _delay((unsigned long)((5)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+"116
+[; ;Display.c: 116:     }
+}
+[e :U 149 ]
+"118
+[; ;Display.c: 118:     if (volume >= 10)
+[e $ ! >= -> _volume `i -> 10 `i 153  ]
+"120
+[; ;Display.c: 120:         white_space(6);
+[e ( _white_space (1 -> -> 6 `i `uc ]
+[e :U 153 ]
+"122
+[; ;Display.c: 122:             for(int x=0; x < 5; x++)
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
-[e $ < _x -> 5 `i 152  ]
-[e $U 153  ]
-[e :U 152 ]
-"39
-[; ;Display.c: 39:             {
+[e $ < _x -> 5 `i 154  ]
+[e $U 155  ]
+[e :U 154 ]
+"123
+[; ;Display.c: 123:             {
 {
-"40
-[; ;Display.c: 40:                 spiWrite(font[1][x]);
+"124
+[; ;Display.c: 124:                 spiWrite(font[1][x]);
 [e ( _spiWrite (1 -> *U + &U *U + &U _font * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _x `ui `ux -> -> # *U &U *U + &U _font * -> -> -> 1 `i `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux `uc ]
-"41
-[; ;Display.c: 41:             }
+"125
+[; ;Display.c: 125:             }
 }
 [e ++ _x -> 1 `i ]
-[e $ < _x -> 5 `i 152  ]
-[e :U 153 ]
+[e $ < _x -> 5 `i 154  ]
+[e :U 155 ]
 }
-"42
-[; ;Display.c: 42:     _delay((unsigned long)((5)*(500000/4000.0)));
+"126
+[; ;Display.c: 126:     _delay((unsigned long)((5)*(500000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-"44
-[; ;Display.c: 44: }
-[e :UE 146 ]
+"128
+[; ;Display.c: 128: }
+[e :UE 148 ]
 }
-"46
-[; ;Display.c: 46: void spiWrite(char data)
+"133
+[; ;Display.c: 133: void update_volume()
+[v _update_volume `(v ~T0 @X0 1 ef ]
+"134
+[; ;Display.c: 134: {
+{
+[e :U _update_volume ]
+[f ]
+"135
+[; ;Display.c: 135:     _selectedDisplay = 0;
+[e = __selectedDisplay -> -> 0 `i `uc ]
+"137
+[; ;Display.c: 137:     write_text("VOL");
+[e ( _write_text (1 :s 1C ]
+"141
+[; ;Display.c: 141:     int spaces = 3;
+[v _spaces `i ~T0 @X0 1 a ]
+[e = _spaces -> 3 `i ]
+"142
+[; ;Display.c: 142:     if (volume > 10)
+[e $ ! > _volume -> 10 `i 158  ]
+"143
+[; ;Display.c: 143:         spaces = 4;
+[e = _spaces -> 4 `i ]
+[e :U 158 ]
+"146
+[; ;Display.c: 146:     for (int i = 0; i < spaces; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 162  ]
+[e :U 159 ]
+"147
+[; ;Display.c: 147:         write_font(38);
+[e ( _write_font (1 -> 38 `i ]
+[e ++ _i -> 1 `i ]
+[e :U 162 ]
+[e $ < _i _spaces 159  ]
+[e :U 160 ]
+}
+"149
+[; ;Display.c: 149:     char vol[2];
+[v _vol `uc ~T0 @X0 -> 2 `i a ]
+"150
+[; ;Display.c: 150:     sprintf(vol, "%d", volume);
+[e ( _sprintf (1 , (. , &U _vol :s 2C _volume ]
+"152
+[; ;Display.c: 152:     write_text(vol);
+[e ( _write_text (1 &U _vol ]
+"154
+[; ;Display.c: 154: }
+[e :UE 157 ]
+}
+"156
+[; ;Display.c: 156: void write_text(char* text)
+[v _write_text `(v ~T0 @X0 1 ef1`*uc ]
+"157
+[; ;Display.c: 157: {
+{
+[e :U _write_text ]
+"156
+[; ;Display.c: 156: void write_text(char* text)
+[v _text `*uc ~T0 @X0 1 r1 ]
+"157
+[; ;Display.c: 157: {
+[f ]
+"158
+[; ;Display.c: 158:     char* c;
+[v _c `*uc ~T0 @X0 1 a ]
+"160
+[; ;Display.c: 160:     for (c = text; *c != '\0'; c++) {
+{
+[e = _c _text ]
+[e $U 167  ]
+[e :U 164 ]
+{
+"161
+[; ;Display.c: 161:         write_char(*c);
+[e ( _write_char (1 *U _c ]
+"162
+[; ;Display.c: 162:     }
+}
+[e ++ _c * -> -> 1 `i `x -> -> # *U _c `i `x ]
+[e :U 167 ]
+[e $ != -> *U _c `ui -> 0 `ui 164  ]
+[e :U 165 ]
+}
+"164
+[; ;Display.c: 164: }
+[e :UE 163 ]
+}
+"166
+[; ;Display.c: 166: void write_char(char c)
+[v _write_char `(v ~T0 @X0 1 ef1`uc ]
+"167
+[; ;Display.c: 167: {
+{
+[e :U _write_char ]
+"166
+[; ;Display.c: 166: void write_char(char c)
+[v _c `uc ~T0 @X0 1 r1 ]
+"167
+[; ;Display.c: 167: {
+[f ]
+"169
+[; ;Display.c: 169:     if (c >= 48 && c <= 57) {
+[e $ ! && >= -> _c `i -> 48 `i <= -> _c `i -> 57 `i 169  ]
+{
+"170
+[; ;Display.c: 170:         int pos = 48 - c;
+[v _pos `i ~T0 @X0 1 a ]
+[e = _pos - -> 48 `i -> _c `i ]
+"171
+[; ;Display.c: 171:         write_font(pos);
+[e ( _write_font (1 _pos ]
+"172
+[; ;Display.c: 172:     } else if (c >= 65 && c <= 90) {
+}
+[e $U 170  ]
+[e :U 169 ]
+[e $ ! && >= -> _c `i -> 65 `i <= -> _c `i -> 90 `i 171  ]
+{
+"173
+[; ;Display.c: 173:         int pos = (65 - c) + 10;
+[v _pos `i ~T0 @X0 1 a ]
+[e = _pos + - -> 65 `i -> _c `i -> 10 `i ]
+"174
+[; ;Display.c: 174:         write_font(pos);
+[e ( _write_font (1 _pos ]
+"175
+[; ;Display.c: 175:     } else if (c >= 97 && c <= 122) {
+}
+[e $U 172  ]
+[e :U 171 ]
+[e $ ! && >= -> _c `i -> 97 `i <= -> _c `i -> 122 `i 173  ]
+{
+"176
+[; ;Display.c: 176:         int pos = (97 - c) + 10;
+[v _pos `i ~T0 @X0 1 a ]
+[e = _pos + - -> 97 `i -> _c `i -> 10 `i ]
+"177
+[; ;Display.c: 177:         write_font(pos);
+[e ( _write_font (1 _pos ]
+"178
+[; ;Display.c: 178:     } else {
+}
+[e $U 174  ]
+[e :U 173 ]
+{
+"181
+[; ;Display.c: 181:     }
+}
+[e :U 174 ]
+[e :U 172 ]
+[e :U 170 ]
+"182
+[; ;Display.c: 182: }
+[e :UE 168 ]
+}
+"184
+[; ;Display.c: 184: void write_font(int fontPos)
+[v _write_font `(v ~T0 @X0 1 ef1`i ]
+"185
+[; ;Display.c: 185: {
+{
+[e :U _write_font ]
+"184
+[; ;Display.c: 184: void write_font(int fontPos)
+[v _fontPos `i ~T0 @X0 1 r1 ]
+"185
+[; ;Display.c: 185: {
+[f ]
+"186
+[; ;Display.c: 186:     display_write_start();
+[e ( _display_write_start ..  ]
+"188
+[; ;Display.c: 188:     for(int x=0; x < 5; x++){
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $ < _x -> 5 `i 176  ]
+[e $U 177  ]
+[e :U 176 ]
+{
+"189
+[; ;Display.c: 189:         spiWrite(font[fontPos][x]);
+[e ( _spiWrite (1 -> *U + &U *U + &U _font * -> -> _fontPos `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _x `ui `ux -> -> # *U &U *U + &U _font * -> -> _fontPos `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux `uc ]
+"190
+[; ;Display.c: 190:     }
+}
+[e ++ _x -> 1 `i ]
+[e $ < _x -> 5 `i 176  ]
+[e :U 177 ]
+}
+"191
+[; ;Display.c: 191:     _delay((unsigned long)((5)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+"194
+[; ;Display.c: 194:     display_write_end();
+[e ( _display_write_end ..  ]
+"195
+[; ;Display.c: 195: }
+[e :UE 175 ]
+}
+"198
+[; ;Display.c: 198: void display_write_start()
+[v _display_write_start `(v ~T0 @X0 1 ef ]
+"199
+[; ;Display.c: 199: {
+{
+[e :U _display_write_start ]
+[f ]
+"200
+[; ;Display.c: 200:     if (_selectedDisplay == 0) {
+[e $ ! == -> __selectedDisplay `i -> 0 `i 180  ]
+{
+"201
+[; ;Display.c: 201:         PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"202
+[; ;Display.c: 202:         return;
+[e $UE 179  ]
+"203
+[; ;Display.c: 203:     }
+}
+[e :U 180 ]
+"205
+[; ;Display.c: 205:     PORTDbits.RD4 = 0;
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+"206
+[; ;Display.c: 206: }
+[e :UE 179 ]
+}
+"209
+[; ;Display.c: 209: void display_write_end()
+[v _display_write_end `(v ~T0 @X0 1 ef ]
+"210
+[; ;Display.c: 210: {
+{
+[e :U _display_write_end ]
+[f ]
+"211
+[; ;Display.c: 211:     if (_selectedDisplay == 0) {
+[e $ ! == -> __selectedDisplay `i -> 0 `i 182  ]
+{
+"212
+[; ;Display.c: 212:         PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"213
+[; ;Display.c: 213:         return;
+[e $UE 181  ]
+"214
+[; ;Display.c: 214:     }
+}
+[e :U 182 ]
+"216
+[; ;Display.c: 216:     PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+"218
+[; ;Display.c: 218: }
+[e :UE 181 ]
+}
+"220
+[; ;Display.c: 220: void spiWrite(char data)
 [v _spiWrite `(v ~T0 @X0 1 ef1`uc ]
-"47
-[; ;Display.c: 47: {
+"221
+[; ;Display.c: 221: {
 {
 [e :U _spiWrite ]
-"46
-[; ;Display.c: 46: void spiWrite(char data)
+"220
+[; ;Display.c: 220: void spiWrite(char data)
 [v _data `uc ~T0 @X0 1 r1 ]
-"47
-[; ;Display.c: 47: {
+"221
+[; ;Display.c: 221: {
 [f ]
-"48
-[; ;Display.c: 48:     SSPBUF = data;
+"222
+[; ;Display.c: 222:     SSPBUF = data;
 [e = _SSPBUF -> _data `uc ]
-"50
-[; ;Display.c: 50:     while(!SSPSTATbits.BF)
-[e $U 156  ]
-[e :U 157 ]
-"51
-[; ;Display.c: 51:     {
+"224
+[; ;Display.c: 224:     while(!SSPSTATbits.BF)
+[e $U 184  ]
+[e :U 185 ]
+"225
+[; ;Display.c: 225:     {
 {
-"53
-[; ;Display.c: 53:     }
+"227
+[; ;Display.c: 227:     }
 }
-[e :U 156 ]
-"50
-[; ;Display.c: 50:     while(!SSPSTATbits.BF)
-[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 157  ]
-[e :U 158 ]
-"56
-[; ;Display.c: 56: }
-[e :UE 155 ]
+[e :U 184 ]
+"224
+[; ;Display.c: 224:     while(!SSPSTATbits.BF)
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 185  ]
+[e :U 186 ]
+"230
+[; ;Display.c: 230: }
+[e :UE 183 ]
 }
+[p f _sprintf 8388736 ]
+[a 2C 37 100 0 ]
+[a 1C 86 79 76 0 ]

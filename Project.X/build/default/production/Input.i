@@ -8,8 +8,10 @@
 # 2 "<built-in>" 2
 # 1 "Input.c" 2
 # 1 "./Input.h" 1
-# 1 "Input.c" 2
 
+
+# 1 "./Globals.h" 1
+# 12 "./Globals.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2494,5 +2496,77 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 2 "Input.c" 2
+# 12 "./Globals.h" 2
+# 21 "./Globals.h"
+char _inputUpdateRequired = 0;
+unsigned short _selectedInput;
+unsigned short _lastA, _lastB;
 
+
+
+int volume = 0;
+# 3 "./Input.h" 2
+
+
+void activateSelectedRelay();
+
+void handle_rotary();
+# 1 "Input.c" 2
+
+
+void activateSelectedRelay()
+{
+    if (!_inputUpdateRequired) return;
+
+    PORTA = 0x0F;
+
+    switch (_selectedInput) {
+        case 0:
+            PORTA = ~0x01;
+            break;
+        case 1:
+            PORTA = ~0x02;
+            break;
+        case 2:
+            PORTA = ~0x04;
+            break;
+        case 3:
+            PORTA = ~0x08;
+            break;
+        default:
+            PORTA = ~0x01;
+            break;
+    }
+
+    _inputUpdateRequired = 0;
+}
+
+void handle_rotary()
+{
+        int portA = PORTBbits.RB4;
+        int portB = PORTBbits.RB5;
+
+        if (_lastA != portA) {
+            if (_lastA == _lastB) {
+                if (_selectedInput < 3) {
+                    _selectedInput++;
+                } else {
+                    _selectedInput = 0;
+                }
+            }
+        }
+
+        if (_lastB != portB) {
+            if (_lastA == _lastB) {
+                if (_selectedInput > 0) {
+                    _selectedInput--;
+                } else {
+                    _selectedInput = 3;
+                }
+            }
+        }
+
+        _lastA = portA;
+        _lastB = portB;
+        _inputUpdateRequired = 1;
+}

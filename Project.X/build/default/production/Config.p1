@@ -104,7 +104,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2436
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2436: extern volatile IOCBbits_t IOCBbits __attribute__((address(0x096)));
 [v _IOCBbits `VS92 ~T0 @X0 0 e@150 ]
-"234
+"10 ./Display.h
+[; ;./Display.h: 10: void display_init();
+[v _display_init `(v ~T0 @X0 0 e? ]
+"234 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 234:     struct {
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -349,108 +352,382 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"5 Config.c
-[; ;Config.c: 5: void config()
+"21 ./Globals.h
+[; ;./Globals.h: 21: char _inputUpdateRequired = 0;
+[v __inputUpdateRequired `uc ~T0 @X0 1 e ]
+[i __inputUpdateRequired
+-> -> 0 `i `uc
+]
+"22
+[; ;./Globals.h: 22: unsigned short _selectedInput;
+[v __selectedInput `us ~T0 @X0 1 e ]
+"23
+[; ;./Globals.h: 23: unsigned short _lastA, _lastB;
+[v __lastA `us ~T0 @X0 1 e ]
+[v __lastB `us ~T0 @X0 1 e ]
+"27
+[; ;./Globals.h: 27: int volume = 0;
+[v _volume `i ~T0 @X0 1 e ]
+[i _volume
+-> 0 `i
+]
+[v F1327 `Ci ~T0 @X0 -> 5 `i t ]
+"4 ./Font.h
+[; ;./Font.h: 4: const int font[][5] = {
+[v _font `F1327 ~T0 @X0 -> 37 `i e ]
+[i _font
+:U ..
+:U ..
+-> 62 `i
+-> 81 `i
+-> 73 `i
+-> 69 `i
+-> 62 `i
+..
+:U ..
+-> 0 `i
+-> 66 `i
+-> 127 `i
+-> 64 `i
+-> 0 `i
+..
+:U ..
+-> 66 `i
+-> 97 `i
+-> 81 `i
+-> 73 `i
+-> 70 `i
+..
+:U ..
+-> 33 `i
+-> 65 `i
+-> 69 `i
+-> 75 `i
+-> 49 `i
+..
+:U ..
+-> 24 `i
+-> 20 `i
+-> 18 `i
+-> 127 `i
+-> 16 `i
+..
+:U ..
+-> 39 `i
+-> 69 `i
+-> 69 `i
+-> 69 `i
+-> 57 `i
+..
+:U ..
+-> 60 `i
+-> 74 `i
+-> 73 `i
+-> 73 `i
+-> 48 `i
+..
+:U ..
+-> 1 `i
+-> 113 `i
+-> 9 `i
+-> 5 `i
+-> 3 `i
+..
+:U ..
+-> 54 `i
+-> 73 `i
+-> 73 `i
+-> 73 `i
+-> 54 `i
+..
+:U ..
+-> 6 `i
+-> 73 `i
+-> 73 `i
+-> 41 `i
+-> 30 `i
+..
+:U ..
+-> 126 `i
+-> 17 `i
+-> 17 `i
+-> 17 `i
+-> 126 `i
+..
+:U ..
+-> 127 `i
+-> 73 `i
+-> 73 `i
+-> 73 `i
+-> 54 `i
+..
+:U ..
+-> 62 `i
+-> 65 `i
+-> 65 `i
+-> 65 `i
+-> 34 `i
+..
+:U ..
+-> 127 `i
+-> 65 `i
+-> 65 `i
+-> 34 `i
+-> 28 `i
+..
+:U ..
+-> 127 `i
+-> 73 `i
+-> 73 `i
+-> 73 `i
+-> 65 `i
+..
+:U ..
+-> 127 `i
+-> 9 `i
+-> 9 `i
+-> 1 `i
+-> 1 `i
+..
+:U ..
+-> 62 `i
+-> 65 `i
+-> 65 `i
+-> 81 `i
+-> 50 `i
+..
+:U ..
+-> 127 `i
+-> 8 `i
+-> 8 `i
+-> 8 `i
+-> 127 `i
+..
+:U ..
+-> 0 `i
+-> 65 `i
+-> 127 `i
+-> 65 `i
+-> 0 `i
+..
+:U ..
+-> 32 `i
+-> 64 `i
+-> 65 `i
+-> 63 `i
+-> 1 `i
+..
+:U ..
+-> 127 `i
+-> 8 `i
+-> 20 `i
+-> 34 `i
+-> 65 `i
+..
+:U ..
+-> 127 `i
+-> 64 `i
+-> 64 `i
+-> 64 `i
+-> 64 `i
+..
+:U ..
+-> 127 `i
+-> 2 `i
+-> 4 `i
+-> 2 `i
+-> 127 `i
+..
+:U ..
+-> 127 `i
+-> 4 `i
+-> 8 `i
+-> 16 `i
+-> 127 `i
+..
+:U ..
+-> 62 `i
+-> 65 `i
+-> 65 `i
+-> 65 `i
+-> 62 `i
+..
+:U ..
+-> 127 `i
+-> 9 `i
+-> 9 `i
+-> 9 `i
+-> 6 `i
+..
+:U ..
+-> 62 `i
+-> 65 `i
+-> 81 `i
+-> 33 `i
+-> 94 `i
+..
+:U ..
+-> 127 `i
+-> 9 `i
+-> 25 `i
+-> 41 `i
+-> 70 `i
+..
+:U ..
+-> 70 `i
+-> 73 `i
+-> 73 `i
+-> 73 `i
+-> 49 `i
+..
+:U ..
+-> 1 `i
+-> 1 `i
+-> 127 `i
+-> 1 `i
+-> 1 `i
+..
+:U ..
+-> 63 `i
+-> 64 `i
+-> 64 `i
+-> 64 `i
+-> 63 `i
+..
+:U ..
+-> 31 `i
+-> 32 `i
+-> 64 `i
+-> 32 `i
+-> 31 `i
+..
+:U ..
+-> 127 `i
+-> 32 `i
+-> 24 `i
+-> 32 `i
+-> 127 `i
+..
+:U ..
+-> 99 `i
+-> 20 `i
+-> 8 `i
+-> 20 `i
+-> 99 `i
+..
+:U ..
+-> 3 `i
+-> 4 `i
+-> 120 `i
+-> 4 `i
+-> 3 `i
+..
+:U ..
+-> 97 `i
+-> 81 `i
+-> 73 `i
+-> 69 `i
+-> 67 `i
+..
+:U ..
+-> 0 `i
+-> 0 `i
+-> 0 `i
+-> 0 `i
+-> 0 `i
+..
+..
+]
+"8 ./Display.h
+[; ;./Display.h: 8: char _selectedDisplay;
+[v __selectedDisplay `uc ~T0 @X0 1 e ]
+"3 Config.c
+[; ;Config.c: 3: void config()
 [v _config `(v ~T0 @X0 1 ef ]
-"6
-[; ;Config.c: 6: {
+"4
+[; ;Config.c: 4: {
 {
 [e :U _config ]
 [f ]
-"7
-[; ;Config.c: 7:         char _inputUpdateRequired;
-[v __inputUpdateRequired `uc ~T0 @X0 1 a ]
-"8
-[; ;Config.c: 8:         unsigned short _selectedInput;
-[v __selectedInput `us ~T0 @X0 1 a ]
-"9
-[; ;Config.c: 9:         unsigned short _lastA, _lastB;
-[v __lastA `us ~T0 @X0 1 a ]
-[v __lastB `us ~T0 @X0 1 a ]
-"11
-[; ;Config.c: 11:         unsigned char data = 0xFF;
-[v _data `uc ~T0 @X0 1 a ]
-[e = _data -> -> 255 `i `uc ]
-"12
-[; ;Config.c: 12:         char display = 1;
-[v _display `uc ~T0 @X0 1 a ]
-[e = _display -> -> 1 `i `uc ]
-"18
-[; ;Config.c: 18:     OSCCON = 0b00111000;
+"5
+[; ;Config.c: 5:     OSCCON = 0b00111000;
 [e = _OSCCON -> -> 56 `i `uc ]
-"25
-[; ;Config.c: 25:     TRISAbits.TRISA0 = 0;
+"12
+[; ;Config.c: 12:     TRISAbits.TRISA0 = 0;
 [e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-"26
-[; ;Config.c: 26:     TRISAbits.TRISA1 = 0;
+"13
+[; ;Config.c: 13:     TRISAbits.TRISA1 = 0;
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
-"27
-[; ;Config.c: 27:     TRISAbits.TRISA2 = 0;
+"14
+[; ;Config.c: 14:     TRISAbits.TRISA2 = 0;
 [e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-"28
-[; ;Config.c: 28:     TRISAbits.TRISA3 = 0;
+"15
+[; ;Config.c: 15:     TRISAbits.TRISA3 = 0;
 [e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-"30
-[; ;Config.c: 30:     PORTA = 0x0F;
+"17
+[; ;Config.c: 17:     PORTA = 0x0F;
 [e = _PORTA -> -> 15 `i `uc ]
-"37
-[; ;Config.c: 37:     TRISBbits.TRISB4 = 1;
+"24
+[; ;Config.c: 24:     TRISBbits.TRISB4 = 1;
 [e = . . _TRISBbits 0 4 -> -> 1 `i `uc ]
-"38
-[; ;Config.c: 38:     TRISBbits.TRISB5 = 1;
+"25
+[; ;Config.c: 25:     TRISBbits.TRISB5 = 1;
 [e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
-"40
-[; ;Config.c: 40:     ANSELHbits.ANS11 = 0;
+"27
+[; ;Config.c: 27:     ANSELHbits.ANS11 = 0;
 [e = . . _ANSELHbits 0 3 -> -> 0 `i `uc ]
-"41
-[; ;Config.c: 41:     ANSELHbits.ANS13 = 0;
+"28
+[; ;Config.c: 28:     ANSELHbits.ANS13 = 0;
 [e = . . _ANSELHbits 0 5 -> -> 0 `i `uc ]
-"47
-[; ;Config.c: 47:     TRISEbits.TRISE0 = 1;
+"34
+[; ;Config.c: 34:     TRISEbits.TRISE0 = 1;
 [e = . . _TRISEbits 0 0 -> -> 1 `i `uc ]
-"48
-[; ;Config.c: 48:     ANSELbits.ANS5 = 1;
+"35
+[; ;Config.c: 35:     ANSELbits.ANS5 = 1;
 [e = . . _ANSELbits 0 5 -> -> 1 `i `uc ]
-"53
-[; ;Config.c: 53:     TRISBbits.TRISB0 = 1;
+"40
+[; ;Config.c: 40:     TRISBbits.TRISB0 = 1;
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"54
-[; ;Config.c: 54:     ANSELHbits.ANS11 = 0;
+"41
+[; ;Config.c: 41:     ANSELHbits.ANS11 = 0;
 [e = . . _ANSELHbits 0 3 -> -> 0 `i `uc ]
-"60
-[; ;Config.c: 60:     TRISCbits.TRISC0 = 0;
+"47
+[; ;Config.c: 47:     TRISCbits.TRISC0 = 0;
 [e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-"61
-[; ;Config.c: 61:     TRISCbits.TRISC1 = 0;
+"48
+[; ;Config.c: 48:     TRISCbits.TRISC1 = 0;
 [e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-"63
-[; ;Config.c: 63:     PORTC = 0x00;
+"50
+[; ;Config.c: 50:     PORTC = 0x00;
 [e = _PORTC -> -> 0 `i `uc ]
-"78
-[; ;Config.c: 78:     INTCONbits.RBIE = 1;
+"57
+[; ;Config.c: 57:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"80
-[; ;Config.c: 80:     IOCBbits.IOCB4 = 1;
+"59
+[; ;Config.c: 59:     IOCBbits.IOCB4 = 1;
 [e = . . _IOCBbits 1 4 -> -> 1 `i `uc ]
-"81
-[; ;Config.c: 81:     IOCBbits.IOCB5 = 1;
+"60
+[; ;Config.c: 60:     IOCBbits.IOCB5 = 1;
 [e = . . _IOCBbits 1 5 -> -> 1 `i `uc ]
-"83
-[; ;Config.c: 83:     INTCONbits.GIE = 1;
+"62
+[; ;Config.c: 62:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"91
-[; ;Config.c: 91:     _inputUpdateRequired = 1;
+"68
+[; ;Config.c: 68:     display_init();
+[e ( _display_init ..  ]
+"74
+[; ;Config.c: 74:     _inputUpdateRequired = 1;
 [e = __inputUpdateRequired -> -> 1 `i `uc ]
-"92
-[; ;Config.c: 92:     _selectedInput = 0;
+"75
+[; ;Config.c: 75:     _selectedInput = 0;
 [e = __selectedInput -> -> 0 `i `us ]
-"93
-[; ;Config.c: 93:     _lastA = PORTBbits.RB4;
+"76
+[; ;Config.c: 76:     _lastA = PORTBbits.RB4;
 [e = __lastA -> . . _PORTBbits 0 4 `us ]
-"94
-[; ;Config.c: 94:     _lastB = PORTBbits.RB5;
+"77
+[; ;Config.c: 77:     _lastB = PORTBbits.RB5;
 [e = __lastB -> . . _PORTBbits 0 5 `us ]
-"95
-[; ;Config.c: 95: }
-[e :UE 138 ]
+"78
+[; ;Config.c: 78: }
+[e :UE 139 ]
 }
