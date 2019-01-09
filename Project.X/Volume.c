@@ -10,8 +10,6 @@ void init_adc()
     
     PIR1bits.ADIF = 0; // Clear AD interrupt flag
     PIE1bits.ADIE = 1; // Enable ADC interrupts
-    INTCONbits.PEIE = 1; // Enable peripheral interrupts
-    INTCONbits.GIE = 1; // Enable global interrupts
     
     ADCON0bits.ADON = 1; // Enable ADC module
 }
@@ -38,7 +36,7 @@ void handle_potmeter()
     } else {
         unsigned int currentStep = ad_result / STEP_SIZE; // Calculate the current step
             
-        if (!is_deadzone(currentStep))  // if NOT in a deadzone
+        if (!is_deadzone(currentStep, ad_result))  // if NOT in a deadzone
             volume = currentStep;     // Set the ledCount
     }
     

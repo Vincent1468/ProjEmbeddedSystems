@@ -1,4 +1,4 @@
-# 1 "Config.c"
+# 1 "Remote.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Config.c" 2
-# 1 "./Config.h" 1
+# 1 "Remote.c" 2
+# 1 "./Remote.h" 1
+
 
 
 # 1 "./Globals.h" 1
@@ -2503,273 +2504,53 @@ unsigned short _selectedInput;
 unsigned short _lastA, _lastB;
 # 32 "./Globals.h"
 int volume = 0;
-# 3 "./Config.h" 2
-
-# 1 "./Display.h" 1
+# 4 "./Remote.h" 2
 
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 1 3
+unsigned int ir_input;
+
+void init_remote();
+
+void poll_receiver();
+
+void handle_remote();
+# 1 "Remote.c" 2
 
 
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
+void init_remote()
 {
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\conio.h" 1 3
+
+    T2CONbits.TOUTPS = 0b0000;
+    T2CONbits.T2CKPS = 0b00;
+
+    PR2 = 25;
 
 
+    PIR1bits.TMR2IF = 0;
+    PIE1bits.TMR2IE = 1;
 
+    T2CONbits.TMR2ON = 1;
 
+}
 
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 3 "./Display.h" 2
-
-
-
-# 1 "./Font.h" 1
-
-
-
-const int font[][5] = {
-    {0x3E, 0x51, 0x49, 0x45, 0x3E},
-    {0x00, 0x42, 0x7F, 0x40, 0x00},
-    {0x42, 0x61, 0x51, 0x49, 0x46},
-    {0x21, 0x41, 0x45, 0x4B, 0x31},
-    {0x18, 0x14, 0x12, 0x7F, 0x10},
-    {0x27, 0x45, 0x45, 0x45, 0x39},
-    {0x3C, 0x4A, 0x49, 0x49, 0x30},
-    {0x01, 0x71, 0x09, 0x05, 0x03},
-    {0x36, 0x49, 0x49, 0x49, 0x36},
-    {0x06, 0x49, 0x49, 0x29, 0x1E},
-    {0x7E, 0x11, 0x11, 0x11, 0x7E},
-    {0x7F, 0x49, 0x49, 0x49, 0x36},
-    {0x3E, 0x41, 0x41, 0x41, 0x22},
-    {0x7F, 0x41, 0x41, 0x22, 0x1C},
-    {0x7F, 0x49, 0x49, 0x49, 0x41},
-    {0x7F, 0x09, 0x09, 0x01, 0x01},
-    {0x3E, 0x41, 0x41, 0x51, 0x32},
-    {0x7F, 0x08, 0x08, 0x08, 0x7F},
-    {0x00, 0x41, 0x7F, 0x41, 0x00},
-    {0x20, 0x40, 0x41, 0x3F, 0x01},
-    {0x7F, 0x08, 0x14, 0x22, 0x41},
-    {0x7F, 0x40, 0x40, 0x40, 0x40},
-    {0x7F, 0x02, 0x04, 0x02, 0x7F},
-    {0x7F, 0x04, 0x08, 0x10, 0x7F},
-    {0x3E, 0x41, 0x41, 0x41, 0x3E},
-    {0x7F, 0x09, 0x09, 0x09, 0x06},
-    {0x3E, 0x41, 0x51, 0x21, 0x5E},
-    {0x7F, 0x09, 0x19, 0x29, 0x46},
-    {0x46, 0x49, 0x49, 0x49, 0x31},
-    {0x01, 0x01, 0x7F, 0x01, 0x01},
-    {0x3F, 0x40, 0x40, 0x40, 0x3F},
-    {0x1F, 0x20, 0x40, 0x20, 0x1F},
-    {0x7F, 0x20, 0x18, 0x20, 0x7F},
-    {0x63, 0x14, 0x08, 0x14, 0x63},
-    {0x03, 0x04, 0x78, 0x04, 0x03},
-    {0x61, 0x51, 0x49, 0x45, 0x43},
-    {0x00, 0x00, 0x00, 0x00, 0x00},
- };
-# 6 "./Display.h" 2
-
-
-char _selectedDisplay;
-
-void display_init();
-
-
-void white_space(char aantal_spaces);
-
-void write_volume(char volume);
-
-
-void update_volume();
-
-
-void write_text(char* text);
-void write_char(char c);
-void write_font(int fontPos);
-
-void display_write_start();
-void display_write_end();
-
-void spiWrite(char data);
-# 4 "./Config.h" 2
-
-# 1 "./Volume.h" 1
-
-
-
-
-void init_adc();
-
-void handle_potmeter();
-
-int is_deadzone(int currentStep, int adcResult);
-# 5 "./Config.h" 2
-
-
-void config(void);
-# 1 "Config.c" 2
-
-
-void config()
+void poll_receiver()
 {
-    OSCCONbits.IRCF = 0b110;
-    OSCCONbits.OSTS = 0;
+    ir_input << 1;
+    ir_input = ir_input | PORTBbits.RB0;
+}
+
+void handle_remote()
+{
+    unsigned int code = ir_input >> 9;
+
+    if (code != 0b010)
+        return;
+
+    char mask = 0b000111111111;
+
+    unsigned int data = ir_input & mask;
 
 
 
 
-
-
-    TRISAbits.TRISA0 = 0;
-    TRISAbits.TRISA1 = 0;
-    TRISAbits.TRISA2 = 0;
-    TRISAbits.TRISA3 = 0;
-
-    PORTA = 0x0F;
-
-
-
-
-
-
-    TRISBbits.TRISB4 = 1;
-    TRISBbits.TRISB5 = 1;
-
-    ANSELHbits.ANS11 = 0;
-    ANSELHbits.ANS13 = 0;
-
-
-
-
-
-    TRISEbits.TRISE2 = 1;
-    ANSELbits.ANS7 = 1;
-
-
-
-
-    TRISBbits.TRISB0 = 1;
-    ANSELHbits.ANS11 = 0;
-
-
-
-
-
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-
-    PORTC = 0x00;
-
-
-
-
-
-    display_init();
-
-
-    init_adc();
-
-
-
-
-
-
-
-    IOCBbits.IOCB4 = 1;
-    IOCBbits.IOCB5 = 1;
-
-    INTCONbits.PEIE = 1;
-    INTCONbits.RBIE = 1;
-
-    INTCONbits.GIE = 1;
-# 83 "Config.c"
-    _inputUpdateRequired = 1;
-    _selectedInput = 0;
-    _lastA = PORTBbits.RB4;
-    _lastB = PORTBbits.RB5;
 }

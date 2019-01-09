@@ -49,19 +49,7 @@ void config()
     TRISCbits.TRISC1 = 0; // Output
     
     PORTC = 0x00; // Set motor OFF
-        
     
-    //
-    // INTERRUPTS
-    //   
-    
-    INTCONbits.RBIE = 1; // Enable PORTB interrupts
-
-    IOCBbits.IOCB4 = 1; // Enable interrupt on RB4
-    IOCBbits.IOCB5 = 1; // Enable interrupt on RB5
-    
-    INTCONbits.GIE = 1; // Enable global interrupts
-
     
     //
     // DISPLAYS
@@ -70,6 +58,23 @@ void config()
     
     // ADC
     init_adc();
+    
+    
+    
+    //
+    // INTERRUPTS
+    // 
+    
+    IOCBbits.IOCB4 = 1; // Enable interrupt on RB4 (Encoder)
+    IOCBbits.IOCB5 = 1; // Enable interrupt on RB5 (Encoder)
+    
+    INTCONbits.PEIE = 1; // Enable peripheral interrupts
+    INTCONbits.RBIE = 1; // Enable PORTB interrupts
+
+    INTCONbits.GIE = 1; // Enable global interrupts
+
+    
+
     
     //
     // Default values

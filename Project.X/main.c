@@ -22,7 +22,7 @@
 #include "Input.h"
 #include "Display.h"
 #include "Volume.h"
-
+#include "Remote.h"
 
 
 void main(void) 
@@ -36,7 +36,7 @@ void main(void)
             ADCON0bits.GO = 1;
         
         update_volume();
-        
+        activateSelectedRelay();
         
         __delay_ms(100);
     
@@ -57,6 +57,15 @@ void __interrupt() isr()
         handle_potmeter();
         
         PIR1bits.ADIF = 0;
+    }
+    
+    if (PIR1bits.TMR2IF) {
+        PR2 = 25; // Set TMR2 value TODO: Check if this can be removed
+
+        poll_receiver();
+        
+        PIR1bits.TMR2IF = 0;
+
     }
 }
  

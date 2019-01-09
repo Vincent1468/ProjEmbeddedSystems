@@ -2727,6 +2727,20 @@ void handle_rotary();
 
 
 
+# 1 "./Remote.h" 1
+
+
+
+
+
+unsigned int ir_input;
+
+void init_remote();
+
+void poll_receiver();
+
+void handle_remote();
+# 25 "main.c" 2
 
 
 
@@ -2739,6 +2753,9 @@ void main(void)
     {
         if (!ADCON0bits.GO)
             ADCON0bits.GO = 1;
+
+        update_volume();
+        activateSelectedRelay();
 
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
@@ -2759,5 +2776,14 @@ void __attribute__((picinterrupt(""))) isr()
         handle_potmeter();
 
         PIR1bits.ADIF = 0;
+    }
+
+    if (PIR1bits.TMR2IF) {
+        PR2 = 25;
+
+        poll_receiver();
+
+        PIR1bits.TMR2IF = 0;
+
     }
 }

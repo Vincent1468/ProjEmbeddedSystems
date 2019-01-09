@@ -2524,8 +2524,6 @@ void init_adc()
 
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
 
     ADCON0bits.ADON = 1;
 }
@@ -2545,8 +2543,15 @@ int is_deadzone(int currentStep, int adcResult)
 
 void handle_potmeter()
 {
-    int ad_result = ADRES;
+    unsigned int ad_result = (ADRESH << 8) + ADRESL;
 
+    if (ad_result == 0 || ad_result < ((1023 * 0.8) / 40)) {
+            volume = 0;
+    } else {
+        unsigned int currentStep = ad_result / ((1023 * 0.8) / 40);
 
+        if (!is_deadzone(currentStep, ad_result))
+            volume = currentStep;
+    }
 
 }

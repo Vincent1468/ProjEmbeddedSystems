@@ -177,7 +177,7 @@ void write_char(char c)
     } else {
         // Special char?
         // TODO!
-    }    
+    }
 }
 
 void write_font(int fontPos)

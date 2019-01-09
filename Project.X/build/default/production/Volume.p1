@@ -1,8 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"7 ./Config.h
-[; ;./Config.h: 7: void config(void);
-[v _config `(v ~T0 @X0 0 ef ]
 "1251 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1251:     struct {
 [s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
@@ -26,37 +22,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1276
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
-"18 ./Display.h
-[; ;./Display.h: 18: void update_volume();
-[v _update_volume `(v ~T0 @X0 0 e? ]
-"5 ./Input.h
-[; ;./Input.h: 5: void activateSelectedRelay();
-[v _activateSelectedRelay `(v ~T0 @X0 0 e? ]
-[v F1256 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF1256 ~T0 @X0 0 e ]
-[p i __delay ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"465 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 465:     struct {
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"475
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 475:     struct {
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"464
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 464: typedef union {
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"482
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"7 ./Input.h
-[; ;./Input.h: 7: void handle_rotary();
-[v _handle_rotary `(v ~T0 @X0 0 e? ]
-"543 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+"2983
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2983:     struct {
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2982
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2982: typedef union {
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2991
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"543
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 543:     struct {
 [s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
@@ -67,41 +44,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"7 ./Volume.h
-[; ;./Volume.h: 7: void handle_potmeter();
-[v _handle_potmeter `(v ~T0 @X0 0 e? ]
-"2041 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2041: extern volatile unsigned char PR2 __attribute__((address(0x092)));
-[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
-"10 ./Remote.h
-[; ;./Remote.h: 10: void poll_receiver();
-[v _poll_receiver `(v ~T0 @X0 0 e? ]
-"2 main.c
-[; ;main.c: 2: 
-[p x FOSC = INTRC_CLKOUT ]
-"3
-[; ;main.c: 3: 
-[p x WDTE = OFF ]
-"4
-[p x PWRTE = OFF ]
-"5
-[p x MCLRE = OFF ]
-"6
-[p x CP = OFF ]
-"7
-[p x CPD = OFF ]
-"8
-[p x BOREN = ON ]
-"9
-[p x IESO = OFF ]
-"10
-[p x FCMEN = OFF ]
-"11
-[p x LVP = OFF ]
-"14
-[p x BOR4V = BOR21V ]
-"15
-[p x WRT = OFF ]
+"1708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1708:     struct {
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
+"1707
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1707: typedef union {
+[u S62 `S63 1 ]
+[n S62 . . ]
+"1718
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+"1238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2970
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2970: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -355,378 +314,111 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _volume
 -> 0 `i
 ]
-[v F1327 `Ci ~T0 @X0 -> 5 `i t ]
-"4 ./Font.h
-[; ;./Font.h: 4: const int font[][5] = {
-[v _font `F1327 ~T0 @X0 -> 37 `i e ]
-[i _font
-:U ..
-:U ..
--> 62 `i
--> 81 `i
--> 73 `i
--> 69 `i
--> 62 `i
-..
-:U ..
--> 0 `i
--> 66 `i
--> 127 `i
--> 64 `i
--> 0 `i
-..
-:U ..
--> 66 `i
--> 97 `i
--> 81 `i
--> 73 `i
--> 70 `i
-..
-:U ..
--> 33 `i
--> 65 `i
--> 69 `i
--> 75 `i
--> 49 `i
-..
-:U ..
--> 24 `i
--> 20 `i
--> 18 `i
--> 127 `i
--> 16 `i
-..
-:U ..
--> 39 `i
--> 69 `i
--> 69 `i
--> 69 `i
--> 57 `i
-..
-:U ..
--> 60 `i
--> 74 `i
--> 73 `i
--> 73 `i
--> 48 `i
-..
-:U ..
--> 1 `i
--> 113 `i
--> 9 `i
--> 5 `i
--> 3 `i
-..
-:U ..
--> 54 `i
--> 73 `i
--> 73 `i
--> 73 `i
--> 54 `i
-..
-:U ..
--> 6 `i
--> 73 `i
--> 73 `i
--> 41 `i
--> 30 `i
-..
-:U ..
--> 126 `i
--> 17 `i
--> 17 `i
--> 17 `i
--> 126 `i
-..
-:U ..
--> 127 `i
--> 73 `i
--> 73 `i
--> 73 `i
--> 54 `i
-..
-:U ..
--> 62 `i
--> 65 `i
--> 65 `i
--> 65 `i
--> 34 `i
-..
-:U ..
--> 127 `i
--> 65 `i
--> 65 `i
--> 34 `i
--> 28 `i
-..
-:U ..
--> 127 `i
--> 73 `i
--> 73 `i
--> 73 `i
--> 65 `i
-..
-:U ..
--> 127 `i
--> 9 `i
--> 9 `i
--> 1 `i
--> 1 `i
-..
-:U ..
--> 62 `i
--> 65 `i
--> 65 `i
--> 81 `i
--> 50 `i
-..
-:U ..
--> 127 `i
--> 8 `i
--> 8 `i
--> 8 `i
--> 127 `i
-..
-:U ..
--> 0 `i
--> 65 `i
--> 127 `i
--> 65 `i
--> 0 `i
-..
-:U ..
--> 32 `i
--> 64 `i
--> 65 `i
--> 63 `i
--> 1 `i
-..
-:U ..
--> 127 `i
--> 8 `i
--> 20 `i
--> 34 `i
--> 65 `i
-..
-:U ..
--> 127 `i
--> 64 `i
--> 64 `i
--> 64 `i
--> 64 `i
-..
-:U ..
--> 127 `i
--> 2 `i
--> 4 `i
--> 2 `i
--> 127 `i
-..
-:U ..
--> 127 `i
--> 4 `i
--> 8 `i
--> 16 `i
--> 127 `i
-..
-:U ..
--> 62 `i
--> 65 `i
--> 65 `i
--> 65 `i
--> 62 `i
-..
-:U ..
--> 127 `i
--> 9 `i
--> 9 `i
--> 9 `i
--> 6 `i
-..
-:U ..
--> 62 `i
--> 65 `i
--> 81 `i
--> 33 `i
--> 94 `i
-..
-:U ..
--> 127 `i
--> 9 `i
--> 25 `i
--> 41 `i
--> 70 `i
-..
-:U ..
--> 70 `i
--> 73 `i
--> 73 `i
--> 73 `i
--> 49 `i
-..
-:U ..
--> 1 `i
--> 1 `i
--> 127 `i
--> 1 `i
--> 1 `i
-..
-:U ..
--> 63 `i
--> 64 `i
--> 64 `i
--> 64 `i
--> 63 `i
-..
-:U ..
--> 31 `i
--> 32 `i
--> 64 `i
--> 32 `i
--> 31 `i
-..
-:U ..
--> 127 `i
--> 32 `i
--> 24 `i
--> 32 `i
--> 127 `i
-..
-:U ..
--> 99 `i
--> 20 `i
--> 8 `i
--> 20 `i
--> 99 `i
-..
-:U ..
--> 3 `i
--> 4 `i
--> 120 `i
--> 4 `i
--> 3 `i
-..
-:U ..
--> 97 `i
--> 81 `i
--> 73 `i
--> 69 `i
--> 67 `i
-..
-:U ..
--> 0 `i
--> 0 `i
--> 0 `i
--> 0 `i
--> 0 `i
-..
-..
-]
-"8 ./Display.h
-[; ;./Display.h: 8: char _selectedDisplay;
-[v __selectedDisplay `uc ~T0 @X0 1 e ]
-"6 ./Remote.h
-[; ;./Remote.h: 6: unsigned int ir_input;
-[v _ir_input `ui ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"28 main.c
-[; ;main.c: 28: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"29
-[; ;main.c: 29: {
+"5 Volume.c
+[; ;Volume.c: 5: void init_adc()
+[v _init_adc `(v ~T0 @X0 1 ef ]
+"6
+[; ;Volume.c: 6: {
 {
-[e :U _main ]
+[e :U _init_adc ]
 [f ]
-"30
-[; ;main.c: 30:     config();
-[e ( _config ..  ]
-"33
-[; ;main.c: 33:     while(1)
-[e :U 141 ]
-"34
-[; ;main.c: 34:     {
-{
-"35
-[; ;main.c: 35:         if (!ADCON0bits.GO)
-[e $ ! ! != -> . . _ADCON0bits 1 1 `i -> 0 `i 143  ]
-"36
-[; ;main.c: 36:             ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-[e :U 143 ]
-"38
-[; ;main.c: 38:         update_volume();
-[e ( _update_volume ..  ]
-"39
-[; ;main.c: 39:         activateSelectedRelay();
-[e ( _activateSelectedRelay ..  ]
-"41
-[; ;main.c: 41:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"43
-[; ;main.c: 43:     }
+"7
+[; ;Volume.c: 7:     ADCON0bits.CHS = 0b0111;
+[e = . . _ADCON0bits 0 2 -> -> 7 `i `uc ]
+"8
+[; ;Volume.c: 8:     ADCON0bits.ADCS = 0b001;
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
+"9
+[; ;Volume.c: 9:     ADCON1bits.ADFM = 1;
+[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
+"11
+[; ;Volume.c: 11:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"12
+[; ;Volume.c: 12:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"14
+[; ;Volume.c: 14:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"15
+[; ;Volume.c: 15: }
+[e :UE 138 ]
 }
-[e :U 140 ]
-[e $U 141  ]
-[e :U 142 ]
-"45
-[; ;main.c: 45: }
+"20
+[; ;Volume.c: 20: int is_deadzone(int currentStep, int adcResult)
+[v _is_deadzone `(i ~T0 @X0 1 ef2`i`i ]
+"21
+[; ;Volume.c: 21: {
+{
+[e :U _is_deadzone ]
+"20
+[; ;Volume.c: 20: int is_deadzone(int currentStep, int adcResult)
+[v _currentStep `i ~T0 @X0 1 r1 ]
+[v _adcResult `i ~T0 @X0 1 r2 ]
+"21
+[; ;Volume.c: 21: {
+[f ]
+"22
+[; ;Volume.c: 22:     int turnPoint = ((1023 * 0.8) / 40) * currentStep;
+[v _turnPoint `i ~T0 @X0 1 a ]
+[e = _turnPoint -> * / * -> -> 1023 `i `d .0.8 -> -> 40 `i `d -> _currentStep `d `i ]
+"24
+[; ;Volume.c: 24:     int deadzoneLow = turnPoint - ((1023 * 0.8) * 0.01);
+[v _deadzoneLow `i ~T0 @X0 1 a ]
+[e = _deadzoneLow -> - -> _turnPoint `d * * -> -> 1023 `i `d .0.8 .0.01 `i ]
+"25
+[; ;Volume.c: 25:     int deadzoneHigh = turnPoint + ((1023 * 0.8) * 0.01);
+[v _deadzoneHigh `i ~T0 @X0 1 a ]
+[e = _deadzoneHigh -> + -> _turnPoint `d * * -> -> 1023 `i `d .0.8 .0.01 `i ]
+"27
+[; ;Volume.c: 27:     return adcResult > deadzoneLow && adcResult < deadzoneHigh;
+[e ) -> && > _adcResult _deadzoneLow < _adcResult _deadzoneHigh `i ]
+[e $UE 139  ]
+"28
+[; ;Volume.c: 28: }
 [e :UE 139 ]
 }
-[v $root$_isr `(v ~T0 @X0 0 e ]
-"47
-[; ;main.c: 47: void __attribute__((picinterrupt(""))) isr()
-[v _isr `(v ~T1 @X0 1 ef ]
-"48
-[; ;main.c: 48: {
+"30
+[; ;Volume.c: 30: void handle_potmeter()
+[v _handle_potmeter `(v ~T0 @X0 1 ef ]
+"31
+[; ;Volume.c: 31: {
 {
-[e :U _isr ]
+[e :U _handle_potmeter ]
 [f ]
-"49
-[; ;main.c: 49:     if (INTCONbits.RBIF) {
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 145  ]
+"32
+[; ;Volume.c: 32:     unsigned int ad_result = (ADRESH << 8) + ADRESL;
+[v _ad_result `ui ~T0 @X0 1 a ]
+[e = _ad_result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+"34
+[; ;Volume.c: 34:     if (ad_result == 0 || ad_result < ((1023 * 0.8) / 40)) {
+[e $ ! || == _ad_result -> -> 0 `i `ui < -> _ad_result `d / * -> -> 1023 `i `d .0.8 -> -> 40 `i `d 141  ]
 {
-"51
-[; ;main.c: 51:         handle_rotary();
-[e ( _handle_rotary ..  ]
-"52
-[; ;main.c: 52:         INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"53
-[; ;main.c: 53:     }
+"35
+[; ;Volume.c: 35:             volume = 0;
+[e = _volume -> 0 `i ]
+"36
+[; ;Volume.c: 36:     } else {
 }
-[e :U 145 ]
-"55
-[; ;main.c: 55:     if (PIR1bits.ADIF) {
-[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 146  ]
+[e $U 142  ]
+[e :U 141 ]
 {
-"57
-[; ;main.c: 57:         handle_potmeter();
-[e ( _handle_potmeter ..  ]
-"59
-[; ;main.c: 59:         PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:     }
+"37
+[; ;Volume.c: 37:         unsigned int currentStep = ad_result / ((1023 * 0.8) / 40);
+[v _currentStep `ui ~T0 @X0 1 a ]
+[e = _currentStep -> / -> _ad_result `d / * -> -> 1023 `i `d .0.8 -> -> 40 `i `d `ui ]
+"39
+[; ;Volume.c: 39:         if (!is_deadzone(currentStep, ad_result))
+[e $ ! ! != ( _is_deadzone (2 , -> _currentStep `i -> _ad_result `i -> 0 `i 143  ]
+"40
+[; ;Volume.c: 40:             volume = currentStep;
+[e = _volume -> _currentStep `i ]
+[e :U 143 ]
+"41
+[; ;Volume.c: 41:     }
 }
-[e :U 146 ]
-"62
-[; ;main.c: 62:     if (PIR1bits.TMR2IF) {
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 147  ]
-{
-"63
-[; ;main.c: 63:         PR2 = 25;
-[e = _PR2 -> -> 25 `i `uc ]
-"65
-[; ;main.c: 65:         poll_receiver();
-[e ( _poll_receiver ..  ]
-"67
-[; ;main.c: 67:         PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:     }
-}
-[e :U 147 ]
-"70
-[; ;main.c: 70: }
-[e :UE 144 ]
+[e :U 142 ]
+"43
+[; ;Volume.c: 43: }
+[e :UE 140 ]
 }
