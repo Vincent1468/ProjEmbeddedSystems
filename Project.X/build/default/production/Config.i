@@ -2501,9 +2501,7 @@ extern __bank0 __bit __timeout;
 char _inputUpdateRequired = 0;
 unsigned short _selectedInput;
 unsigned short _lastA, _lastB;
-
-
-
+# 32 "./Globals.h"
 int volume = 0;
 # 3 "./Config.h" 2
 
@@ -2680,6 +2678,18 @@ void display_write_end();
 void spiWrite(char data);
 # 4 "./Config.h" 2
 
+# 1 "./Volume.h" 1
+
+
+
+
+void init_adc();
+
+void handle_potmeter();
+
+int is_deadzone(int currentStep, int adcResult);
+# 5 "./Config.h" 2
+
 
 void config(void);
 # 1 "Config.c" 2
@@ -2687,7 +2697,8 @@ void config(void);
 
 void config()
 {
-    OSCCON = 0b00111000;
+    OSCCONbits.IRCF = 0b110;
+    OSCCONbits.OSTS = 0;
 
 
 
@@ -2716,8 +2727,8 @@ void config()
 
 
 
-    TRISEbits.TRISE0 = 1;
-    ANSELbits.ANS5 = 1;
+    TRISEbits.TRISE2 = 1;
+    ANSELbits.ANS7 = 1;
 
 
 
@@ -2751,6 +2762,9 @@ void config()
 
 
     display_init();
+
+
+    init_adc();
 
 
 

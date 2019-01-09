@@ -2,8 +2,9 @@
 
 void config()
 {        
-    OSCCON = 0b00111000;      // 500KHz clock speed, change if needed
-
+    OSCCONbits.IRCF = 0b110; // 4MHz clock
+    OSCCONbits.OSTS = 0;
+    
     //
     // OUTPUTS
     //
@@ -31,8 +32,8 @@ void config()
     //
     // POTMETER
     //
-    TRISEbits.TRISE0 = 1; // Set potmeter as input
-    ANSELbits.ANS5 = 1; // ANALOG input
+    TRISEbits.TRISE2 = 1; // Set potmeter as input
+    ANSELbits.ANS7 = 1; // ANALOG input
     
     //
     // IR RECEIVER
@@ -66,6 +67,9 @@ void config()
     // DISPLAYS
     //      
     display_init();
+    
+    // ADC
+    init_adc();
     
     //
     // Default values

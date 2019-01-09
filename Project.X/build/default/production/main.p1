@@ -1,8 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"6 ./Config.h
-[; ;./Config.h: 6: void config(void);
+"7 ./Config.h
+[; ;./Config.h: 7: void config(void);
 [v _config `(v ~T0 @X0 0 ef ]
+"1251 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1251:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1257:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1267
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1267:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1271
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1271:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1250
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1250: typedef union {
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "465 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
@@ -23,6 +50,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./Input.h
 [; ;./Input.h: 7: void handle_rotary();
 [v _handle_rotary `(v ~T0 @X0 0 e? ]
+"543 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"7 ./Volume.h
+[; ;./Volume.h: 7: void handle_potmeter();
+[v _handle_potmeter `(v ~T0 @X0 0 e? ]
 "2 main.c
 [; ;main.c: 2: 
 [p x FOSC = INTRC_CLKOUT ]
@@ -296,8 +337,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Globals.h: 23: unsigned short _lastA, _lastB;
 [v __lastA `us ~T0 @X0 1 e ]
 [v __lastB `us ~T0 @X0 1 e ]
-"27
-[; ;./Globals.h: 27: int volume = 0;
+"32
+[; ;./Globals.h: 32: int volume = 0;
 [v _volume `i ~T0 @X0 1 e ]
 [i _volume
 -> 0 `i
@@ -573,57 +614,81 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Display.h: 8: char _selectedDisplay;
 [v __selectedDisplay `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"27 main.c
-[; ;main.c: 27: void main(void)
+"28 main.c
+[; ;main.c: 28: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"28
-[; ;main.c: 28: {
+"29
+[; ;main.c: 29: {
 {
 [e :U _main ]
 [f ]
-"29
-[; ;main.c: 29:     config();
+"30
+[; ;main.c: 30:     config();
 [e ( _config ..  ]
-"32
-[; ;main.c: 32:     while(1)
-[e :U 141 ]
 "33
-[; ;main.c: 33:     {
+[; ;main.c: 33:     while(1)
+[e :U 141 ]
+"34
+[; ;main.c: 34:     {
 {
+"35
+[; ;main.c: 35:         if (!ADCON0bits.GO)
+[e $ ! ! != -> . . _ADCON0bits 1 1 `i -> 0 `i 143  ]
 "36
-[; ;main.c: 36:     }
+[; ;main.c: 36:             ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[e :U 143 ]
+"38
+[; ;main.c: 38:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"40
+[; ;main.c: 40:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"38
-[; ;main.c: 38: }
+"42
+[; ;main.c: 42: }
 [e :UE 139 ]
 }
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"40
-[; ;main.c: 40: void __attribute__((picinterrupt(""))) isr()
+"44
+[; ;main.c: 44: void __attribute__((picinterrupt(""))) isr()
 [v _isr `(v ~T1 @X0 1 ef ]
-"41
-[; ;main.c: 41: {
+"45
+[; ;main.c: 45: {
 {
 [e :U _isr ]
 [f ]
-"42
-[; ;main.c: 42:     if (INTCONbits.RBIF) {
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 144  ]
-{
-"44
-[; ;main.c: 44:         handle_rotary();
-[e ( _handle_rotary ..  ]
-"45
-[; ;main.c: 45:         INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "46
-[; ;main.c: 46:     }
+[; ;main.c: 46:     if (INTCONbits.RBIF) {
+[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 145  ]
+{
+"48
+[; ;main.c: 48:         handle_rotary();
+[e ( _handle_rotary ..  ]
+"49
+[; ;main.c: 49:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"50
+[; ;main.c: 50:     }
 }
-[e :U 144 ]
-"47
-[; ;main.c: 47: }
-[e :UE 143 ]
+[e :U 145 ]
+"52
+[; ;main.c: 52:     if (PIR1bits.ADIF) {
+[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 146  ]
+{
+"54
+[; ;main.c: 54:         handle_potmeter();
+[e ( _handle_potmeter ..  ]
+"56
+[; ;main.c: 56:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"57
+[; ;main.c: 57:     }
+}
+[e :U 146 ]
+"58
+[; ;main.c: 58: }
+[e :UE 144 ]
 }

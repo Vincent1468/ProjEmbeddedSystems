@@ -2518,9 +2518,7 @@ extern __bank0 __bit __timeout;
 char _inputUpdateRequired = 0;
 unsigned short _selectedInput;
 unsigned short _lastA, _lastB;
-
-
-
+# 32 "./Globals.h"
 int volume = 0;
 # 20 "main.c" 2
 
@@ -2701,6 +2699,18 @@ void display_write_end();
 void spiWrite(char data);
 # 4 "./Config.h" 2
 
+# 1 "./Volume.h" 1
+
+
+
+
+void init_adc();
+
+void handle_potmeter();
+
+int is_deadzone(int currentStep, int adcResult);
+# 5 "./Config.h" 2
+
 
 void config(void);
 # 21 "main.c" 2
@@ -2719,6 +2729,7 @@ void handle_rotary();
 
 
 
+
 void main(void)
 {
     config();
@@ -2726,7 +2737,10 @@ void main(void)
 
     while(1)
     {
+        if (!ADCON0bits.GO)
+            ADCON0bits.GO = 1;
 
+        _delay((unsigned long)((100)*(4000000/4000.0)));
 
     }
 
@@ -2738,5 +2752,12 @@ void __attribute__((picinterrupt(""))) isr()
 
         handle_rotary();
         INTCONbits.RBIF = 0;
+    }
+
+    if (PIR1bits.ADIF) {
+
+        handle_potmeter();
+
+        PIR1bits.ADIF = 0;
     }
 }

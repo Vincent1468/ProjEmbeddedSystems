@@ -2601,9 +2601,7 @@ extern __bank0 __bit __timeout;
 char _inputUpdateRequired = 0;
 unsigned short _selectedInput;
 unsigned short _lastA, _lastB;
-
-
-
+# 32 "./Globals.h"
 int volume = 0;
 # 5 "./Display.h" 2
 
@@ -2764,7 +2762,7 @@ void write_volume(char volume)
             {
                 spiWrite(font[volume][rij]);
             }
-        _delay((unsigned long)((5)*(500000/4000.0)));
+        _delay((unsigned long)((5)*(4000000/4000.0)));
 
     }
 
@@ -2776,7 +2774,7 @@ void write_volume(char volume)
             {
                 spiWrite(font[1][x]);
             }
-    _delay((unsigned long)((5)*(500000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
 
 }
 
@@ -2803,7 +2801,6 @@ void update_volume()
     sprintf(vol, "%d", volume);
 
     write_text(vol);
-
 }
 
 void write_text(char* text)
@@ -2841,7 +2838,7 @@ void write_font(int fontPos)
     for(int x=0; x < 5; x++){
         spiWrite(font[fontPos][x]);
     }
-    _delay((unsigned long)((5)*(500000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
 
 
     display_write_end();
@@ -2867,7 +2864,6 @@ void display_write_end()
     }
 
     PORTDbits.RD4 = 1;
-
 }
 
 void spiWrite(char data)

@@ -260,8 +260,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Globals.h: 23: unsigned short _lastA, _lastB;
 [v __lastA `us ~T0 @X0 1 e ]
 [v __lastB `us ~T0 @X0 1 e ]
-"27
-[; ;./Globals.h: 27: int volume = 0;
+"32
+[; ;./Globals.h: 32: int volume = 0;
 [v _volume `i ~T0 @X0 1 e ]
 [i _volume
 -> 0 `i

@@ -21,6 +21,7 @@
 #include "Config.h"
 #include "Input.h"
 #include "Display.h"
+#include "Volume.h"
 
 
 
@@ -31,7 +32,13 @@ void main(void)
     
     while(1)  
     {
-   
+        if (!ADCON0bits.GO) // Start ADC 
+            ADCON0bits.GO = 1;
+        
+        update_volume();
+        
+        
+        __delay_ms(100);
     
     }
 
@@ -43,6 +50,13 @@ void __interrupt() isr()
        
         handle_rotary();
         INTCONbits.RBIF = 0;
+    }
+    
+    if (PIR1bits.ADIF) {
+        
+        handle_potmeter();
+        
+        PIR1bits.ADIF = 0;
     }
 }
  

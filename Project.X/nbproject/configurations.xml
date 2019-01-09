@@ -9,6 +9,7 @@
       <itemPath>Input.h</itemPath>
       <itemPath>Font.h</itemPath>
       <itemPath>Globals.h</itemPath>
+      <itemPath>Volume.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +22,7 @@
       <itemPath>Display.c</itemPath>
       <itemPath>Input.c</itemPath>
       <itemPath>Config.c</itemPath>
+      <itemPath>Volume.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

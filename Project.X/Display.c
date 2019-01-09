@@ -212,8 +212,7 @@ void display_write_end()
         return;
     }
     
-    PORTDbits.RD4 = 1; // Latch data display 2
-    
+    PORTDbits.RD4 = 1; // Latch data display 2    
 }
 
 void spiWrite(char data) // Write data to SPI bus

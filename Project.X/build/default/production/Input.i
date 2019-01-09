@@ -2501,9 +2501,7 @@ extern __bank0 __bit __timeout;
 char _inputUpdateRequired = 0;
 unsigned short _selectedInput;
 unsigned short _lastA, _lastB;
-
-
-
+# 32 "./Globals.h"
 int volume = 0;
 # 3 "./Input.h" 2
 
