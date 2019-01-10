@@ -65,7 +65,7 @@ void display_init()
     
     PORTCbits.RC7 = 1; // select control register
     PORTCbits.RC4 = 0; // chip enable @luisteren@
-    spiWrite(0b01001010); // control word 0, wake up from sleep and set brightness
+    spiWrite(0b01001111); // control word 0, wake up from sleep and set brightness
     
     PORTCbits.RC4 = 1;  // latch control word to register
     
@@ -135,14 +135,16 @@ void update_input(void)
 {
     if (lastInput == _selectedInput) return;
     
-    _selectedDisplay = 0; // Display 1
-    
+    _selectedDisplay = 1; // Display 1
+    display_write_start();
+
     write_text("INPUT");
         
     write_space(2);
 
     write_int(_selectedInput+1); // Plus 1 because the input is zero-based
-    
+    display_write_end();    
+
     lastInput = _selectedInput;
     
 }
@@ -150,9 +152,12 @@ void update_input(void)
 void update_volume()
 {
     if (lastVolume == volume) return;
+ 
+
     
     _selectedDisplay = 0; // Display 1
-    
+    display_write_start();
+
     write_text("VOL"); // First 3
     
     // Calculate amount of spaces    
@@ -164,7 +169,8 @@ void update_volume()
     write_space(spaces);
   
     write_int(volume);
-    
+    display_write_end();    
+
     lastVolume = volume;
    
 }
@@ -175,9 +181,9 @@ void write_space(int count)
         //write_font(37); // 37 = empty (See Font.h)       
     
         for (int x = 0; x < 5; x++) {
-            display_write_start();
+            
             spiWrite(0x00);
-            display_write_end();
+            
         }
     }   
 }
@@ -227,7 +233,6 @@ void write_char(char c)
 
 void write_font(int fontPos)
 {
-    display_write_start();
 
     for(int x=0; x < 5; x++){
         spiWrite(font[fontPos][x]);  
@@ -235,7 +240,6 @@ void write_font(int fontPos)
     
   //  __delay_ms(200);
     
-    display_write_end();    
 }
 
 // Set the selected display in listen mode

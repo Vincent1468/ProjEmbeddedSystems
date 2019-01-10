@@ -30,7 +30,7 @@ void config()
        
     
     //
-    // POTMETER
+        // POTMETER
     //
     TRISEbits.TRISE2 = 1; // Set potmeter as input
     ANSELbits.ANS7 = 1; // ANALOG input
@@ -39,7 +39,7 @@ void config()
     // IR RECEIVER
     //
     TRISBbits.TRISB0 = 1; // Set as input
-    ANSELHbits.ANS11 = 0; // DIGITAL input
+    ANSELHbits.ANS12 = 0; // DIGITAL input
     
     //
     // VOLUME MOTOR
@@ -59,12 +59,15 @@ void config()
     // ADC
     init_adc();
     
+    init_remote();
+    
     
     
     //
     // INTERRUPTS
     // 
     
+    IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB4 = 1; // Enable interrupt on RB4 (Encoder)
     IOCBbits.IOCB5 = 1; // Enable interrupt on RB5 (Encoder)
     

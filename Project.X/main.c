@@ -32,12 +32,15 @@ void main(void)
     
     while(1)  
     {
+     
+        
         if (!ADCON0bits.GO) // Start ADC 
             ADCON0bits.GO = 1;
         
         update_volume();
         update_input();
         activateSelectedRelay();
+        handle_remote();
         
         __delay_ms(10);
     
@@ -50,6 +53,11 @@ void __interrupt() isr()
     if (INTCONbits.RBIF) {
        
         handle_rotary();
+        
+        if (PORTBbits.RB0 == 0) {
+            start_receive();
+        }
+        
         INTCONbits.RBIF = 0;
     }
     
