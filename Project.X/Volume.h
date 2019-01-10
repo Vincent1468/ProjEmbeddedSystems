@@ -2,9 +2,12 @@
 #define	VOLUME_H
 #include "Globals.h"
 
-void init_adc();
+const int step_size = MAX_ADC / VOL_STEPS;
 
-void handle_potmeter();
+
+void init_adc(void);
+
+void handle_potmeter(void);
 
 int is_deadzone(int currentStep, int adcResult);
 

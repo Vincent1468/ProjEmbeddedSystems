@@ -6,8 +6,10 @@
 #include "Font.h"
 
 char _selectedDisplay;
+int lastVolume;
+unsigned short lastInput;
 
-void display_init();
+void display_init(void);
 
 // BEGIN NIEK CODE
 void white_space(char aantal_spaces);
@@ -15,15 +17,17 @@ void white_space(char aantal_spaces);
 void write_volume(char volume);
 // END NIEK CODE
 
-void update_volume();
+void update_volume(void);
+void update_input(void);
 
-
+void write_space(int count);
 void write_text(char* text);
+void write_int(int number);
 void write_char(char c);
 void write_font(int fontPos);
 
-void display_write_start();
-void display_write_end();
+void display_write_start(void);
+void display_write_end(void);
 
 void spiWrite(char data);
 

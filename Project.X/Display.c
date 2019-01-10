@@ -80,6 +80,8 @@ void display_init()
     
     
     _selectedDisplay = 0; // Default to display 1
+    lastVolume = 99; // Set to high number
+    lastInput = 99;
     
 }
 
@@ -127,29 +129,51 @@ void write_volume(char volume)
     
 }
 
-
 // END NIEK CODE
+
+void update_input(void)
+{
+    if (lastInput == _selectedInput) return;
+    
+    _selectedDisplay = 0; // Display 1
+    
+    write_text("INPUT");
+        
+    write_space(2);
+
+    write_int(_selectedInput+1); // Plus 1 because the input is zero-based
+    
+    lastInput = _selectedInput;
+    
+}
 
 void update_volume()
 {
+    if (lastVolume == volume) return;
+    
     _selectedDisplay = 0; // Display 1
     
     write_text("VOL"); // First 3
     
-    // Calculate amount of spaces
-    
+    // Calculate amount of spaces    
     int spaces = 3;
-    if (volume > 10)
+    if (volume < 10)
         spaces = 4;
     
     // Write spaces
-    for (int i = 0; i < spaces; i++)
-        write_font(38); // 38 = empty (See Font.h)
-
-    char vol[2];
-    sprintf(vol, "%d", volume);
+    write_space(spaces);
+  
+    write_int(volume);
     
-    write_text(vol);  
+    lastVolume = volume;
+   
+}
+
+void write_space(int count)
+{
+    for (int i = 0; i < count; i++) {        
+        write_font(37); // 37 = empty (See Font.h)       
+    }   
 }
 
 void write_text(char* text) 
@@ -162,17 +186,32 @@ void write_text(char* text)
     
 }
 
+void write_int(int number)
+{
+    if (number < 10) {
+        write_char(number + 48);
+        return;
+    }
+    
+    char num[2];
+    sprintf(num, "%d", number);
+
+    write_text(num);  
+}
+
 void write_char(char c)
 {
+    int pos;
+    
     // Is number? (ASCII 48 - 57)
     if (c >= 48 && c <= 57) {
-        int pos = 48 - c; // Calculate font position based on ASCII numbering
+        pos = c - 48; // Calculate font position based on ASCII numbering
         write_font(pos);
     } else if (c >= 65 && c <= 90) { // Is it a capital letter? (ASCII 65 - 90)
-        int pos = (65 - c) + 10; // Add 10, because the letters in the font start at index 10
+        pos = (c - 65) + 10; // Add 10, because the letters in the font start at index 10
         write_font(pos);
     } else if (c >= 97 && c <= 122) { // Is it a lowercase letter? (ASCII 97 - 122)
-        int pos = (97 - c) + 10; // Add 10, because the letters in the font start at index 10
+        pos = (c - 97) + 10; // Add 10, because the letters in the font start at index 10
         write_font(pos);
     } else {
         // Special char?
@@ -186,9 +225,8 @@ void write_font(int fontPos)
 
     for(int x=0; x < 5; x++){
         spiWrite(font[fontPos][x]);  
-    }
-    __delay_ms(5);
-
+    }   
+    
     
     display_write_end();    
 }

@@ -3,15 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Display.h</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Input.h</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Config.h</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Input.c</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/main.h</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Font.h</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/main.c</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Config.c</file>
-            <file>file:/C:/Users/Niek/Documents/GitHub/ProjEmbeddedSystems/Project.X/Display.c</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Display.h</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Config.c</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/main.c</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Input.c</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Display.c</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Config.h</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Volume.c</file>
+            <file>file:/home/vincent/school/ProjEmbedded/Project.X/Font.h</file>
         </group>
     </open-files>
 </project-private>

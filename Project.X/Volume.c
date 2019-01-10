@@ -19,7 +19,7 @@ void init_adc()
  */
 int is_deadzone(int currentStep, int adcResult) 
 {    
-    int turnPoint = STEP_SIZE * currentStep;    // Calculate the turning point
+    int turnPoint = step_size * currentStep;    // Calculate the turning point
         
     int deadzoneLow = turnPoint - DEADZONE;     // Calculate low point
     int deadzoneHigh = turnPoint + DEADZONE;    // Calculate high point
@@ -29,12 +29,12 @@ int is_deadzone(int currentStep, int adcResult)
 
 void handle_potmeter()
 {
-    unsigned int ad_result = (ADRESH << 8) + ADRESL;
+    unsigned int ad_result = (ADRESH << 8) + ADRESL;    
     
-    if (ad_result == 0 || ad_result < STEP_SIZE) { // If ADC is 0 OR result < 1 step, set ledCount to 0
+    if (ad_result == 0 || ad_result < step_size) { // If ADC is 0 OR result < 1 step, set ledCount to 0
             volume = 0;
     } else {
-        unsigned int currentStep = ad_result / STEP_SIZE; // Calculate the current step
+        unsigned int currentStep = ad_result / step_size; // Calculate the current step
             
         if (!is_deadzone(currentStep, ad_result))  // if NOT in a deadzone
             volume = currentStep;     // Set the ledCount

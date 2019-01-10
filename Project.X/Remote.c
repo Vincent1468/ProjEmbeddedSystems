@@ -20,7 +20,7 @@ void poll_receiver()
 {
     if (ignore_poll) return;
     
-    ir_input << 1;
+    ir_input = ir_input << 1;
     ir_input = ir_input | PORTBbits.RB0;
 }
 

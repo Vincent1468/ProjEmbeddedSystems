@@ -36,9 +36,10 @@ void main(void)
             ADCON0bits.GO = 1;
         
         update_volume();
+        update_input();
         activateSelectedRelay();
         
-        __delay_ms(100);
+        __delay_ms(10);
     
     }
 

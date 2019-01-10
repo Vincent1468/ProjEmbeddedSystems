@@ -24,10 +24,9 @@ unsigned short _lastA, _lastB;
 
 
 // VOLUME
-#define MAX_ADC (1023 * 0.8)            // PIC16 has a 10-bit ADC, 2^10 - 1023. Potmeter with 20% tolerance, 1023 * .8
+#define MAX_ADC (1023)            // PIC16 has a 10-bit ADC, 2^10 - 1023. Potmeter with 20% tolerance, 1023 * .8
 #define DEADZONE (MAX_ADC * 0.01)       // Deadzone between turnpoint, 1% of the MAX_ADC
-#define STEPS 40                        // Total amound of volume steps 
-#define STEP_SIZE (MAX_ADC / STEPS)     // Define size of each step
+#define VOL_STEPS 40                        // Total amount of volume steps 
 
 int volume = 0;
 

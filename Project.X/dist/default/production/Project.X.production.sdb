@@ -3,86 +3,96 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
-"500 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+"500 /opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-"43 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\fltol.c
+"43 /opt/microchip/xc8/v2.00/pic/sources/c90/common/fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+"5 /opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v i1___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+"10 /opt/microchip/xc8/v2.00/pic/sources/c90/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+"15 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v i1___wmul __wmul `(ui  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\xxtofl.c
+"10 /opt/microchip/xc8/v2.00/pic/sources/c90/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+"6 /opt/microchip/xc8/v2.00/pic/sources/c90/pic/__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"3 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Config.c
+"3 /home/vincent/school/ProjEmbedded/Project.X/Config.c
 [v _config config `(v  1 e 1 0 ]
-"26 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Display.c
+"26 /home/vincent/school/ProjEmbedded/Project.X/Display.c
 [v _display_init display_init `(v  1 e 1 0 ]
-"89
+"91
 [v _white_space white_space `(v  1 e 1 0 ]
-"133
+"134
+[v _update_input update_input `(v  1 e 1 0 ]
+"150
 [v _update_volume update_volume `(v  1 e 1 0 ]
-"155
+"173
+[v _write_space write_space `(v  1 e 1 0 ]
+"180
 [v _write_text write_text `(v  1 e 1 0 ]
-"165
+"190
+[v _write_int write_int `(v  1 e 1 0 ]
+"203
 [v _write_char write_char `(v  1 e 1 0 ]
-"183
+"223
 [v _write_font write_font `(v  1 e 1 0 ]
-"197
+"236
 [v _display_write_start display_write_start `(v  1 e 1 0 ]
-"208
+"247
 [v _display_write_end display_write_end `(v  1 e 1 0 ]
-"218
+"257
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-"3 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Input.c
+"3 /home/vincent/school/ProjEmbedded/Project.X/Input.c
 [v _activateSelectedRelay activateSelectedRelay `(v  1 e 1 0 ]
 "30
 [v _handle_rotary handle_rotary `(v  1 e 1 0 ]
-"28 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\main.c
+"28 /home/vincent/school/ProjEmbedded/Project.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"47
+"48
 [v _isr isr `II(v  1 e 1 0 ]
-"19 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Remote.c
+"19 /home/vincent/school/ProjEmbedded/Project.X/Remote.c
 [v _poll_receiver poll_receiver `(v  1 e 1 0 ]
-"5 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Volume.c
+"5 /home/vincent/school/ProjEmbedded/Project.X/Volume.c
 [v _init_adc init_adc `(v  1 e 1 0 ]
 "20
 [v _is_deadzone is_deadzone `(i  1 e 2 0 ]
 "30
 [v _handle_potmeter handle_potmeter `(v  1 e 1 0 ]
-"8 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X/Display.h
+"8 /home/vincent/school/ProjEmbedded/Project.X/Display.h
 [v __selectedDisplay _selectedDisplay `uc  1 e 1 0 ]
-"4 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X/Font.h
+"9
+[v _lastVolume lastVolume `i  1 e 2 0 ]
+"10
+[v _lastInput lastInput `us  1 e 2 0 ]
+"4 /home/vincent/school/ProjEmbedded/Project.X/Font.h
 [v _font font `DC[37][5]i  1 e 370 0 ]
-"21 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X/Globals.h
+"21 /home/vincent/school/ProjEmbedded/Project.X/Globals.h
 [v __inputUpdateRequired _inputUpdateRequired `uc  1 e 1 0 ]
 "22
 [v __selectedInput _selectedInput `us  1 e 2 0 ]
 "23
 [v __lastA _lastA `us  1 e 2 0 ]
 [v __lastB _lastB `us  1 e 2 0 ]
-"32
+"31
 [v _volume volume `i  1 e 2 0 ]
-"6 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X/Remote.h
-[v _ir_input ir_input `ui  1 e 2 0 ]
-"166 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+"6 /home/vincent/school/ProjEmbedded/Project.X/Remote.h
+[v _ir_input ir_input `ul  1 e 4 0 ]
+"7
+[v _ignore_poll ignore_poll `uc  1 e 1 0 ]
+"5 /home/vincent/school/ProjEmbedded/Project.X/Volume.h
+[v _step_size step_size `DCi  1 e 2 0 ]
+"166 /opt/microchip/xc8/v2.00/pic/include/pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S428 . 1 `uc 1 RB0 1 0 :1:0 
+[s S452 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -92,11 +102,11 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S437 . 1 `S428 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES437  1 e 1 @6 ]
+[u S461 . 1 `S452 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES461  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S217 . 1 `uc 1 RC0 1 0 :1:0 
+[s S225 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -106,9 +116,9 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S226 . 1 `S217 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES226  1 e 1 @7 ]
-[s S196 . 1 `uc 1 RD0 1 0 :1:0 
+[u S234 . 1 `S225 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES234  1 e 1 @7 ]
+[s S204 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -118,9 +128,9 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S205 . 1 `S196 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES205  1 e 1 @8 ]
-[s S86 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S213 . 1 `S204 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES213  1 e 1 @8 ]
+[s S90 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -130,14 +140,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S95 . 1 `uc 1 . 1 0 :2:0 
+[s S99 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S100 . 1 `S86 1 . 1 0 `S95 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES100  1 e 1 @11 ]
-[s S122 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S104 . 1 `S90 1 . 1 0 `S99 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES104  1 e 1 @11 ]
+[s S126 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -146,14 +156,14 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S130 . 1 `S122 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES130  1 e 1 @12 ]
-[s S840 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[u S134 . 1 `S126 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES134  1 e 1 @12 ]
+[s S868 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
 "793
-[s S844 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S872 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TOUTPS0 1 0 :1:3 
@@ -161,8 +171,8 @@
 `uc 1 TOUTPS2 1 0 :1:5 
 `uc 1 TOUTPS3 1 0 :1:6 
 ]
-[u S852 . 1 `S840 1 . 1 0 `S844 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES852  1 e 1 @18 ]
+[u S880 . 1 `S868 1 . 1 0 `S872 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES880  1 e 1 @18 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -192,7 +202,7 @@
 ]
 [u S46 . 1 `S26 1 . 1 0 `S31 1 . 1 0 `S40 1 . 1 0 `S43 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES46  1 e 1 @31 ]
-[s S492 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S516 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -202,9 +212,9 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S501 . 1 `S492 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES501  1 e 1 @133 ]
-[s S514 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S525 . 1 `S516 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES525  1 e 1 @133 ]
+[s S538 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -214,11 +224,11 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S523 . 1 `S514 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES523  1 e 1 @134 ]
+[u S547 . 1 `S538 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES547  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S586 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S610 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -228,19 +238,19 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S595 . 1 `S586 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES595  1 e 1 @135 ]
+[u S619 . 1 `S610 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES619  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S552 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S576 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S557 . 1 `S552 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES557  1 e 1 @137 ]
-[s S786 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S581 . 1 `S576 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES581  1 e 1 @137 ]
+[s S813 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -249,27 +259,27 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S794 . 1 `S786 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES794  1 e 1 @140 ]
-[s S466 . 1 `uc 1 SCS 1 0 :1:0 
+[u S821 . 1 `S813 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES821  1 e 1 @140 ]
+[s S490 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S472 . 1 `uc 1 . 1 0 :4:0 
+[s S496 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S477 . 1 `S466 1 . 1 0 `S472 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES477  1 e 1 @143 ]
+[u S501 . 1 `S490 1 . 1 0 `S496 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES501  1 e 1 @143 ]
 "2041
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S275 . 1 `uc 1 BF 1 0 :1:0 
+[s S293 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -279,43 +289,43 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S284 . 1 `uc 1 . 1 0 :2:0 
+[s S302 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S289 . 1 `uc 1 . 1 0 :2:0 
+[s S307 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S295 . 1 `uc 1 . 1 0 :2:0 
+[s S313 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S300 . 1 `uc 1 . 1 0 :2:0 
+[s S318 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S305 . 1 `uc 1 . 1 0 :2:0 
+[s S323 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S310 . 1 `uc 1 . 1 0 :2:0 
+[s S328 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S315 . 1 `S275 1 . 1 0 `S284 1 . 1 0 `S289 1 . 1 0 `S295 1 . 1 0 `S300 1 . 1 0 `S305 1 . 1 0 `S310 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES315  1 e 1 @148 ]
-[s S613 . 1 `uc 1 IOCB 1 0 :8:0 
+[u S333 . 1 `S293 1 . 1 0 `S302 1 . 1 0 `S307 1 . 1 0 `S313 1 . 1 0 `S318 1 . 1 0 `S323 1 . 1 0 `S328 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES333  1 e 1 @148 ]
+[s S637 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2436
-[s S615 . 1 `uc 1 IOCB0 1 0 :1:0 
+[s S639 . 1 `uc 1 IOCB0 1 0 :1:0 
 `uc 1 IOCB1 1 0 :1:1 
 `uc 1 IOCB2 1 0 :1:2 
 `uc 1 IOCB3 1 0 :1:3 
@@ -324,20 +334,20 @@
 `uc 1 IOCB6 1 0 :1:6 
 `uc 1 IOCB7 1 0 :1:7 
 ]
-[u S624 . 1 `S613 1 . 1 0 `S615 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES624  1 e 1 @150 ]
+[u S648 . 1 `S637 1 . 1 0 `S639 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES648  1 e 1 @150 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S760 . 1 `uc 1 . 1 0 :4:0 
+[s S787 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S766 . 1 `S760 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES766  1 e 1 @159 ]
-[s S565 . 1 `uc 1 ANS0 1 0 :1:0 
+[u S793 . 1 `S787 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES793  1 e 1 @159 ]
+[s S589 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -347,9 +357,9 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S574 . 1 `S565 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES574  1 e 1 @392 ]
-[s S535 . 1 `uc 1 ANS8 1 0 :1:0 
+[u S598 . 1 `S589 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES598  1 e 1 @392 ]
+[s S559 . 1 `uc 1 ANS8 1 0 :1:0 
 `uc 1 ANS9 1 0 :1:1 
 `uc 1 ANS10 1 0 :1:2 
 `uc 1 ANS11 1 0 :1:3 
@@ -357,71 +367,86 @@
 `uc 1 ANS13 1 0 :1:5 
 ]
 "3464
-[u S542 . 1 `S535 1 . 1 0 ]
-[v _ANSELHbits ANSELHbits `VES542  1 e 1 @393 ]
-"358 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[u S566 . 1 `S559 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES566  1 e 1 @393 ]
+"358 /opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"28 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\main.c
+"28 /home/vincent/school/ProjEmbedded/Project.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"45
+"46
 } 0
-"133 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Display.c
+"150 /home/vincent/school/ProjEmbedded/Project.X/Display.c
 [v _update_volume update_volume `(v  1 e 1 0 ]
 {
-"146
-[v update_volume@i i `i  1 a 2 32 ]
-"149
-[v update_volume@vol vol `[2]uc  1 a 2 34 ]
-"141
-[v update_volume@spaces spaces `i  1 a 2 30 ]
-"153
+"160
+[v update_volume@spaces spaces `i  1 a 2 33 ]
+"171
 } 0
-"155
+"134
+[v _update_input update_input `(v  1 e 1 0 ]
+{
+"148
+} 0
+"173
+[v _write_space write_space `(v  1 e 1 0 ]
+{
+"175
+[v write_space@i i `i  1 a 2 19 ]
+"173
+[v write_space@count count `i  1 p 2 16 ]
+"178
+} 0
+"190
+[v _write_int write_int `(v  1 e 1 0 ]
+{
+"197
+[v write_int@num num `[2]uc  1 a 2 31 ]
+"190
+[v write_int@number number `i  1 p 2 29 ]
+"201
+} 0
+"180
 [v _write_text write_text `(v  1 e 1 0 ]
 {
-"157
-[v write_text@c c `*.26uc  1 a 2 27 ]
-"155
-[v write_text@text text `*.26uc  1 p 2 25 ]
-"163
+"182
+[v write_text@c c `*.26uc  1 a 2 21 ]
+"180
+[v write_text@text text `*.26uc  1 p 2 19 ]
+"188
 } 0
-"165
+"203
 [v _write_char write_char `(v  1 e 1 0 ]
 {
 [v write_char@c c `uc  1 a 1 wreg ]
-"175
-[v write_char@pos_411 pos `i  1 a 2 22 ]
-"172
-[v write_char@pos_410 pos `i  1 a 2 20 ]
-"169
-[v write_char@pos pos `i  1 a 2 18 ]
-"165
+"205
+[v write_char@pos pos `i  1 a 2 16 ]
+"203
 [v write_char@c c `uc  1 a 1 wreg ]
-"168
-[v write_char@c c `uc  1 a 1 24 ]
-"181
+"208
+[v write_char@c c `uc  1 a 1 18 ]
+"221
 } 0
-"183
+"223
 [v _write_font write_font `(v  1 e 1 0 ]
 {
-"187
+"227
 [v write_font@x x `i  1 a 2 14 ]
-"183
+"223
 [v write_font@fontPos fontPos `i  1 p 2 6 ]
-"194
+"233
 } 0
-"197
+"236
 [v _display_write_start display_write_start `(v  1 e 1 0 ]
 {
-"205
+"244
 } 0
-"208
+"247
 [v _display_write_end display_write_end `(v  1 e 1 0 ]
 {
-"216
+"255
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+"15 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -431,7 +456,7 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"500 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+"500 /opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@sp sp `*.4uc  1 a 1 wreg ]
@@ -452,7 +477,7 @@
 [v sprintf@sp sp `*.4uc  1 a 1 27 ]
 "1560
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+"5 /opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "10
@@ -462,7 +487,7 @@
 [v ___lwmod@dividend dividend `ui  1 p 2 10 ]
 "25
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+"5 /opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -474,46 +499,46 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"3 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Config.c
+"3 /home/vincent/school/ProjEmbedded/Project.X/Config.c
 [v _config config `(v  1 e 1 0 ]
 {
 "87
 } 0
-"5 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Volume.c
+"5 /home/vincent/school/ProjEmbedded/Project.X/Volume.c
 [v _init_adc init_adc `(v  1 e 1 0 ]
 {
 "15
 } 0
-"26 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Display.c
+"26 /home/vincent/school/ProjEmbedded/Project.X/Display.c
 [v _display_init display_init `(v  1 e 1 0 ]
 {
-"84
+"86
 } 0
-"218
+"257
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 {
 [v spiWrite@data data `uc  1 a 1 wreg ]
 [v spiWrite@data data `uc  1 a 1 wreg ]
-"220
+"259
 [v spiWrite@data data `uc  1 a 1 0 ]
-"228
+"267
 } 0
-"3 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Input.c
+"3 /home/vincent/school/ProjEmbedded/Project.X/Input.c
 [v _activateSelectedRelay activateSelectedRelay `(v  1 e 1 0 ]
 {
 "28
 } 0
-"47 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\main.c
+"48 /home/vincent/school/ProjEmbedded/Project.X/main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"70
+"71
 } 0
-"19 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Remote.c
+"19 /home/vincent/school/ProjEmbedded/Project.X/Remote.c
 [v _poll_receiver poll_receiver `(v  1 e 1 0 ]
 {
-"23
+"25
 } 0
-"30 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Input.c
+"30 /home/vincent/school/ProjEmbedded/Project.X/Input.c
 [v _handle_rotary handle_rotary `(v  1 e 1 0 ]
 {
 "33
@@ -522,7 +547,7 @@
 [v handle_rotary@portA portA `i  1 a 2 3 ]
 "58
 } 0
-"30 C:\Users\Vincent\source\ProjEmbeddedSystems\Project.X\Volume.c
+"30 /home/vincent/school/ProjEmbedded/Project.X/Volume.c
 [v _handle_potmeter handle_potmeter `(v  1 e 1 0 ]
 {
 "37
@@ -531,21 +556,38 @@
 [v handle_potmeter@ad_result ad_result `ui  1 a 2 52 ]
 "43
 } 0
-"20
+"5 /opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+[v i1___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+[v i1___lwdiv@quotient __lwdiv `ui  1 a 2 5 ]
+[v i1___lwdiv@counter __lwdiv `uc  1 a 1 7 ]
+[v i1___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v i1___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"20 /home/vincent/school/ProjEmbedded/Project.X/Volume.c
 [v _is_deadzone is_deadzone `(i  1 e 2 0 ]
 {
 "22
-[v is_deadzone@turnPoint turnPoint `i  1 a 2 48 ]
+[v is_deadzone@turnPoint turnPoint `i  1 a 2 46 ]
 "25
-[v is_deadzone@deadzoneHigh deadzoneHigh `i  1 a 2 45 ]
+[v is_deadzone@deadzoneHigh deadzoneHigh `i  1 a 2 43 ]
 "24
-[v is_deadzone@deadzoneLow deadzoneLow `i  1 a 2 43 ]
+[v is_deadzone@deadzoneLow deadzoneLow `i  1 a 2 41 ]
 "20
-[v is_deadzone@currentStep currentStep `i  1 p 2 37 ]
-[v is_deadzone@adcResult adcResult `i  1 p 2 39 ]
+[v is_deadzone@currentStep currentStep `i  1 p 2 35 ]
+[v is_deadzone@adcResult adcResult `i  1 p 2 37 ]
 "28
 } 0
-"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\xxtofl.c
+"15 /opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+[v i1___wmul __wmul `(ui  1 e 2 0 ]
+{
+[v i1___wmul@product __wmul `ui  1 a 2 4 ]
+[v i1___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v i1___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"10 /opt/microchip/xc8/v2.00/pic/sources/c90/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -560,56 +602,17 @@
 [v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"43 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\fltol.c
+"43 /opt/microchip/xc8/v2.00/pic/sources/c90/common/fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 36 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 35 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 34 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 33 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 26 ]
+[v ___fltol@f1 f1 `d  1 p 4 24 ]
 "70
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S1216 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S1221 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1224 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1216 1 fAsBytes 4 0 `S1221 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1224  1 a 4 20 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S1293 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S1296 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1293 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1296  1 a 2 24 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 19 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 18 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 13 ]
-"8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
-"205
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
-[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-{
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
-"5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
-"4
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
-"60
-} 0
-"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+"10 /opt/microchip/xc8/v2.00/pic/sources/c90/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
@@ -624,31 +627,4 @@
 [v ___fladd@b b `d  1 p 4 0 ]
 [v ___fladd@a a `d  1 p 4 4 ]
 "237
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-{
-[v ___flge@ff1 ff1 `d  1 p 4 0 ]
-[v ___flge@ff2 ff2 `d  1 p 4 4 ]
-"19
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 20 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 13 ]
-"20
-[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 17 ]
-"8
-[v ___fldiv@a a `d  1 p 4 0 ]
-[v ___fldiv@b b `d  1 p 4 4 ]
-"185
 } 0

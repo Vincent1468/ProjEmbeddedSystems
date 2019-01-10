@@ -3,14 +3,14 @@
 
 #include "Globals.h"
 
-unsigned int ir_input = 0;
+unsigned long ir_input = 0;
 char ignore_poll = 0;
 
-void init_remote();
+void init_remote(void);
 
-void poll_receiver();
+void poll_receiver(void);
 
-void handle_remote();
+void handle_remote(void);
 
 #endif	/* REMOTE_H */
 

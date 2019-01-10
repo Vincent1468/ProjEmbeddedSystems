@@ -2,8 +2,8 @@
 #define _INPUT_
 #include "Globals.h"
 
-void activateSelectedRelay();
+void activateSelectedRelay(void);
 
-void handle_rotary();
+void handle_rotary(void);
 
 #endif

@@ -33,7 +33,7 @@ void handle_rotary()
         int portB = PORTBbits.RB5;
 
         if (_lastA != portA) { // Interrupt rotary port A
-            if (_lastA == _lastB) {
+            if (_lastA == _lastB && portA) {
                 if (_selectedInput < INPUT_MAX) {
                     _selectedInput++;
                 } else {
@@ -43,7 +43,7 @@ void handle_rotary()
         }
 
         if (_lastB != portB) { // Interrupt rotary port B
-            if (_lastA == _lastB) {
+            if (_lastA == _lastB && portB) {
                 if (_selectedInput > INPUT_MIN) {
                     _selectedInput--;
                 } else {
