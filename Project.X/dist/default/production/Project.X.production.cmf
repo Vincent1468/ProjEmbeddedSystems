@@ -11,41 +11,37 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXQWbiMP.o
-reset_vec CODE 0 0 0 3 2
-end_init CODE 0 12 12 3 2
-config CONFIG 0 2007 2007 2 2
 $dist/default/production/Project.X.production.o
 cinit CODE 0 15 15 1B 2
-text1 CODE 0 D88 D88 4F 2
-text2 CODE 0 BAB BAB 39 2
-text3 CODE 0 A87 A87 29 2
-text4 CODE 0 B3C B3C 36 2
-text5 CODE 0 BE4 BE4 3A 2
+text1 CODE 0 D32 D32 4F 2
+text2 CODE 0 B55 B55 39 2
+text3 CODE 0 D81 D81 56 2
+text4 CODE 0 AE6 AE6 36 2
+text5 CODE 0 B8E B8E 3A 2
 text6 CODE 0 DD7 DD7 62 2
 text7 CODE 0 EA1 EA1 6C 2
-text8 CODE 0 A39 A39 F 2
-text9 CODE 0 A2A A2A F 2
-text10 CODE 0 AB0 AB0 2A 2
+text8 CODE 0 A0C A0C F 2
+text9 CODE 0 9FD 9FD F 2
+text10 CODE 0 A5A A5A 2A 2
 text11 CODE 0 49D 49D 136 2
-text12 CODE 0 C5F C5F 43 2
-text13 CODE 0 CED CED 4D 2
+text12 CODE 0 C09 C09 43 2
+text13 CODE 0 C97 C97 4D 2
 text14 CODE 0 E39 E39 68 2
-text15 CODE 0 A48 A48 17 2
-text16 CODE 0 D3A D3A 4E 2
+text15 CODE 0 A1B A1B 17 2
+text16 CODE 0 CE4 CE4 4E 2
 text17 CODE 0 2EC 2EC 10 2
-text18 CODE 0 B72 B72 39 2
-text19 CODE 0 B06 B06 36 2
-text20 CODE 0 C1E C1E 41 2
+text18 CODE 0 B1C B1C 39 2
+text19 CODE 0 AB0 AB0 36 2
+text20 CODE 0 BC8 BC8 41 2
 text21 CODE 0 F7F F7F 81 2
 text22 CODE 0 F0D F0D 72 2
-text23 CODE 0 CA2 CA2 4B 2
+text23 CODE 0 C4C C4C 4B 2
 text24 CODE 0 5D3 5D3 C6 2
-text25 CODE 0 A5F A5F 28 2
+text25 CODE 0 A32 A32 28 2
 text26 CODE 0 699 699 C2 2
 text27 CODE 0 75B 75B 9C 2
 text28 CODE 0 30 30 2BC 2
-maintext CODE 0 ADA ADA 2C 2
+maintext CODE 0 A84 A84 2C 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 20 20 3A 1
 cstackBANK1 BANK1 1 A0 A0 25 1
@@ -53,6 +49,10 @@ intentry CODE 0 4 4 E 2
 bssBANK0 BANK0 1 5A 5A A 1
 bssBANK1 BANK1 1 C5 C5 9 1
 stringtext STRCODE 0 300 300 19D 2
+$/tmp/xcXNwzJrA.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 12 12 3 2
+config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -69,17 +69,17 @@ BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
 CONST 2FC-2FF 2
-CONST 7F7-A29 2
+CONST 7F7-9FC 2
 CONST 1000-1FFF 2
 ENTRY 3-3 2
 ENTRY 2FC-2FF 2
-ENTRY 7F7-A29 2
+ENTRY 7F7-9FC 2
 ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
 CODE 2FC-2FF 2
-CODE 7F7-A29 2
+CODE 7F7-9FC 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -88,11 +88,11 @@ SFR3 180-18F 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
 STRCODE 2FC-2FF 2
-STRCODE 7F7-A29 2
+STRCODE 7F7-9FC 2
 STRCODE 1000-1FFF 2
 STRING 3-3 2
 STRING 2FC-2FF 2
-STRING 7F7-A29 2
+STRING 7F7-9FC 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -108,34 +108,34 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/Project.X.production.o
-15 cinit CODE >1961:/tmp/xcXmNyhfY
-15 cinit CODE >1964:/tmp/xcXmNyhfY
-15 cinit CODE >2005:/tmp/xcXmNyhfY
-16 cinit CODE >2006:/tmp/xcXmNyhfY
-17 cinit CODE >2007:/tmp/xcXmNyhfY
-18 cinit CODE >2008:/tmp/xcXmNyhfY
-19 cinit CODE >2009:/tmp/xcXmNyhfY
-1A cinit CODE >2010:/tmp/xcXmNyhfY
-1B cinit CODE >2011:/tmp/xcXmNyhfY
-1C cinit CODE >2012:/tmp/xcXmNyhfY
-1D cinit CODE >2013:/tmp/xcXmNyhfY
-1E cinit CODE >2014:/tmp/xcXmNyhfY
-1F cinit CODE >2015:/tmp/xcXmNyhfY
-20 cinit CODE >2016:/tmp/xcXmNyhfY
-21 cinit CODE >2019:/tmp/xcXmNyhfY
-22 cinit CODE >2020:/tmp/xcXmNyhfY
-23 cinit CODE >2021:/tmp/xcXmNyhfY
-24 cinit CODE >2022:/tmp/xcXmNyhfY
-25 cinit CODE >2023:/tmp/xcXmNyhfY
-26 cinit CODE >2024:/tmp/xcXmNyhfY
-27 cinit CODE >2025:/tmp/xcXmNyhfY
-28 cinit CODE >2026:/tmp/xcXmNyhfY
-29 cinit CODE >2027:/tmp/xcXmNyhfY
-2A cinit CODE >2028:/tmp/xcXmNyhfY
-2B cinit CODE >2029:/tmp/xcXmNyhfY
-2C cinit CODE >2035:/tmp/xcXmNyhfY
-2C cinit CODE >2037:/tmp/xcXmNyhfY
-2D cinit CODE >2038:/tmp/xcXmNyhfY
+15 cinit CODE >1963:/tmp/xcX7K1raD
+15 cinit CODE >1966:/tmp/xcX7K1raD
+15 cinit CODE >2007:/tmp/xcX7K1raD
+16 cinit CODE >2008:/tmp/xcX7K1raD
+17 cinit CODE >2009:/tmp/xcX7K1raD
+18 cinit CODE >2010:/tmp/xcX7K1raD
+19 cinit CODE >2011:/tmp/xcX7K1raD
+1A cinit CODE >2012:/tmp/xcX7K1raD
+1B cinit CODE >2013:/tmp/xcX7K1raD
+1C cinit CODE >2014:/tmp/xcX7K1raD
+1D cinit CODE >2015:/tmp/xcX7K1raD
+1E cinit CODE >2016:/tmp/xcX7K1raD
+1F cinit CODE >2017:/tmp/xcX7K1raD
+20 cinit CODE >2018:/tmp/xcX7K1raD
+21 cinit CODE >2021:/tmp/xcX7K1raD
+22 cinit CODE >2022:/tmp/xcX7K1raD
+23 cinit CODE >2023:/tmp/xcX7K1raD
+24 cinit CODE >2024:/tmp/xcX7K1raD
+25 cinit CODE >2025:/tmp/xcX7K1raD
+26 cinit CODE >2026:/tmp/xcX7K1raD
+27 cinit CODE >2027:/tmp/xcX7K1raD
+28 cinit CODE >2028:/tmp/xcX7K1raD
+29 cinit CODE >2029:/tmp/xcX7K1raD
+2A cinit CODE >2030:/tmp/xcX7K1raD
+2B cinit CODE >2031:/tmp/xcX7K1raD
+2C cinit CODE >2037:/tmp/xcX7K1raD
+2C cinit CODE >2039:/tmp/xcX7K1raD
+2D cinit CODE >2040:/tmp/xcX7K1raD
 4 intentry CODE >48:/home/vincent/school/ProjEmbedded/Project.X/main.c
 30 text28 CODE >10:/opt/microchip/xc8/v2.00/pic/sources/c90/common/sprcadd.c
 30 text28 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/sprcadd.c
@@ -360,42 +360,42 @@ E6 text28 CODE >100:/opt/microchip/xc8/v2.00/pic/sources/c90/common/sprcadd.c
 74F text26 CODE >42:/opt/microchip/xc8/v2.00/pic/sources/c90/common/xxtofl.c
 751 text26 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c90/common/xxtofl.c
 75A text26 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c90/common/xxtofl.c
-A5F text25 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A5F text25 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A62 text25 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A62 text25 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A66 text25 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A6C text25 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A73 text25 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A7A text25 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A81 text25 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A86 text25 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A32 text25 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A32 text25 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A35 text25 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A35 text25 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A39 text25 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A3F text25 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A46 text25 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A4D text25 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A54 text25 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A59 text25 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
 5D3 text24 CODE >20:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 5D3 text24 CODE >22:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 5F4 text24 CODE >24:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 62F text24 CODE >25:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 66A text24 CODE >27:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 698 text24 CODE >28:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-CA2 text23 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CA2 text23 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CA4 text23 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CAA text23 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CAC text23 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CAD text23 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CB4 text23 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CB9 text23 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CB9 text23 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CBF text23 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CBF text23 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CC6 text23 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CD0 text23 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CD6 text23 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CD8 text23 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CD8 text23 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CDF text23 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CE7 text23 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CE7 text23 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CEC text23 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C4C text23 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C4C text23 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C4E text23 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C54 text23 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C56 text23 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C57 text23 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C5E text23 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C63 text23 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C63 text23 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C69 text23 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C69 text23 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C70 text23 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C7A text23 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C80 text23 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C82 text23 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C82 text23 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C89 text23 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C91 text23 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C91 text23 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C96 text23 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
 F0D text22 CODE >30:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 F0D text22 CODE >32:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 F17 text22 CODE >34:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
@@ -431,97 +431,97 @@ FF4 text21 CODE >55:/home/vincent/school/ProjEmbedded/Project.X/Input.c
 FF9 text21 CODE >56:/home/vincent/school/ProjEmbedded/Project.X/Input.c
 FFD text21 CODE >57:/home/vincent/school/ProjEmbedded/Project.X/Input.c
 FFF text21 CODE >58:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-C1E text20 CODE >19:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
-C1E text20 CODE >21:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
-C27 text20 CODE >23:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
-C40 text20 CODE >24:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
-C5E text20 CODE >25:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
-B06 text19 CODE >48:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B06 text19 CODE >50:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B0A text19 CODE >52:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B0F text19 CODE >53:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B11 text19 CODE >54:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B11 text19 CODE >56:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B17 text19 CODE >58:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B1C text19 CODE >60:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B20 text19 CODE >61:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B20 text19 CODE >63:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B24 text19 CODE >64:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B28 text19 CODE >66:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B2D text19 CODE >68:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B31 text19 CODE >70:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B31 text19 CODE >71:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B72 text18 CODE >3:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B72 text18 CODE >5:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B7B text18 CODE >7:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B7D text18 CODE >9:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B7E text18 CODE >10:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B7E text18 CODE >11:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B81 text18 CODE >12:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B82 text18 CODE >13:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B82 text18 CODE >14:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B85 text18 CODE >15:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B86 text18 CODE >16:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B86 text18 CODE >17:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B89 text18 CODE >18:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B8A text18 CODE >19:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B8A text18 CODE >20:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B8D text18 CODE >21:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B8E text18 CODE >22:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B8E text18 CODE >23:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B91 text18 CODE >24:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-B92 text18 CODE >25:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-BA8 text18 CODE >27:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-BAA text18 CODE >28:/home/vincent/school/ProjEmbedded/Project.X/Input.c
-2EC text17 CODE >257:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-2EF text17 CODE >259:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-2F3 text17 CODE >261:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-2F4 text17 CODE >261:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-2F4 text17 CODE >264:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-2FB text17 CODE >267:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D3A text16 CODE >26:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D3A text16 CODE >30:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D3E text16 CODE >31:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D42 text16 CODE >34:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D43 text16 CODE >35:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D44 text16 CODE >38:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D47 text16 CODE >39:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D48 text16 CODE >40:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D49 text16 CODE >41:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D4A text16 CODE >44:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D4B text16 CODE >45:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D4C text16 CODE >46:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D52 text16 CODE >47:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D55 text16 CODE >50:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D56 text16 CODE >51:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D57 text16 CODE >52:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D5D text16 CODE >53:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D60 text16 CODE >57:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D61 text16 CODE >61:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D62 text16 CODE >62:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D63 text16 CODE >63:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D64 text16 CODE >64:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D65 text16 CODE >66:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D66 text16 CODE >67:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D67 text16 CODE >68:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D6D text16 CODE >70:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D70 text16 CODE >72:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D71 text16 CODE >73:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D72 text16 CODE >75:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D78 text16 CODE >76:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D7B text16 CODE >79:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D7C text16 CODE >82:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D7F text16 CODE >83:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D83 text16 CODE >84:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D87 text16 CODE >86:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A48 text15 CODE >5:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A48 text15 CODE >7:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A4E text15 CODE >8:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A52 text15 CODE >9:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A55 text15 CODE >11:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A58 text15 CODE >12:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A5B text15 CODE >14:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
-A5E text15 CODE >15:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+BC8 text20 CODE >19:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
+BC8 text20 CODE >21:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
+BD1 text20 CODE >23:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
+BEA text20 CODE >24:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
+C08 text20 CODE >25:/home/vincent/school/ProjEmbedded/Project.X/Remote.c
+AB0 text19 CODE >48:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AB0 text19 CODE >50:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AB4 text19 CODE >52:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AB9 text19 CODE >53:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ABB text19 CODE >54:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ABB text19 CODE >56:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AC1 text19 CODE >58:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AC6 text19 CODE >60:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ACA text19 CODE >61:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ACA text19 CODE >63:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ACE text19 CODE >64:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AD2 text19 CODE >66:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AD7 text19 CODE >68:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ADB text19 CODE >70:/home/vincent/school/ProjEmbedded/Project.X/main.c
+ADB text19 CODE >71:/home/vincent/school/ProjEmbedded/Project.X/main.c
+B1C text18 CODE >3:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B1C text18 CODE >5:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B25 text18 CODE >7:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B27 text18 CODE >9:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B28 text18 CODE >10:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B28 text18 CODE >11:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B2B text18 CODE >12:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B2C text18 CODE >13:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B2C text18 CODE >14:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B2F text18 CODE >15:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B30 text18 CODE >16:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B30 text18 CODE >17:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B33 text18 CODE >18:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B34 text18 CODE >19:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B34 text18 CODE >20:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B37 text18 CODE >21:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B38 text18 CODE >22:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B38 text18 CODE >23:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B3B text18 CODE >24:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B3C text18 CODE >25:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B52 text18 CODE >27:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+B54 text18 CODE >28:/home/vincent/school/ProjEmbedded/Project.X/Input.c
+2EC text17 CODE >263:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+2EF text17 CODE >265:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+2F3 text17 CODE >267:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+2F4 text17 CODE >267:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+2F4 text17 CODE >270:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+2FB text17 CODE >273:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CE4 text16 CODE >26:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CE4 text16 CODE >30:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CE8 text16 CODE >31:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CEC text16 CODE >34:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CED text16 CODE >35:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CEE text16 CODE >38:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CF1 text16 CODE >39:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CF2 text16 CODE >40:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CF3 text16 CODE >41:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CF4 text16 CODE >44:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CF5 text16 CODE >45:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CF6 text16 CODE >46:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CFC text16 CODE >47:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+CFF text16 CODE >50:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D00 text16 CODE >51:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D01 text16 CODE >52:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D07 text16 CODE >53:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D0A text16 CODE >57:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D0B text16 CODE >61:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D0C text16 CODE >62:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D0D text16 CODE >63:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D0E text16 CODE >64:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D0F text16 CODE >66:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D10 text16 CODE >67:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D11 text16 CODE >68:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D17 text16 CODE >70:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D1A text16 CODE >72:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D1B text16 CODE >73:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D1C text16 CODE >75:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D22 text16 CODE >76:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D25 text16 CODE >79:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D26 text16 CODE >82:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D29 text16 CODE >83:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D2D text16 CODE >84:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D31 text16 CODE >86:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A1B text15 CODE >5:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A1B text15 CODE >7:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A21 text15 CODE >8:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A25 text15 CODE >9:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A28 text15 CODE >11:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A2B text15 CODE >12:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A2E text15 CODE >14:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
+A31 text15 CODE >15:/home/vincent/school/ProjEmbedded/Project.X/Volume.c
 E39 text14 CODE >3:/home/vincent/school/ProjEmbedded/Project.X/Config.c
 E39 text14 CODE >5:/home/vincent/school/ProjEmbedded/Project.X/Config.c
 E3F text14 CODE >6:/home/vincent/school/ProjEmbedded/Project.X/Config.c
@@ -553,42 +553,42 @@ E78 text14 CODE >84:/home/vincent/school/ProjEmbedded/Project.X/Config.c
 E7C text14 CODE >85:/home/vincent/school/ProjEmbedded/Project.X/Config.c
 E8E text14 CODE >86:/home/vincent/school/ProjEmbedded/Project.X/Config.c
 EA0 text14 CODE >87:/home/vincent/school/ProjEmbedded/Project.X/Config.c
-CED text13 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CED text13 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CF1 text13 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CF7 text13 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CF9 text13 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-CFA text13 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D01 text13 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D06 text13 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D06 text13 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D0C text13 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D0C text13 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D13 text13 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D1D text13 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D23 text13 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D25 text13 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D25 text13 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D2C text13 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D34 text13 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D34 text13 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-D39 text13 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
-C5F text12 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C5F text12 CODE >12:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C67 text12 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C69 text12 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C6A text12 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C71 text12 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C76 text12 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C76 text12 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C7C text12 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C7C text12 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C86 text12 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C8D text12 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C94 text12 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C9C text12 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-C9C text12 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
-CA1 text12 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C97 text13 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C97 text13 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C9B text13 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CA1 text13 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CA3 text13 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CA4 text13 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CAB text13 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CB0 text13 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CB0 text13 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CB6 text13 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CB6 text13 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CBD text13 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CC7 text13 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CCD text13 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CCF text13 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CCF text13 CODE >26:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CD6 text13 CODE >27:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CDE text13 CODE >28:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CDE text13 CODE >29:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+CE3 text13 CODE >30:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwdiv.c
+C09 text12 CODE >5:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C09 text12 CODE >12:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C11 text12 CODE >13:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C13 text12 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C14 text12 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C1B text12 CODE >16:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C20 text12 CODE >14:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C20 text12 CODE >17:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C26 text12 CODE >18:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C26 text12 CODE >19:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C30 text12 CODE >20:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C37 text12 CODE >21:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C3E text12 CODE >22:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C46 text12 CODE >23:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C46 text12 CODE >24:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
+C4B text12 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
 49D text11 CODE >500:/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 4A0 text11 CODE >545:/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 4A4 text11 CODE >548:/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
@@ -628,98 +628,102 @@ CA1 text12 CODE >25:/opt/microchip/xc8/v2.00/pic/sources/c90/common/lwmod.c
 5CD text11 CODE >1557:/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 5D2 text11 CODE >1559:/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
 5D2 text11 CODE >1560:/opt/microchip/xc8/v2.00/pic/sources/c90/common/doprnt.c
-AB0 text10 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AB0 text10 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AB5 text10 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AB5 text10 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AB9 text10 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-ABF text10 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AC6 text10 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-ACD text10 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AD4 text10 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-AD9 text10 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
-A2A text9 CODE >247:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A2A text9 CODE >249:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A31 text9 CODE >250:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A34 text9 CODE >251:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A35 text9 CODE >252:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A35 text9 CODE >254:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A38 text9 CODE >255:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A39 text8 CODE >236:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A39 text8 CODE >238:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A40 text8 CODE >239:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A43 text8 CODE >240:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A44 text8 CODE >241:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A44 text8 CODE >243:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A47 text8 CODE >244:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-EA1 text7 CODE >223:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-EA1 text7 CODE >225:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-EA6 text7 CODE >227:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-EB9 text7 CODE >228:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-EF1 text7 CODE >229:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-F07 text7 CODE >232:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-F0C text7 CODE >233:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DD7 text6 CODE >203:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DDA text6 CODE >208:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DE6 text6 CODE >209:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DED text6 CODE >210:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DF6 text6 CODE >211:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E05 text6 CODE >212:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E0C text6 CODE >213:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E15 text6 CODE >214:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E24 text6 CODE >215:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E2B text6 CODE >216:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E34 text6 CODE >217:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E36 text6 CODE >220:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-E38 text6 CODE >221:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BE4 text5 CODE >180:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BE4 text5 CODE >184:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BEB text5 CODE >185:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-C01 text5 CODE >186:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-C1D text5 CODE >188:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B3C text4 CODE >190:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B3C text4 CODE >192:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B4B text4 CODE >193:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B55 text4 CODE >194:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B56 text4 CODE >195:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B56 text4 CODE >198:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B66 text4 CODE >200:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-B71 text4 CODE >201:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A87 text3 CODE >173:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A87 text3 CODE >175:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A8C text3 CODE >176:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-A97 text3 CODE >177:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-AAF text3 CODE >178:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BAB text2 CODE >134:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BAB text2 CODE >136:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BB9 text2 CODE >138:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BBA text2 CODE >140:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BC3 text2 CODE >142:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BCE text2 CODE >144:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BDD text2 CODE >146:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-BE3 text2 CODE >148:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D88 text1 CODE >150:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D88 text1 CODE >152:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D96 text1 CODE >154:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-D97 text1 CODE >156:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DA0 text1 CODE >160:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DA6 text1 CODE >161:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DB3 text1 CODE >162:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DBA text1 CODE >165:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DC5 text1 CODE >167:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DD0 text1 CODE >169:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-DD6 text1 CODE >171:/home/vincent/school/ProjEmbedded/Project.X/Display.c
-ADA maintext CODE >28:/home/vincent/school/ProjEmbedded/Project.X/main.c
-ADA maintext CODE >30:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AE0 maintext CODE >33:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AE0 maintext CODE >35:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AE6 maintext CODE >36:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AE8 maintext CODE >38:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AED maintext CODE >39:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AF2 maintext CODE >40:/home/vincent/school/ProjEmbedded/Project.X/main.c
-AF7 maintext CODE >42:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B02 maintext CODE >44:/home/vincent/school/ProjEmbedded/Project.X/main.c
-B03 maintext CODE >46:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A5A text10 CODE >15:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A5A text10 CODE >43:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A5F text10 CODE >44:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A5F text10 CODE >45:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A63 text10 CODE >46:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A69 text10 CODE >47:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A70 text10 CODE >48:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A77 text10 CODE >49:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A7E text10 CODE >52:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+A83 text10 CODE >53:/opt/microchip/xc8/v2.00/pic/sources/c90/common/Umul16.c
+9FD text9 CODE >253:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+9FD text9 CODE >255:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A04 text9 CODE >256:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A07 text9 CODE >257:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A08 text9 CODE >258:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A08 text9 CODE >260:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A0B text9 CODE >261:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A0C text8 CODE >242:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A0C text8 CODE >244:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A13 text8 CODE >245:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A16 text8 CODE >246:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A17 text8 CODE >247:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A17 text8 CODE >249:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A1A text8 CODE >250:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+EA1 text7 CODE >228:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+EA1 text7 CODE >230:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+EA6 text7 CODE >232:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+EB9 text7 CODE >233:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+EF1 text7 CODE >234:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+F07 text7 CODE >238:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+F0C text7 CODE >239:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DD7 text6 CODE >208:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DDA text6 CODE >213:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DE6 text6 CODE >214:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DED text6 CODE >215:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DF6 text6 CODE >216:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E05 text6 CODE >217:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E0C text6 CODE >218:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E15 text6 CODE >219:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E24 text6 CODE >220:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E2B text6 CODE >221:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E34 text6 CODE >222:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E36 text6 CODE >225:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+E38 text6 CODE >226:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B8E text5 CODE >185:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B8E text5 CODE >189:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B95 text5 CODE >190:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+BAB text5 CODE >191:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+BC7 text5 CODE >193:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+AE6 text4 CODE >195:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+AE6 text4 CODE >197:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+AF5 text4 CODE >198:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+AFF text4 CODE >199:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B00 text4 CODE >200:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B00 text4 CODE >203:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B10 text4 CODE >205:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B1B text4 CODE >206:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D81 text3 CODE >172:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D81 text3 CODE >174:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D86 text3 CODE >177:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D99 text3 CODE >178:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D9E text3 CODE >179:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DA4 text3 CODE >180:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DA9 text3 CODE >181:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DBF text3 CODE >182:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+DD6 text3 CODE >183:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B55 text2 CODE >134:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B55 text2 CODE >136:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B63 text2 CODE >138:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B64 text2 CODE >140:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B6D text2 CODE >142:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B78 text2 CODE >144:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B87 text2 CODE >146:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+B8D text2 CODE >148:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D32 text1 CODE >150:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D32 text1 CODE >152:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D40 text1 CODE >154:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D41 text1 CODE >156:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D4A text1 CODE >159:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D50 text1 CODE >160:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D5D text1 CODE >161:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D64 text1 CODE >164:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D6F text1 CODE >166:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D7A text1 CODE >168:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+D80 text1 CODE >170:/home/vincent/school/ProjEmbedded/Project.X/Display.c
+A84 maintext CODE >28:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A84 maintext CODE >30:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A8A maintext CODE >33:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A8A maintext CODE >35:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A90 maintext CODE >36:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A92 maintext CODE >38:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A97 maintext CODE >39:/home/vincent/school/ProjEmbedded/Project.X/main.c
+A9C maintext CODE >40:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AA1 maintext CODE >42:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AAC maintext CODE >44:/home/vincent/school/ProjEmbedded/Project.X/main.c
+AAD maintext CODE >46:/home/vincent/school/ProjEmbedded/Project.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -740,20 +744,20 @@ __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_init_adc 0 0 ABS 0 - dist/default/production/Project.X.production.o
-_update_volume 1B10 0 CODE 0 text1 dist/default/production/Project.X.production.o
+_update_volume 1A64 0 CODE 0 text1 dist/default/production/Project.X.production.o
 __end_of_write_char 1C72 0 CODE 0 text6 dist/default/production/Project.X.production.o
 __end_of_write_font 1E1A 0 CODE 0 text7 dist/default/production/Project.X.production.o
-__end_of_write_text 183C 0 CODE 0 text5 dist/default/production/Project.X.production.o
+__end_of_write_text 1790 0 CODE 0 text5 dist/default/production/Project.X.production.o
 _lastInput C5 0 BANK1 1 bssBANK1 dist/default/production/Project.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lstringtext 0 0 ABS 0 stringtext -
 i1___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack /tmp/xcXQWbiMP.o
+___sp 0 0 STACK 2 stack /tmp/xcXNwzJrA.o
 _font 624 0 STRCODE 0 stringtext dist/default/production/Project.X.production.o
-_main 15B4 0 CODE 0 maintext dist/default/production/Project.X.production.o
+_main 1508 0 CODE 0 maintext dist/default/production/Project.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/Project.X.production.o
-start 24 0 CODE 0 init /tmp/xcXQWbiMP.o
+start 24 0 CODE 0 init /tmp/xcXNwzJrA.o
 __size_of___fladd 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of___fltol 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -762,44 +766,44 @@ __size_of___lwmod 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_write_space 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __end_of_handle_potmeter 1EFE 0 CODE 0 text22 dist/default/production/Project.X.production.o
 _lastVolume C7 0 BANK1 1 bssBANK1 dist/default/production/Project.X.production.o
-_is_deadzone$863 4D 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
+_is_deadzone$864 4D 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
 ?___wmul A0 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __selectedDisplay CD 0 BANK1 1 bssBANK1 dist/default/production/Project.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXQWbiMP.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXQWbiMP.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXQWbiMP.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXQWbiMP.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXQWbiMP.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXQWbiMP.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXNwzJrA.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXNwzJrA.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXNwzJrA.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXNwzJrA.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXNwzJrA.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXNwzJrA.o
 i1___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
-_init_adc 1490 0 CODE 0 text15 dist/default/production/Project.X.production.o
+_init_adc 1436 0 CODE 0 text15 dist/default/production/Project.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production/Project.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production/Project.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 spiWrite@data A0 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_init_adc 14BE 0 CODE 0 text15 dist/default/production/Project.X.production.o
+__end_of_init_adc 1464 0 CODE 0 text15 dist/default/production/Project.X.production.o
 ___wmul@multiplicand A2 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 _handle_potmeter 1E1A 0 CODE 0 text22 dist/default/production/Project.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production/Project.X.production.o
 _ADRESL 9E 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_update_volume 0 0 ABS 0 - dist/default/production/Project.X.production.o
-__end_of___wmul 15B4 0 CODE 0 text10 dist/default/production/Project.X.production.o
+__end_of___wmul 1508 0 CODE 0 text10 dist/default/production/Project.X.production.o
 __end_of_is_deadzone D32 0 CODE 0 text24 dist/default/production/Project.X.production.o
 write_int@number BD 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_sprintf 0 0 ABS 0 - dist/default/production/Project.X.production.o
-__end_ofi1___lwdiv 19DA 0 CODE 0 text23 dist/default/production/Project.X.production.o
-__end_of_activateSelectedRelay 1756 0 CODE 0 text18 dist/default/production/Project.X.production.o
+__end_ofi1___lwdiv 192E 0 CODE 0 text23 dist/default/production/Project.X.production.o
+__end_of_activateSelectedRelay 16AA 0 CODE 0 text18 dist/default/production/Project.X.production.o
 _ir_input 5A 0 BANK0 1 bssBANK0 dist/default/production/Project.X.production.o
 ___lwmod@divisor A8 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __size_ofi1___lwdiv 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_display_write_start 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __end_of___fladd 5D8 0 CODE 0 text28 dist/default/production/Project.X.production.o
 __end_of___fltol FEE 0 CODE 0 text27 dist/default/production/Project.X.production.o
-__end_of___lwdiv 1A74 0 CODE 0 text13 dist/default/production/Project.X.production.o
-__end_of___lwmod 1944 0 CODE 0 text12 dist/default/production/Project.X.production.o
+__end_of___lwdiv 19C8 0 CODE 0 text13 dist/default/production/Project.X.production.o
+__end_of___lwmod 1898 0 CODE 0 text12 dist/default/production/Project.X.production.o
 __end_of_config 1D42 0 CODE 0 text14 dist/default/production/Project.X.production.o
 handle_potmeter@ad_result 54 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
 __CFG_FOSC$INTRC_CLKOUT 0 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -808,9 +812,9 @@ __size_ofi1___wmul 0 0 ABS 0 - dist/default/production/Project.X.production.o
 ___lwdiv@quotient A5 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 ___fladd@a 24 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
 ___fladd@b 20 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
-__end_of_update_volume 1BAE 0 CODE 0 text1 dist/default/production/Project.X.production.o
-_activateSelectedRelay 16E4 0 CODE 0 text18 dist/default/production/Project.X.production.o
-i1___lwdiv 1944 0 CODE 0 text23 dist/default/production/Project.X.production.o
+__end_of_update_volume 1B02 0 CODE 0 text1 dist/default/production/Project.X.production.o
+_activateSelectedRelay 1638 0 CODE 0 text18 dist/default/production/Project.X.production.o
+i1___lwdiv 1898 0 CODE 0 text23 dist/default/production/Project.X.production.o
 ___lwmod@dividend AA 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -823,16 +827,16 @@ __size_of_write_char 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_write_font 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_write_text 0 0 ABS 0 - dist/default/production/Project.X.production.o
 is_deadzone@deadzoneHigh 4B 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
-_display_write_start 1472 0 CODE 0 text8 dist/default/production/Project.X.production.o
+_display_write_start 1418 0 CODE 0 text8 dist/default/production/Project.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production/Project.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_handle_potmeter 0 0 ABS 0 - dist/default/production/Project.X.production.o
 i1___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXQWbiMP.o
-i1___wmul 14BE 0 CODE 0 text25 dist/default/production/Project.X.production.o
-_write_space 150E 0 CODE 0 text3 dist/default/production/Project.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXNwzJrA.o
+i1___wmul 1464 0 CODE 0 text25 dist/default/production/Project.X.production.o
+_write_space 1B02 0 CODE 0 text3 dist/default/production/Project.X.production.o
 __selectedInput CB 0 BANK1 1 bssBANK1 dist/default/production/Project.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -852,7 +856,7 @@ ___xxtofl@val 70 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.produ
 __end_of_sprintf BA6 0 CODE 0 text11 dist/default/production/Project.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 0 config -
-__end_ofi1___wmul 150E 0 CODE 0 text25 dist/default/production/Project.X.production.o
+__end_ofi1___wmul 14B4 0 CODE 0 text25 dist/default/production/Project.X.production.o
 ?_is_deadzone 43 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
@@ -860,7 +864,7 @@ __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
 __Lcinit 2A 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
-_display_init 1A74 0 CODE 0 text16 dist/default/production/Project.X.production.o
+_display_init 19C8 0 CODE 0 text16 dist/default/production/Project.X.production.o
 __Lstack 0 0 STACK 2 stack -
 __end_of_step_size 920 0 STRCODE 0 stringtext dist/default/production/Project.X.production.o
 _PORTBbits 6 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -884,7 +888,7 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___wmul 1560 0 CODE 0 text10 dist/default/production/Project.X.production.o
+___wmul 14B4 0 CODE 0 text10 dist/default/production/Project.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __lastA 60 0 BANK0 1 bssBANK0 dist/default/production/Project.X.production.o
@@ -895,7 +899,7 @@ __S0 2009 0 ABS 0 - -
 __S1 CE 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 160C 0 CODE 0 text19 dist/default/production/Project.X.production.o
+_isr 1560 0 CODE 0 text19 dist/default/production/Project.X.production.o
 __CFG_BOR4V$BOR21V 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __size_of_is_deadzone 0 0 ABS 0 - dist/default/production/Project.X.production.o
 i1___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
@@ -906,14 +910,14 @@ is_deadzone@currentStep 43 0 BANK0 1 cstackBANK0 dist/default/production/Project
 __size_of_display_write_end 0 0 ABS 0 - dist/default/production/Project.X.production.o
 sprintf@val B9 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 ___xxtofl D32 0 CODE 0 text26 dist/default/production/Project.X.production.o
-__end_of_isr 1678 0 CODE 0 text19 dist/default/production/Project.X.production.o
+__end_of_isr 15CC 0 CODE 0 text19 dist/default/production/Project.X.production.o
 __size_of_display_init 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 _ignore_poll 62 0 BANK0 1 bssBANK0 dist/default/production/Project.X.production.o
 __stringtab 600 0 STRCODE 0 stringtext dist/default/production/Project.X.production.o
-__end_of_display_write_start 1490 0 CODE 0 text8 dist/default/production/Project.X.production.o
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXQWbiMP.o
+__end_of_display_write_start 1436 0 CODE 0 text8 dist/default/production/Project.X.production.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXNwzJrA.o
 __end_of___xxtofl EB6 0 CODE 0 text26 dist/default/production/Project.X.production.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -923,37 +927,37 @@ i1___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production/Project.X
 _PIE1bits 8C 0 ABS 0 - dist/default/production/Project.X.production.o
 sprintf@flag B7 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 sprintf@prec B8 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
-__end_of_display_init 1B10 0 CODE 0 text16 dist/default/production/Project.X.production.o
+__end_of_display_init 1A64 0 CODE 0 text16 dist/default/production/Project.X.production.o
 ___fladd@signs 34 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
-__ptext10 1560 0 CODE 0 text10 dist/default/production/Project.X.production.o
+__ptext10 14B4 0 CODE 0 text10 dist/default/production/Project.X.production.o
 __ptext11 93A 0 CODE 0 text11 dist/default/production/Project.X.production.o
-__ptext12 18BE 0 CODE 0 text12 dist/default/production/Project.X.production.o
-__ptext13 19DA 0 CODE 0 text13 dist/default/production/Project.X.production.o
+__ptext12 1812 0 CODE 0 text12 dist/default/production/Project.X.production.o
+__ptext13 192E 0 CODE 0 text13 dist/default/production/Project.X.production.o
 __ptext14 1C72 0 CODE 0 text14 dist/default/production/Project.X.production.o
-__ptext15 1490 0 CODE 0 text15 dist/default/production/Project.X.production.o
-__ptext16 1A74 0 CODE 0 text16 dist/default/production/Project.X.production.o
+__ptext15 1436 0 CODE 0 text15 dist/default/production/Project.X.production.o
+__ptext16 19C8 0 CODE 0 text16 dist/default/production/Project.X.production.o
 __ptext17 5D8 0 CODE 0 text17 dist/default/production/Project.X.production.o
-__ptext18 16E4 0 CODE 0 text18 dist/default/production/Project.X.production.o
-__ptext19 160C 0 CODE 0 text19 dist/default/production/Project.X.production.o
-__ptext20 183C 0 CODE 0 text20 dist/default/production/Project.X.production.o
+__ptext18 1638 0 CODE 0 text18 dist/default/production/Project.X.production.o
+__ptext19 1560 0 CODE 0 text19 dist/default/production/Project.X.production.o
+__ptext20 1790 0 CODE 0 text20 dist/default/production/Project.X.production.o
 __ptext21 1EFE 0 CODE 0 text21 dist/default/production/Project.X.production.o
 __ptext22 1E1A 0 CODE 0 text22 dist/default/production/Project.X.production.o
-__ptext23 1944 0 CODE 0 text23 dist/default/production/Project.X.production.o
+__ptext23 1898 0 CODE 0 text23 dist/default/production/Project.X.production.o
 __ptext24 BA6 0 CODE 0 text24 dist/default/production/Project.X.production.o
-__ptext25 14BE 0 CODE 0 text25 dist/default/production/Project.X.production.o
+__ptext25 1464 0 CODE 0 text25 dist/default/production/Project.X.production.o
 __ptext26 D32 0 CODE 0 text26 dist/default/production/Project.X.production.o
 __ptext27 EB6 0 CODE 0 text27 dist/default/production/Project.X.production.o
 __ptext28 60 0 CODE 0 text28 dist/default/production/Project.X.production.o
 ___fladd 60 0 CODE 0 text28 dist/default/production/Project.X.production.o
 ___fltol EB6 0 CODE 0 text27 dist/default/production/Project.X.production.o
 __size_of_config 0 0 ABS 0 - dist/default/production/Project.X.production.o
-___lwdiv 19DA 0 CODE 0 text13 dist/default/production/Project.X.production.o
-___lwmod 18BE 0 CODE 0 text12 dist/default/production/Project.X.production.o
-__pmaintext 15B4 0 CODE 0 maintext dist/default/production/Project.X.production.o
-write_space@count B0 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
+___lwdiv 192E 0 CODE 0 text13 dist/default/production/Project.X.production.o
+___lwmod 1812 0 CODE 0 text12 dist/default/production/Project.X.production.o
+__pmaintext 1508 0 CODE 0 maintext dist/default/production/Project.X.production.o
+write_space@count A1 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
-_update_input 1756 0 CODE 0 text2 dist/default/production/Project.X.production.o
+_update_input 16AA 0 CODE 0 text2 dist/default/production/Project.X.production.o
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
 write_char@c B2 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -963,13 +967,13 @@ handle_rotary@portB 75 0 COMMON 1 cstackCOMMON dist/default/production/Project.X
 ___lwdiv@divisor A0 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 ?i1___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
 write_font@x AE 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
-__end_of_write_int 16E4 0 CODE 0 text4 dist/default/production/Project.X.production.o
+__end_of_write_int 1638 0 CODE 0 text4 dist/default/production/Project.X.production.o
 is_deadzone@turnPoint 4E 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
 __size_of_write_int 0 0 ABS 0 - dist/default/production/Project.X.production.o
-stackhi 0 0 ABS 0 - /tmp/xcXQWbiMP.o
-stacklo 0 0 ABS 0 - /tmp/xcXQWbiMP.o
+stackhi 0 0 ABS 0 - /tmp/xcXNwzJrA.o
+stacklo 0 0 ABS 0 - /tmp/xcXNwzJrA.o
 _volume C9 0 BANK1 1 bssBANK1 dist/default/production/Project.X.production.o
-_poll_receiver 183C 0 CODE 0 text20 dist/default/production/Project.X.production.o
+_poll_receiver 1790 0 CODE 0 text20 dist/default/production/Project.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production/Project.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production/Project.X.production.o
 ___fladd@grs 37 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
@@ -987,7 +991,7 @@ _PIR1bits C 0 ABS 0 - dist/default/production/Project.X.production.o
 __Lend_init 24 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 ___fltol@exp1 42 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
-_write_int 1678 0 CODE 0 text4 dist/default/production/Project.X.production.o
+_write_int 15CC 0 CODE 0 text4 dist/default/production/Project.X.production.o
 end_of_initialization 58 0 CODE 0 cinit dist/default/production/Project.X.production.o
 __size_of_update_input 0 0 ABS 0 - dist/default/production/Project.X.production.o
 __Hintentry 24 0 CODE 0 intentry -
@@ -1001,25 +1005,25 @@ handle_potmeter@currentStep 52 0 BANK0 1 cstackBANK0 dist/default/production/Pro
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-__end_of_display_write_end 1472 0 CODE 0 text9 dist/default/production/Project.X.production.o
-__ptext1 1B10 0 CODE 0 text1 dist/default/production/Project.X.production.o
-__ptext2 1756 0 CODE 0 text2 dist/default/production/Project.X.production.o
-__ptext3 150E 0 CODE 0 text3 dist/default/production/Project.X.production.o
-__ptext4 1678 0 CODE 0 text4 dist/default/production/Project.X.production.o
-__ptext5 17C8 0 CODE 0 text5 dist/default/production/Project.X.production.o
+__end_of_display_write_end 1418 0 CODE 0 text9 dist/default/production/Project.X.production.o
+__ptext1 1A64 0 CODE 0 text1 dist/default/production/Project.X.production.o
+__ptext2 16AA 0 CODE 0 text2 dist/default/production/Project.X.production.o
+__ptext3 1B02 0 CODE 0 text3 dist/default/production/Project.X.production.o
+__ptext4 15CC 0 CODE 0 text4 dist/default/production/Project.X.production.o
+__ptext5 171C 0 CODE 0 text5 dist/default/production/Project.X.production.o
 __ptext6 1BAE 0 CODE 0 text6 dist/default/production/Project.X.production.o
 __ptext7 1D42 0 CODE 0 text7 dist/default/production/Project.X.production.o
-__ptext8 1472 0 CODE 0 text8 dist/default/production/Project.X.production.o
-__ptext9 1454 0 CODE 0 text9 dist/default/production/Project.X.production.o
+__ptext8 1418 0 CODE 0 text8 dist/default/production/Project.X.production.o
+__ptext9 13FA 0 CODE 0 text9 dist/default/production/Project.X.production.o
 _sprintf 93A 0 CODE 0 text11 dist/default/production/Project.X.production.o
 write_text@c B5 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
-__end_of_update_input 17C8 0 CODE 0 text2 dist/default/production/Project.X.production.o
+__end_of_update_input 171C 0 CODE 0 text2 dist/default/production/Project.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 ?___xxtofl 70 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 i1___lwdiv@counter 77 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
 __pstringtext 600 0 STRCODE 0 stringtext dist/default/production/Project.X.production.o
-__end_of_write_space 1560 0 CODE 0 text3 dist/default/production/Project.X.production.o
+__end_of_write_space 1BAE 0 CODE 0 text3 dist/default/production/Project.X.production.o
 sprintf@ap B6 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 sprintf@sp BB 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 ___fladd@aexp 35 0 BANK0 1 cstackBANK0 dist/default/production/Project.X.production.o
@@ -1043,15 +1047,16 @@ __size_of_poll_receiver 0 0 ABS 0 - dist/default/production/Project.X.production
 write_int@num BF 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 _write_char 1BAE 0 CODE 0 text6 dist/default/production/Project.X.production.o
 _write_font 1D42 0 CODE 0 text7 dist/default/production/Project.X.production.o
-_write_text 17C8 0 CODE 0 text5 dist/default/production/Project.X.production.o
+_write_text 171C 0 CODE 0 text5 dist/default/production/Project.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production/Project.X.production.o
 __Hend_init 2A 0 CODE 0 end_init -
 __size_of_handle_rotary 0 0 ABS 0 - dist/default/production/Project.X.production.o
 sprintf@c BC 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 sprintf@f AE 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __end_of_font 908 0 STRCODE 0 stringtext dist/default/production/Project.X.production.o
-__end_of_main 160C 0 CODE 0 maintext dist/default/production/Project.X.production.o
-write_space@i B3 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
+__end_of_main 1560 0 CODE 0 maintext dist/default/production/Project.X.production.o
+write_space@i A4 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
+write_space@x A6 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __end_of_dpowers 91C 0 STRCODE 0 stringtext dist/default/production/Project.X.production.o
 ?_sprintf AE 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -1066,7 +1071,7 @@ __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production/Project.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production/Project.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production/Project.X.production.o
-_display_write_end 1454 0 CODE 0 text9 dist/default/production/Project.X.production.o
+_display_write_end 13FA 0 CODE 0 text9 dist/default/production/Project.X.production.o
 __initialization 2A 0 CODE 0 cinit dist/default/production/Project.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
 ___xxtofl@sign 78 0 COMMON 1 cstackCOMMON dist/default/production/Project.X.production.o
@@ -1077,7 +1082,7 @@ _spiWrite 5D8 0 CODE 0 text17 dist/default/production/Project.X.production.o
 _T2CONbits 12 0 ABS 0 - dist/default/production/Project.X.production.o
 __Hstringtext 0 0 ABS 0 stringtext -
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/Project.X.production.o
-__end_of_poll_receiver 18BE 0 CODE 0 text20 dist/default/production/Project.X.production.o
+__end_of_poll_receiver 1812 0 CODE 0 text20 dist/default/production/Project.X.production.o
 ___wmul@product A4 0 BANK1 1 cstackBANK1 dist/default/production/Project.X.production.o
 __end_of_handle_rotary 2000 0 CODE 0 text21 dist/default/production/Project.X.production.o
 _ANSELHbits 189 0 ABS 0 - dist/default/production/Project.X.production.o
@@ -1107,30 +1112,30 @@ __end_of_spiWrite 5F8 0 CODE 0 text17 dist/default/production/Project.X.producti
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text1 0 D88 1B10 4F 2
-text2 0 BAB 1756 39 2
-text3 0 A87 150E 29 2
-text4 0 B3C 1678 36 2
-text5 0 BE4 17C8 3A 2
+text1 0 D32 1A64 4F 2
+text2 0 B55 16AA 39 2
+text3 0 D81 1B02 56 2
+text4 0 AE6 15CC 36 2
+text5 0 B8E 171C 3A 2
 text6 0 DD7 1BAE 62 2
 text7 0 EA1 1D42 6C 2
-text8 0 A39 1472 F 2
-text9 0 A2A 1454 F 2
-text10 0 AB0 1560 2A 2
+text8 0 A0C 1418 F 2
+text9 0 9FD 13FA F 2
+text10 0 A5A 14B4 2A 2
 text11 0 49D 93A 35A 2
-text12 0 C5F 18BE 43 2
-text13 0 CED 19DA 4D 2
+text12 0 C09 1812 43 2
+text13 0 C97 192E 4D 2
 text14 0 E39 1C72 68 2
-text15 0 A48 1490 17 2
-text16 0 D3A 1A74 4E 2
-text18 0 B72 16E4 39 2
-text19 0 B06 160C 36 2
-text20 0 C1E 183C 41 2
+text15 0 A1B 1436 17 2
+text16 0 CE4 19C8 4E 2
+text18 0 B1C 1638 39 2
+text19 0 AB0 1560 36 2
+text20 0 BC8 1790 41 2
 text21 0 F7F 1EFE 81 2
 text22 0 F0D 1E1A 72 2
-text23 0 CA2 1944 4B 2
-text25 0 A5F 14BE 28 2
-maintext 0 ADA 15B4 2C 2
+text23 0 C4C 1898 4B 2
+text25 0 A32 1464 28 2
+maintext 0 A84 1508 2C 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 44 1
 cstackBANK1 1 A0 A0 2E 1

@@ -2813,7 +2813,6 @@ void update_volume()
     write_text("VOL");
 
 
-
     int spaces = 3;
     if (volume < 10)
         spaces = 4;
@@ -2830,7 +2829,13 @@ void update_volume()
 void write_space(int count)
 {
     for (int i = 0; i < count; i++) {
-        write_font(37);
+
+
+        for (int x = 0; x < 5; x++) {
+            display_write_start();
+            spiWrite(0x00);
+            display_write_end();
+        }
     }
 }
 
@@ -2884,6 +2889,7 @@ void write_font(int fontPos)
     for(int x=0; x < 5; x++){
         spiWrite(font[fontPos][x]);
     }
+
 
 
     display_write_end();

@@ -49,20 +49,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;./Display.h: 25: void write_int(int number);
 [v _write_int `(v ~T0 @X0 0 ef1`i ]
-"27
-[; ;./Display.h: 27: void write_font(int fontPos);
-[v _write_font `(v ~T0 @X0 0 ef1`i ]
-"26
-[; ;./Display.h: 26: void write_char(char c);
-[v _write_char `(v ~T0 @X0 0 ef1`uc ]
-"194 /opt/microchip/xc8/v2.00/pic/include/c90/stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"29 ./Display.h
+"29
 [; ;./Display.h: 29: void display_write_start(void);
 [v _display_write_start `(v ~T0 @X0 0 ef ]
 "30
 [; ;./Display.h: 30: void display_write_end(void);
 [v _display_write_end `(v ~T0 @X0 0 ef ]
+"26
+[; ;./Display.h: 26: void write_char(char c);
+[v _write_char `(v ~T0 @X0 0 ef1`uc ]
+"194 /opt/microchip/xc8/v2.00/pic/include/c90/stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"27 ./Display.h
+[; ;./Display.h: 27: void write_font(int fontPos);
+[v _write_font `(v ~T0 @X0 0 ef1`i ]
 "843 /opt/microchip/xc8/v2.00/pic/include/pic16f887.h
 [; ;/opt/microchip/xc8/v2.00/pic/include/pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
@@ -927,346 +927,368 @@ Version 4.0 HI-TECH Software Intermediate Code
 "156
 [; ;Display.c: 156:     write_text("VOL");
 [e ( _write_text (1 :s 2C ]
-"160
-[; ;Display.c: 160:     int spaces = 3;
+"159
+[; ;Display.c: 159:     int spaces = 3;
 [v _spaces `i ~T0 @X0 1 a ]
 [e = _spaces -> 3 `i ]
-"161
-[; ;Display.c: 161:     if (volume < 10)
+"160
+[; ;Display.c: 160:     if (volume < 10)
 [e $ ! < _volume -> 10 `i 161  ]
-"162
-[; ;Display.c: 162:         spaces = 4;
+"161
+[; ;Display.c: 161:         spaces = 4;
 [e = _spaces -> 4 `i ]
 [e :U 161 ]
-"165
-[; ;Display.c: 165:     write_space(spaces);
+"164
+[; ;Display.c: 164:     write_space(spaces);
 [e ( _write_space (1 _spaces ]
-"167
-[; ;Display.c: 167:     write_int(volume);
+"166
+[; ;Display.c: 166:     write_int(volume);
 [e ( _write_int (1 _volume ]
-"169
-[; ;Display.c: 169:     lastVolume = volume;
+"168
+[; ;Display.c: 168:     lastVolume = volume;
 [e = _lastVolume _volume ]
-"171
-[; ;Display.c: 171: }
+"170
+[; ;Display.c: 170: }
 [e :UE 159 ]
 }
-"173
-[; ;Display.c: 173: void write_space(int count)
+"172
+[; ;Display.c: 172: void write_space(int count)
 [v _write_space `(v ~T0 @X0 1 ef1`i ]
-"174
-[; ;Display.c: 174: {
+"173
+[; ;Display.c: 173: {
 {
 [e :U _write_space ]
-"173
-[; ;Display.c: 173: void write_space(int count)
+"172
+[; ;Display.c: 172: void write_space(int count)
 [v _count `i ~T0 @X0 1 r1 ]
-"174
-[; ;Display.c: 174: {
+"173
+[; ;Display.c: 173: {
 [f ]
-"175
-[; ;Display.c: 175:     for (int i = 0; i < count; i++) {
+"174
+[; ;Display.c: 174:     for (int i = 0; i < count; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 166  ]
 [e :U 163 ]
 {
-"176
-[; ;Display.c: 176:         write_font(37);
-[e ( _write_font (1 -> 37 `i ]
 "177
-[; ;Display.c: 177:     }
+[; ;Display.c: 177:         for (int x = 0; x < 5; x++) {
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $ < _x -> 5 `i 167  ]
+[e $U 168  ]
+[e :U 167 ]
+{
+"178
+[; ;Display.c: 178:             display_write_start();
+[e ( _display_write_start ..  ]
+"179
+[; ;Display.c: 179:             spiWrite(0x00);
+[e ( _spiWrite (1 -> -> 0 `i `uc ]
+"180
+[; ;Display.c: 180:             display_write_end();
+[e ( _display_write_end ..  ]
+"181
+[; ;Display.c: 181:         }
+}
+[e ++ _x -> 1 `i ]
+[e $ < _x -> 5 `i 167  ]
+[e :U 168 ]
+}
+"182
+[; ;Display.c: 182:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 166 ]
 [e $ < _i _count 163  ]
 [e :U 164 ]
 }
-"178
-[; ;Display.c: 178: }
+"183
+[; ;Display.c: 183: }
 [e :UE 162 ]
 }
-"180
-[; ;Display.c: 180: void write_text(char* text)
+"185
+[; ;Display.c: 185: void write_text(char* text)
 [v _write_text `(v ~T0 @X0 1 ef1`*uc ]
-"181
-[; ;Display.c: 181: {
+"186
+[; ;Display.c: 186: {
 {
 [e :U _write_text ]
-"180
-[; ;Display.c: 180: void write_text(char* text)
+"185
+[; ;Display.c: 185: void write_text(char* text)
 [v _text `*uc ~T0 @X0 1 r1 ]
-"181
-[; ;Display.c: 181: {
+"186
+[; ;Display.c: 186: {
 [f ]
-"182
-[; ;Display.c: 182:     char* c;
+"187
+[; ;Display.c: 187:     char* c;
 [v _c `*uc ~T0 @X0 1 a ]
-"184
-[; ;Display.c: 184:     for (c = text; *c != '\0'; c++) {
+"189
+[; ;Display.c: 189:     for (c = text; *c != '\0'; c++) {
 {
 [e = _c _text ]
-[e $U 171  ]
-[e :U 168 ]
+[e $U 174  ]
+[e :U 171 ]
 {
-"185
-[; ;Display.c: 185:         write_char(*c);
+"190
+[; ;Display.c: 190:         write_char(*c);
 [e ( _write_char (1 *U _c ]
-"186
-[; ;Display.c: 186:     }
+"191
+[; ;Display.c: 191:     }
 }
 [e ++ _c * -> -> 1 `i `x -> -> # *U _c `i `x ]
-[e :U 171 ]
-[e $ != -> *U _c `ui -> 0 `ui 168  ]
-[e :U 169 ]
+[e :U 174 ]
+[e $ != -> *U _c `ui -> 0 `ui 171  ]
+[e :U 172 ]
 }
-"188
-[; ;Display.c: 188: }
-[e :UE 167 ]
+"193
+[; ;Display.c: 193: }
+[e :UE 170 ]
 }
-"190
-[; ;Display.c: 190: void write_int(int number)
+"195
+[; ;Display.c: 195: void write_int(int number)
 [v _write_int `(v ~T0 @X0 1 ef1`i ]
-"191
-[; ;Display.c: 191: {
+"196
+[; ;Display.c: 196: {
 {
 [e :U _write_int ]
-"190
-[; ;Display.c: 190: void write_int(int number)
-[v _number `i ~T0 @X0 1 r1 ]
-"191
-[; ;Display.c: 191: {
-[f ]
-"192
-[; ;Display.c: 192:     if (number < 10) {
-[e $ ! < _number -> 10 `i 173  ]
-{
-"193
-[; ;Display.c: 193:         write_char(number + 48);
-[e ( _write_char (1 -> + _number -> 48 `i `uc ]
-"194
-[; ;Display.c: 194:         return;
-[e $UE 172  ]
 "195
-[; ;Display.c: 195:     }
-}
-[e :U 173 ]
+[; ;Display.c: 195: void write_int(int number)
+[v _number `i ~T0 @X0 1 r1 ]
+"196
+[; ;Display.c: 196: {
+[f ]
 "197
-[; ;Display.c: 197:     char num[2];
-[v _num `uc ~T0 @X0 -> 2 `i a ]
+[; ;Display.c: 197:     if (number < 10) {
+[e $ ! < _number -> 10 `i 176  ]
+{
 "198
-[; ;Display.c: 198:     sprintf(num, "%d", number);
-[e ( _sprintf (1 , (. , &U _num :s 3C _number ]
+[; ;Display.c: 198:         write_char(number + 48);
+[e ( _write_char (1 -> + _number -> 48 `i `uc ]
+"199
+[; ;Display.c: 199:         return;
+[e $UE 175  ]
 "200
-[; ;Display.c: 200:     write_text(num);
-[e ( _write_text (1 &U _num ]
-"201
-[; ;Display.c: 201: }
-[e :UE 172 ]
+[; ;Display.c: 200:     }
 }
+[e :U 176 ]
+"202
+[; ;Display.c: 202:     char num[2];
+[v _num `uc ~T0 @X0 -> 2 `i a ]
 "203
-[; ;Display.c: 203: void write_char(char c)
+[; ;Display.c: 203:     sprintf(num, "%d", number);
+[e ( _sprintf (1 , (. , &U _num :s 3C _number ]
+"205
+[; ;Display.c: 205:     write_text(num);
+[e ( _write_text (1 &U _num ]
+"206
+[; ;Display.c: 206: }
+[e :UE 175 ]
+}
+"208
+[; ;Display.c: 208: void write_char(char c)
 [v _write_char `(v ~T0 @X0 1 ef1`uc ]
-"204
-[; ;Display.c: 204: {
+"209
+[; ;Display.c: 209: {
 {
 [e :U _write_char ]
-"203
-[; ;Display.c: 203: void write_char(char c)
-[v _c `uc ~T0 @X0 1 r1 ]
-"204
-[; ;Display.c: 204: {
-[f ]
-"205
-[; ;Display.c: 205:     int pos;
-[v _pos `i ~T0 @X0 1 a ]
 "208
-[; ;Display.c: 208:     if (c >= 48 && c <= 57) {
-[e $ ! && >= -> _c `i -> 48 `i <= -> _c `i -> 57 `i 175  ]
-{
+[; ;Display.c: 208: void write_char(char c)
+[v _c `uc ~T0 @X0 1 r1 ]
 "209
-[; ;Display.c: 209:         pos = c - 48;
-[e = _pos - -> _c `i -> 48 `i ]
+[; ;Display.c: 209: {
+[f ]
 "210
-[; ;Display.c: 210:         write_font(pos);
-[e ( _write_font (1 _pos ]
-"211
-[; ;Display.c: 211:     } else if (c >= 65 && c <= 90) {
-}
-[e $U 176  ]
-[e :U 175 ]
-[e $ ! && >= -> _c `i -> 65 `i <= -> _c `i -> 90 `i 177  ]
-{
-"212
-[; ;Display.c: 212:         pos = (c - 65) + 10;
-[e = _pos + - -> _c `i -> 65 `i -> 10 `i ]
+[; ;Display.c: 210:     int pos;
+[v _pos `i ~T0 @X0 1 a ]
 "213
-[; ;Display.c: 213:         write_font(pos);
-[e ( _write_font (1 _pos ]
-"214
-[; ;Display.c: 214:     } else if (c >= 97 && c <= 122) {
-}
-[e $U 178  ]
-[e :U 177 ]
-[e $ ! && >= -> _c `i -> 97 `i <= -> _c `i -> 122 `i 179  ]
+[; ;Display.c: 213:     if (c >= 48 && c <= 57) {
+[e $ ! && >= -> _c `i -> 48 `i <= -> _c `i -> 57 `i 178  ]
 {
+"214
+[; ;Display.c: 214:         pos = c - 48;
+[e = _pos - -> _c `i -> 48 `i ]
 "215
-[; ;Display.c: 215:         pos = (c - 97) + 10;
-[e = _pos + - -> _c `i -> 97 `i -> 10 `i ]
-"216
-[; ;Display.c: 216:         write_font(pos);
+[; ;Display.c: 215:         write_font(pos);
 [e ( _write_font (1 _pos ]
-"217
-[; ;Display.c: 217:     } else {
+"216
+[; ;Display.c: 216:     } else if (c >= 65 && c <= 90) {
 }
-[e $U 180  ]
-[e :U 179 ]
+[e $U 179  ]
+[e :U 178 ]
+[e $ ! && >= -> _c `i -> 65 `i <= -> _c `i -> 90 `i 180  ]
+{
+"217
+[; ;Display.c: 217:         pos = (c - 65) + 10;
+[e = _pos + - -> _c `i -> 65 `i -> 10 `i ]
+"218
+[; ;Display.c: 218:         write_font(pos);
+[e ( _write_font (1 _pos ]
+"219
+[; ;Display.c: 219:     } else if (c >= 97 && c <= 122) {
+}
+[e $U 181  ]
+[e :U 180 ]
+[e $ ! && >= -> _c `i -> 97 `i <= -> _c `i -> 122 `i 182  ]
 {
 "220
-[; ;Display.c: 220:     }
-}
-[e :U 180 ]
-[e :U 178 ]
-[e :U 176 ]
+[; ;Display.c: 220:         pos = (c - 97) + 10;
+[e = _pos + - -> _c `i -> 97 `i -> 10 `i ]
 "221
-[; ;Display.c: 221: }
-[e :UE 174 ]
+[; ;Display.c: 221:         write_font(pos);
+[e ( _write_font (1 _pos ]
+"222
+[; ;Display.c: 222:     } else {
 }
-"223
-[; ;Display.c: 223: void write_font(int fontPos)
-[v _write_font `(v ~T0 @X0 1 ef1`i ]
-"224
-[; ;Display.c: 224: {
-{
-[e :U _write_font ]
-"223
-[; ;Display.c: 223: void write_font(int fontPos)
-[v _fontPos `i ~T0 @X0 1 r1 ]
-"224
-[; ;Display.c: 224: {
-[f ]
-"225
-[; ;Display.c: 225:     display_write_start();
-[e ( _display_write_start ..  ]
-"227
-[; ;Display.c: 227:     for(int x=0; x < 5; x++){
-{
-[v _x `i ~T0 @X0 1 a ]
-[e = _x -> 0 `i ]
-[e $ < _x -> 5 `i 182  ]
 [e $U 183  ]
 [e :U 182 ]
 {
+"225
+[; ;Display.c: 225:     }
+}
+[e :U 183 ]
+[e :U 181 ]
+[e :U 179 ]
+"226
+[; ;Display.c: 226: }
+[e :UE 177 ]
+}
 "228
-[; ;Display.c: 228:         spiWrite(font[fontPos][x]);
-[e ( _spiWrite (1 -> *U + &U *U + &U _font * -> -> _fontPos `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _x `ui `ux -> -> # *U &U *U + &U _font * -> -> _fontPos `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux `uc ]
+[; ;Display.c: 228: void write_font(int fontPos)
+[v _write_font `(v ~T0 @X0 1 ef1`i ]
 "229
-[; ;Display.c: 229:     }
+[; ;Display.c: 229: {
+{
+[e :U _write_font ]
+"228
+[; ;Display.c: 228: void write_font(int fontPos)
+[v _fontPos `i ~T0 @X0 1 r1 ]
+"229
+[; ;Display.c: 229: {
+[f ]
+"230
+[; ;Display.c: 230:     display_write_start();
+[e ( _display_write_start ..  ]
+"232
+[; ;Display.c: 232:     for(int x=0; x < 5; x++){
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $ < _x -> 5 `i 185  ]
+[e $U 186  ]
+[e :U 185 ]
+{
+"233
+[; ;Display.c: 233:         spiWrite(font[fontPos][x]);
+[e ( _spiWrite (1 -> *U + &U *U + &U _font * -> -> _fontPos `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _x `ui `ux -> -> # *U &U *U + &U _font * -> -> _fontPos `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux `uc ]
+"234
+[; ;Display.c: 234:     }
 }
 [e ++ _x -> 1 `i ]
-[e $ < _x -> 5 `i 182  ]
-[e :U 183 ]
+[e $ < _x -> 5 `i 185  ]
+[e :U 186 ]
 }
-"232
-[; ;Display.c: 232:     display_write_end();
+"238
+[; ;Display.c: 238:     display_write_end();
 [e ( _display_write_end ..  ]
-"233
-[; ;Display.c: 233: }
-[e :UE 181 ]
+"239
+[; ;Display.c: 239: }
+[e :UE 184 ]
 }
-"236
-[; ;Display.c: 236: void display_write_start()
+"242
+[; ;Display.c: 242: void display_write_start()
 [v _display_write_start `(v ~T0 @X0 1 ef ]
-"237
-[; ;Display.c: 237: {
+"243
+[; ;Display.c: 243: {
 {
 [e :U _display_write_start ]
 [f ]
-"238
-[; ;Display.c: 238:     if (_selectedDisplay == 0) {
-[e $ ! == -> __selectedDisplay `i -> 0 `i 186  ]
-{
-"239
-[; ;Display.c: 239:         PORTCbits.RC4 = 0;
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"240
-[; ;Display.c: 240:         return;
-[e $UE 185  ]
-"241
-[; ;Display.c: 241:     }
-}
-[e :U 186 ]
-"243
-[; ;Display.c: 243:     PORTDbits.RD4 = 0;
-[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
 "244
-[; ;Display.c: 244: }
-[e :UE 185 ]
-}
+[; ;Display.c: 244:     if (_selectedDisplay == 0) {
+[e $ ! == -> __selectedDisplay `i -> 0 `i 189  ]
+{
+"245
+[; ;Display.c: 245:         PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"246
+[; ;Display.c: 246:         return;
+[e $UE 188  ]
 "247
-[; ;Display.c: 247: void display_write_end()
+[; ;Display.c: 247:     }
+}
+[e :U 189 ]
+"249
+[; ;Display.c: 249:     PORTDbits.RD4 = 0;
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+"250
+[; ;Display.c: 250: }
+[e :UE 188 ]
+}
+"253
+[; ;Display.c: 253: void display_write_end()
 [v _display_write_end `(v ~T0 @X0 1 ef ]
-"248
-[; ;Display.c: 248: {
+"254
+[; ;Display.c: 254: {
 {
 [e :U _display_write_end ]
 [f ]
-"249
-[; ;Display.c: 249:     if (_selectedDisplay == 0) {
-[e $ ! == -> __selectedDisplay `i -> 0 `i 188  ]
-{
-"250
-[; ;Display.c: 250:         PORTCbits.RC4 = 1;
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"251
-[; ;Display.c: 251:         return;
-[e $UE 187  ]
-"252
-[; ;Display.c: 252:     }
-}
-[e :U 188 ]
-"254
-[; ;Display.c: 254:     PORTDbits.RD4 = 1;
-[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
 "255
-[; ;Display.c: 255: }
-[e :UE 187 ]
-}
+[; ;Display.c: 255:     if (_selectedDisplay == 0) {
+[e $ ! == -> __selectedDisplay `i -> 0 `i 191  ]
+{
+"256
+[; ;Display.c: 256:         PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
 "257
-[; ;Display.c: 257: void spiWrite(char data)
-[v _spiWrite `(v ~T0 @X0 1 ef1`uc ]
+[; ;Display.c: 257:         return;
+[e $UE 190  ]
 "258
-[; ;Display.c: 258: {
+[; ;Display.c: 258:     }
+}
+[e :U 191 ]
+"260
+[; ;Display.c: 260:     PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+"261
+[; ;Display.c: 261: }
+[e :UE 190 ]
+}
+"263
+[; ;Display.c: 263: void spiWrite(char data)
+[v _spiWrite `(v ~T0 @X0 1 ef1`uc ]
+"264
+[; ;Display.c: 264: {
 {
 [e :U _spiWrite ]
-"257
-[; ;Display.c: 257: void spiWrite(char data)
+"263
+[; ;Display.c: 263: void spiWrite(char data)
 [v _data `uc ~T0 @X0 1 r1 ]
-"258
-[; ;Display.c: 258: {
-[f ]
-"259
-[; ;Display.c: 259:     SSPBUF = data;
-[e = _SSPBUF -> _data `uc ]
-"261
-[; ;Display.c: 261:     while(!SSPSTATbits.BF)
-[e $U 190  ]
-[e :U 191 ]
-"262
-[; ;Display.c: 262:     {
-{
 "264
-[; ;Display.c: 264:     }
-}
-[e :U 190 ]
-"261
-[; ;Display.c: 261:     while(!SSPSTATbits.BF)
-[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 191  ]
-[e :U 192 ]
+[; ;Display.c: 264: {
+[f ]
+"265
+[; ;Display.c: 265:     SSPBUF = data;
+[e = _SSPBUF -> _data `uc ]
 "267
-[; ;Display.c: 267: }
-[e :UE 189 ]
+[; ;Display.c: 267:     while(!SSPSTATbits.BF)
+[e $U 193  ]
+[e :U 194 ]
+"268
+[; ;Display.c: 268:     {
+{
+"270
+[; ;Display.c: 270:     }
+}
+[e :U 193 ]
+"267
+[; ;Display.c: 267:     while(!SSPSTATbits.BF)
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 194  ]
+[e :U 195 ]
+"273
+[; ;Display.c: 273: }
+[e :UE 192 ]
 }
 [p f _sprintf 8388736 ]
 [a 3C 37 100 0 ]

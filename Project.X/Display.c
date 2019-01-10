@@ -172,7 +172,13 @@ void update_volume()
 void write_space(int count)
 {
     for (int i = 0; i < count; i++) {        
-        write_font(37); // 37 = empty (See Font.h)       
+        //write_font(37); // 37 = empty (See Font.h)       
+    
+        for (int x = 0; x < 5; x++) {
+            display_write_start();
+            spiWrite(0x00);
+            display_write_end();
+        }
     }   
 }
 
@@ -227,6 +233,7 @@ void write_font(int fontPos)
         spiWrite(font[fontPos][x]);  
     }   
     
+  //  __delay_ms(200);
     
     display_write_end();    
 }
