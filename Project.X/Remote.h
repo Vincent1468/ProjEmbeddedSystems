@@ -10,8 +10,6 @@ char receive_count = 0;
 void init_remote(void);
 void start_receive(void);
 
-void poll_receiver(void);
-
 void handle_remote(void);
 
 #endif	/* REMOTE_H */

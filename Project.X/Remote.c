@@ -2,40 +2,24 @@
 
 void init_remote()
 {
-    // Configure timer2 to run at 38kHz
-    T2CONbits.TOUTPS = 0b0000; // 1:1 postscale
-    T2CONbits.T2CKPS = 0b00; // 1:1 prescaler
-    
-    PR2 = 25; // Set TMR2 value
-    
-    
-    PIR1bits.TMR2IF = 0; // Clear T2 IF
-    PIE1bits.TMR2IE = 1; // Enable T2 interrupt
 
 
 }
 
 void start_receive(void)
 {
-    poll_receiver();
-    T2CONbits.TMR2ON = 1; // Enable timer 2
 
-}
-
-void poll_receiver()
-{
-   
-    ir_input = ir_input << 1;
-    ir_input = ir_input | !PORTBbits.RB0;
+    // Wacht 3a
     
-    receive_count++;
-    
-    if (receive_count > 24) {
-                T2CONbits.TMR2ON = 0; // Enable timer 2
-                receive_count = 0;
+    for (int i = 0; i < 12; i++) {
+        ir_input = (ir_input << 1) | PORTBbits.RB0;
+        // Wacht 4a
     }
     
+    // 80a + 48a wachten
+    
 }
+
 
 void handle_remote()
 {

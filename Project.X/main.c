@@ -68,13 +68,6 @@ void __interrupt() isr()
         PIR1bits.ADIF = 0;
     }
     
-    if (PIR1bits.TMR2IF) {
-        PR2 = 25; // Set TMR2 value TODO: Check if this can be removed
-
-        poll_receiver();
-        
-        PIR1bits.TMR2IF = 0;
-
-    }
+    
 }
  
