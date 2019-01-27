@@ -1,21 +1,23 @@
 #include "Remote.h"
 
 // a=(1/fosc)×192
-// 1a = (1/455000) * 192 = 421us
-// 2a = 842us
-// 3a = 1263us
-// 4a = 1684us
+// 1a = (1/455000) * 192 = 421,978us  +/- 422
+// 2a = 844us
+// 3a = 1266us
+// 4a = 1688us
+// 60a = 25,31868ms
+// 80a = 33,758ms
 
 void start_receive(void)
 {    
     ir_input = 0;
     
     // Wacht 1.5a
-    __delay_us(631);
+    __delay_us(633);
     for (int i = 0; i < 12; i++) {
         ir_input = (ir_input << 1) | !PORTBbits.RB0;
         // Wacht 2a
-        __delay_us(842);
+        __delay_us(844);
     }
 
     handle_remote();
