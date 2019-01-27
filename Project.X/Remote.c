@@ -7,6 +7,7 @@
 // 4a = 1688us
 // 60a = 25,31868ms
 // 80a = 33,758ms
+// 128a = 54,013ms 
 
 void start_receive(void)
 {    
