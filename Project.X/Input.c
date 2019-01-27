@@ -6,18 +6,18 @@ void activateSelectedRelay()
     
     PORTA = 0x0F; // Clear port A
     
-    switch (_selectedInput) {
+    switch (_selectedInput) { // Outputs are inverted
         case 0:
-            PORTA = ~0x01;
+            PORTA = ~0x01; // 1111 1110
             break;        
         case 1:
-            PORTA = ~0x02;
+            PORTA = ~0x02; // 1111 1101
             break;
         case 2:
-            PORTA = ~0x04;
+            PORTA = ~0x04; // 1111 1011
             break;
         case 3:
-            PORTA = ~0x08;
+            PORTA = ~0x08;// 1111 0111
             break;
         default:
             PORTA = ~0x01; // RA0 (relay 1) default

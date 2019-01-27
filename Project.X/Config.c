@@ -30,7 +30,7 @@ void config()
        
     
     //
-        // POTMETER
+    // POTMETER
     //
     TRISEbits.TRISE2 = 1; // Set potmeter as input
     ANSELbits.ANS7 = 1; // ANALOG input
@@ -58,10 +58,7 @@ void config()
     
     // ADC
     init_adc();
-    
-    init_remote();
-    
-    
+        
     
     //
     // INTERRUPTS

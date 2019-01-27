@@ -1,28 +1,5 @@
 #include "Display.h"
 
-    /*
-    
-    int i;
-    int x;
-    int long nummer = 11;
-    PORTDbits.RD7 = 0; // write to dot register
-    PORTDbits.RD4 = 0; // set in luistermodus
-    
-    for(i = 0; i < 8; i++)
-    {
-        for(x=0; x < 5; x++){
-        spiWrite(font_5x7[nummer][x]);
-        
-        }
-        __delay_ms(5);
-        nummer++;
-    }
-   
-    
-    //PORTDbits.RD4 = 1; // latch naar register
-    
-    __delay_ms(100);*/
-
 void display_init()
 {
     // SPI config
@@ -85,52 +62,6 @@ void display_init()
     
 }
 
-
-// BEGIN NIEK CODE
-
-void white_space(char aantal_spaces) {
-
-    for(int kolom = 0; kolom < aantal_spaces; kolom++)
-    {
-        for(int rij = 0; rij < 5; rij++)
-        {  
-            spiWrite(font[1][rij]);
-        }
-      
-    } 
-}
-
-
-void write_volume(char volume)
-{
-    if (volume <= 9)
-    {
-        white_space(7);
-        
-        
-         
-        for(int rij=0; rij < 5; rij++)
-            {  
-                spiWrite(font[volume][rij]);
-            }
-        __delay_ms(5);
-        // PORTCbits.RC4 = 1; // latch naar register
-    }
-    
-    if (volume >= 10)
-        
-        white_space(6);
-               
-            for(int x=0; x < 5; x++)
-            {  
-                spiWrite(font[1][x]);
-            }
-    __delay_ms(5);
-    
-}
-
-// END NIEK CODE
-
 void update_input(void)
 {
     if (lastInput == _selectedInput) return;
@@ -152,15 +83,13 @@ void update_input(void)
 void update_volume()
 {
     if (lastVolume == volume) return;
- 
-
-    
-    _selectedDisplay = 0; // Display 1
+  
+    _selectedDisplay = 0; // Display 0
     display_write_start();
 
     write_text("VOL"); // First 3
     
-    // Calculate amount of spaces    
+    // Determine the amount of spaces    
     int spaces = 3;
     if (volume < 10)
         spaces = 4;
@@ -178,8 +107,7 @@ void update_volume()
 void write_space(int count)
 {
     for (int i = 0; i < count; i++) {        
-        //write_font(37); // 37 = empty (See Font.h)       
-    
+
         for (int x = 0; x < 5; x++) {
             
             spiWrite(0x00);
@@ -226,20 +154,16 @@ void write_char(char c)
         pos = (c - 97) + 10; // Add 10, because the letters in the font start at index 10
         write_font(pos);
     } else {
-        // Special char?
-        // TODO!
+        // Special char etc 
+        // Can be implemented here
     }
 }
 
 void write_font(int fontPos)
 {
-
     for(int x=0; x < 5; x++){
         spiWrite(font[fontPos][x]);  
-    }   
-    
-  //  __delay_ms(200);
-    
+    }     
 }
 
 // Set the selected display in listen mode
@@ -264,14 +188,10 @@ void display_write_end()
     PORTDbits.RD4 = 1; // Latch data display 2    
 }
 
-void spiWrite(char data) // Write data to SPI bus
+// Write data to SPI bus
+void spiWrite(char data) 
 {
     SSPBUF = data; // write var data todisplay
       
-    while(!SSPSTATbits.BF) // check if register is empty from bits
-    {
-    
-    }
-    
-    
+    while(!SSPSTATbits.BF); // check if register is empty from bits 
 }

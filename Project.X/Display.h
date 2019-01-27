@@ -11,12 +11,6 @@ unsigned short lastInput;
 
 void display_init(void);
 
-// BEGIN NIEK CODE
-void white_space(char aantal_spaces);
-
-void write_volume(char volume);
-// END NIEK CODE
-
 void update_volume(void);
 void update_input(void);
 

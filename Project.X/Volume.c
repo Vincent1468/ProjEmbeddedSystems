@@ -1,7 +1,5 @@
 #include "Volume.h"
 
-// RE2 / AN7
-
 void init_adc()
 {
     ADCON0bits.CHS = 0b0111; // Enable AN7 for ADC
@@ -30,7 +28,10 @@ int is_deadzone(int currentStep, int adcResult)
 void handle_potmeter()
 {
     unsigned int ad_result = (ADRESH << 8) + ADRESL;    
-    
+ 
+    if (ad_result == _lastAdcResult)
+        return;
+            
     if (ad_result == 0 || ad_result < step_size) { // If ADC is 0 OR result < 1 step, set ledCount to 0
             volume = 0;
     } else {
@@ -39,6 +40,8 @@ void handle_potmeter()
         if (!is_deadzone(currentStep, ad_result))  // if NOT in a deadzone
             volume = currentStep;     // Set the ledCount
     }
+    
+    _lastAdcResult = ad_result;
     
 }
 

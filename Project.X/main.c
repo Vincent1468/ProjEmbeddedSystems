@@ -14,8 +14,6 @@
 #pragma config BOR4V = BOR21V   // Brown-out Reset Selection bit (Brown-out Reset set to 2.1V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-// #pragma config statements should precede project file includes.
-
 
 #include "Globals.h"
 #include "Config.h"
@@ -28,46 +26,40 @@
 void main(void) 
 {   
     config();
-
-    
+ 
     while(1)  
-    {
-     
-        
+    {    
         if (!ADCON0bits.GO) // Start ADC 
             ADCON0bits.GO = 1;
         
         update_volume();
         update_input();
         activateSelectedRelay();
-        handle_remote();
-        
+
         __delay_ms(10);
-    
     }
 
 }
 
 void __interrupt() isr()
 {    
-    if (INTCONbits.RBIF) {
+    if (INTCONbits.RBIF) { // PORTB interrupt
        
-        handle_rotary();
+        handle_rotary(); 
         
-        if (PORTBbits.RB0 == 0) {
+        if (PORTBbits.RB0 == 0) { // Interrupt triggered by IR
             start_receive();
         }
         
         INTCONbits.RBIF = 0;
     }
     
-    if (PIR1bits.ADIF) {
+    if (PIR1bits.ADIF) { // ADC interrupt
         
         handle_potmeter();
         
         PIR1bits.ADIF = 0;
     }
-    
-    
+   
 }
  

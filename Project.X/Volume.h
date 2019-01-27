@@ -3,7 +3,7 @@
 #include "Globals.h"
 
 const int step_size = MAX_ADC / VOL_STEPS;
-
+unsigned int _lastAdcResult;
 
 void init_adc(void);
 
