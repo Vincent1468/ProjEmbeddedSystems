@@ -2496,8 +2496,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 12 "./Globals.h" 2
-
+# 13 "./Globals.h" 2
 
 
 
@@ -2516,14 +2515,12 @@ unsigned short _lastA, _lastB;
 
 
 int volume = 0;
-# 3 "./Input.h" 2
-
+# 4 "./Input.h" 2
 
 void activateSelectedRelay(void);
 
 void handle_rotary(void);
-# 1 "Input.c" 2
-
+# 2 "Input.c" 2
 
 void activateSelectedRelay()
 {

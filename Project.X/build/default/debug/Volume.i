@@ -2496,8 +2496,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 12 "./Globals.h" 2
-
+# 13 "./Globals.h" 2
 
 
 
@@ -2516,8 +2515,7 @@ unsigned short _lastA, _lastB;
 
 
 int volume = 0;
-# 3 "./Volume.h" 2
-
+# 4 "./Volume.h" 2
 
 const int step_size = (1023) / 40;
 unsigned int _lastAdcResult;
@@ -2527,10 +2525,7 @@ void init_adc(void);
 void handle_potmeter(void);
 
 int is_deadzone(int currentStep, int adcResult);
-# 1 "Volume.c" 2
-
-
-
+# 2 "Volume.c" 2
 
 void init_adc()
 {

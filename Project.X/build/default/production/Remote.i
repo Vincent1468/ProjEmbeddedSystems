@@ -2497,8 +2497,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 12 "./Globals.h" 2
-
+# 13 "./Globals.h" 2
 
 
 
@@ -2517,32 +2516,24 @@ unsigned short _lastA, _lastB;
 
 
 int volume = 0;
-# 4 "./Remote.h" 2
-
+# 5 "./Remote.h" 2
 
 unsigned long ir_input = 0;
 
 void start_receive(void);
 void handle_remote(void);
-# 1 "Remote.c" 2
-
-
-
-
-
-
-
-
+# 2 "Remote.c" 2
+# 12 "Remote.c"
 void start_receive(void)
 {
     ir_input = 0;
 
 
-    _delay((unsigned long)((631)*(4000000/4000000.0)));
+    _delay((unsigned long)((844)*(4000000/4000000.0)));
     for (int i = 0; i < 12; i++) {
         ir_input = (ir_input << 1) | !PORTBbits.RB0;
 
-        _delay((unsigned long)((842)*(4000000/4000000.0)));
+        _delay((unsigned long)((844)*(4000000/4000000.0)));
     }
 
     handle_remote();

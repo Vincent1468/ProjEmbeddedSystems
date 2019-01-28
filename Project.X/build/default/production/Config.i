@@ -2496,8 +2496,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 12 "./Globals.h" 2
-
+# 13 "./Globals.h" 2
 
 
 
@@ -2516,8 +2515,7 @@ unsigned short _lastA, _lastB;
 
 
 int volume = 0;
-# 3 "./Config.h" 2
-
+# 4 "./Config.h" 2
 # 1 "./Display.h" 1
 
 
@@ -2618,8 +2616,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 3 "./Display.h" 2
-
+# 4 "./Display.h" 2
 
 
 # 1 "./Font.h" 1
@@ -2665,8 +2662,7 @@ const int font[][5] = {
     {0x61, 0x51, 0x49, 0x45, 0x43},
     {0x00, 0x00, 0x00, 0x00, 0x00},
  };
-# 6 "./Display.h" 2
-
+# 7 "./Display.h" 2
 
 char _selectedDisplay;
 int lastVolume;
@@ -2687,8 +2683,7 @@ void display_write_start(void);
 void display_write_end(void);
 
 void spiWrite(char data);
-# 4 "./Config.h" 2
-
+# 5 "./Config.h" 2
 # 1 "./Volume.h" 1
 
 
@@ -2702,8 +2697,7 @@ void init_adc(void);
 void handle_potmeter(void);
 
 int is_deadzone(int currentStep, int adcResult);
-# 5 "./Config.h" 2
-
+# 6 "./Config.h" 2
 # 1 "./Remote.h" 1
 
 
@@ -2714,12 +2708,10 @@ unsigned long ir_input = 0;
 
 void start_receive(void);
 void handle_remote(void);
-# 6 "./Config.h" 2
-
+# 7 "./Config.h" 2
 
 void config(void);
-# 1 "Config.c" 2
-
+# 2 "Config.c" 2
 
 void config()
 {
@@ -2780,9 +2772,6 @@ void config()
 
     init_adc();
 
-    init_remote();
-
-
 
 
 
@@ -2796,7 +2785,7 @@ void config()
     INTCONbits.RBIE = 1;
 
     INTCONbits.GIE = 1;
-# 86 "Config.c"
+# 83 "Config.c"
     _inputUpdateRequired = 1;
     _selectedInput = 0;
     _lastA = PORTBbits.RB4;

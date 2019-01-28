@@ -107,8 +107,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 3 "./Display.h" 2
-
+# 4 "./Display.h" 2
 
 # 1 "./Globals.h" 1
 # 12 "./Globals.h"
@@ -2596,8 +2595,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 12 "./Globals.h" 2
-
+# 13 "./Globals.h" 2
 
 
 
@@ -2616,8 +2614,7 @@ unsigned short _lastA, _lastB;
 
 
 int volume = 0;
-# 5 "./Display.h" 2
-
+# 6 "./Display.h" 2
 # 1 "./Font.h" 1
 
 
@@ -2661,8 +2658,7 @@ const int font[][5] = {
     {0x61, 0x51, 0x49, 0x45, 0x43},
     {0x00, 0x00, 0x00, 0x00, 0x00},
  };
-# 6 "./Display.h" 2
-
+# 7 "./Display.h" 2
 
 char _selectedDisplay;
 int lastVolume;
@@ -2683,8 +2679,7 @@ void display_write_start(void);
 void display_write_end(void);
 
 void spiWrite(char data);
-# 1 "Display.c" 2
-
+# 2 "Display.c" 2
 
 void display_init()
 {

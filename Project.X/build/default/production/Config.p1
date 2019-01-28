@@ -92,9 +92,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8 ./Volume.h
 [; ;./Volume.h: 8: void init_adc(void);
 [v _init_adc `(v ~T0 @X0 0 ef ]
-"62 Config.c
-[; ;Config.c: 62:     init_remote();
-[v _init_remote `(i ~T0 @X0 0 e? ]
 "2422 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2422:     struct {
 [s S93 :8 `uc 1 ]
@@ -748,40 +745,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60
 [; ;Config.c: 60:     init_adc();
 [e ( _init_adc ..  ]
-"62
-[; ;Config.c: 62:     init_remote();
-[e ( _init_remote ..  ]
-"70
-[; ;Config.c: 70:     IOCBbits.IOCB0 = 1;
+"67
+[; ;Config.c: 67:     IOCBbits.IOCB0 = 1;
 [e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
-"71
-[; ;Config.c: 71:     IOCBbits.IOCB4 = 1;
+"68
+[; ;Config.c: 68:     IOCBbits.IOCB4 = 1;
 [e = . . _IOCBbits 1 4 -> -> 1 `i `uc ]
-"72
-[; ;Config.c: 72:     IOCBbits.IOCB5 = 1;
+"69
+[; ;Config.c: 69:     IOCBbits.IOCB5 = 1;
 [e = . . _IOCBbits 1 5 -> -> 1 `i `uc ]
-"74
-[; ;Config.c: 74:     INTCONbits.PEIE = 1;
+"71
+[; ;Config.c: 71:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"75
-[; ;Config.c: 75:     INTCONbits.RBIE = 1;
+"72
+[; ;Config.c: 72:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"77
-[; ;Config.c: 77:     INTCONbits.GIE = 1;
+"74
+[; ;Config.c: 74:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"86
-[; ;Config.c: 86:     _inputUpdateRequired = 1;
+"83
+[; ;Config.c: 83:     _inputUpdateRequired = 1;
 [e = __inputUpdateRequired -> -> 1 `i `uc ]
-"87
-[; ;Config.c: 87:     _selectedInput = 0;
+"84
+[; ;Config.c: 84:     _selectedInput = 0;
 [e = __selectedInput -> -> 0 `i `us ]
-"88
-[; ;Config.c: 88:     _lastA = PORTBbits.RB4;
+"85
+[; ;Config.c: 85:     _lastA = PORTBbits.RB4;
 [e = __lastA -> . . _PORTBbits 0 4 `us ]
-"89
-[; ;Config.c: 89:     _lastB = PORTBbits.RB5;
+"86
+[; ;Config.c: 86:     _lastB = PORTBbits.RB5;
 [e = __lastB -> . . _PORTBbits 0 5 `us ]
-"90
-[; ;Config.c: 90: }
+"87
+[; ;Config.c: 87: }
 [e :UE 139 ]
 }

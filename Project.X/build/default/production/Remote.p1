@@ -276,22 +276,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _ir_input
 -> -> -> 0 `i `l `ul
 ]
-"9 Remote.c
-[; ;Remote.c: 9: void start_receive(void)
+"12 Remote.c
+[; ;Remote.c: 12: void start_receive(void)
 [v _start_receive `(v ~T0 @X0 1 ef ]
-"10
-[; ;Remote.c: 10: {
+"13
+[; ;Remote.c: 13: {
 {
 [e :U _start_receive ]
 [f ]
-"11
-[; ;Remote.c: 11:     ir_input = 0;
-[e = _ir_input -> -> -> 0 `i `l `ul ]
 "14
-[; ;Remote.c: 14:     _delay((unsigned long)((631)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 631 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"15
-[; ;Remote.c: 15:     for (int i = 0; i < 12; i++) {
+[; ;Remote.c: 14:     ir_input = 0;
+[e = _ir_input -> -> -> 0 `i `l `ul ]
+"17
+[; ;Remote.c: 17:     _delay((unsigned long)((844)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 844 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"18
+[; ;Remote.c: 18:     for (int i = 0; i < 12; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -299,136 +299,136 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 140  ]
 [e :U 139 ]
 {
-"16
-[; ;Remote.c: 16:         ir_input = (ir_input << 1) | !PORTBbits.RB0;
-[e = _ir_input | << _ir_input -> 1 `i -> -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `l `ul ]
-"18
-[; ;Remote.c: 18:         _delay((unsigned long)((842)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 842 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "19
-[; ;Remote.c: 19:     }
+[; ;Remote.c: 19:         ir_input = (ir_input << 1) | !PORTBbits.RB0;
+[e = _ir_input | << _ir_input -> 1 `i -> -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `l `ul ]
+"21
+[; ;Remote.c: 21:         _delay((unsigned long)((844)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 844 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"22
+[; ;Remote.c: 22:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 12 `i 139  ]
 [e :U 140 ]
 }
-"21
-[; ;Remote.c: 21:     handle_remote();
+"24
+[; ;Remote.c: 24:     handle_remote();
 [e ( _handle_remote ..  ]
-"22
-[; ;Remote.c: 22: }
+"25
+[; ;Remote.c: 25: }
 [e :UE 138 ]
 }
-"25
-[; ;Remote.c: 25: void handle_remote()
+"28
+[; ;Remote.c: 28: void handle_remote()
 [v _handle_remote `(v ~T0 @X0 1 ef ]
-"26
-[; ;Remote.c: 26: {
+"29
+[; ;Remote.c: 29: {
 {
 [e :U _handle_remote ]
 [f ]
-"27
-[; ;Remote.c: 27:     char found = 0;
+"30
+[; ;Remote.c: 30:     char found = 0;
 [v _found `uc ~T0 @X0 1 a ]
 [e = _found -> -> 0 `i `uc ]
-"29
-[; ;Remote.c: 29:     unsigned int mask = 0b0000000111111111;
+"32
+[; ;Remote.c: 32:     unsigned int mask = 0b0000000111111111;
 [v _mask `ui ~T0 @X0 1 a ]
 [e = _mask -> -> 511 `i `ui ]
-"31
-[; ;Remote.c: 31:     unsigned int data = ir_input & mask;
+"34
+[; ;Remote.c: 34:     unsigned int data = ir_input & mask;
 [v _data `ui ~T0 @X0 1 a ]
 [e = _data -> & _ir_input -> _mask `ul `ui ]
-"33
-[; ;Remote.c: 33:     switch (data) {
+"36
+[; ;Remote.c: 36:     switch (data) {
 [e $U 144  ]
 {
-"34
-[; ;Remote.c: 34:         case 72:
-[e :U 145 ]
-"35
-[; ;Remote.c: 35:             _selectedInput = 0;
-[e = __selectedInput -> -> 0 `i `us ]
-"36
-[; ;Remote.c: 36:             _inputUpdateRequired = 1;
-[e = __inputUpdateRequired -> -> 1 `i `uc ]
 "37
-[; ;Remote.c: 37:             found = 1;
-[e = _found -> -> 1 `i `uc ]
+[; ;Remote.c: 37:         case 72:
+[e :U 145 ]
 "38
-[; ;Remote.c: 38:             break;
-[e $U 143  ]
+[; ;Remote.c: 38:             _selectedInput = 0;
+[e = __selectedInput -> -> 0 `i `us ]
 "39
-[; ;Remote.c: 39:         case 264:
-[e :U 146 ]
+[; ;Remote.c: 39:             _inputUpdateRequired = 1;
+[e = __inputUpdateRequired -> -> 1 `i `uc ]
 "40
-[; ;Remote.c: 40:             _selectedInput = 1;
-[e = __selectedInput -> -> 1 `i `us ]
+[; ;Remote.c: 40:             found = 1;
+[e = _found -> -> 1 `i `uc ]
 "41
-[; ;Remote.c: 41:             _inputUpdateRequired = 1;
-[e = __inputUpdateRequired -> -> 1 `i `uc ]
+[; ;Remote.c: 41:             break;
+[e $U 143  ]
 "42
-[; ;Remote.c: 42:             found = 1;
-[e = _found -> -> 1 `i `uc ]
+[; ;Remote.c: 42:         case 264:
+[e :U 146 ]
 "43
-[; ;Remote.c: 43:             break;
-[e $U 143  ]
+[; ;Remote.c: 43:             _selectedInput = 1;
+[e = __selectedInput -> -> 1 `i `us ]
 "44
-[; ;Remote.c: 44:         case 160:
-[e :U 147 ]
+[; ;Remote.c: 44:             _inputUpdateRequired = 1;
+[e = __inputUpdateRequired -> -> 1 `i `uc ]
 "45
-[; ;Remote.c: 45:             _selectedInput = 2;
-[e = __selectedInput -> -> 2 `i `us ]
+[; ;Remote.c: 45:             found = 1;
+[e = _found -> -> 1 `i `uc ]
 "46
-[; ;Remote.c: 46:             _inputUpdateRequired = 1;
-[e = __inputUpdateRequired -> -> 1 `i `uc ]
+[; ;Remote.c: 46:             break;
+[e $U 143  ]
 "47
-[; ;Remote.c: 47:             found = 1;
-[e = _found -> -> 1 `i `uc ]
+[; ;Remote.c: 47:         case 160:
+[e :U 147 ]
 "48
-[; ;Remote.c: 48:             break;
-[e $U 143  ]
+[; ;Remote.c: 48:             _selectedInput = 2;
+[e = __selectedInput -> -> 2 `i `us ]
 "49
-[; ;Remote.c: 49:         case 136:
-[e :U 148 ]
-"50
-[; ;Remote.c: 50:             _selectedInput = 3;
-[e = __selectedInput -> -> 3 `i `us ]
-"51
-[; ;Remote.c: 51:             _inputUpdateRequired = 1;
+[; ;Remote.c: 49:             _inputUpdateRequired = 1;
 [e = __inputUpdateRequired -> -> 1 `i `uc ]
+"50
+[; ;Remote.c: 50:             found = 1;
+[e = _found -> -> 1 `i `uc ]
+"51
+[; ;Remote.c: 51:             break;
+[e $U 143  ]
 "52
-[; ;Remote.c: 52:             found = 1;
-[e = _found -> -> 1 `i `uc ]
+[; ;Remote.c: 52:         case 136:
+[e :U 148 ]
 "53
-[; ;Remote.c: 53:             break;
-[e $U 143  ]
+[; ;Remote.c: 53:             _selectedInput = 3;
+[e = __selectedInput -> -> 3 `i `us ]
 "54
-[; ;Remote.c: 54:         case 288:
-[e :U 149 ]
+[; ;Remote.c: 54:             _inputUpdateRequired = 1;
+[e = __inputUpdateRequired -> -> 1 `i `uc ]
 "55
-[; ;Remote.c: 55:             volume++;
-[e ++ _volume -> 1 `i ]
+[; ;Remote.c: 55:             found = 1;
+[e = _found -> -> 1 `i `uc ]
 "56
-[; ;Remote.c: 56:             found = 1;
-[e = _found -> -> 1 `i `uc ]
+[; ;Remote.c: 56:             break;
+[e $U 143  ]
 "57
-[; ;Remote.c: 57:             break;
-[e $U 143  ]
+[; ;Remote.c: 57:         case 288:
+[e :U 149 ]
 "58
-[; ;Remote.c: 58:         case 272:
-[e :U 150 ]
+[; ;Remote.c: 58:             volume++;
+[e ++ _volume -> 1 `i ]
 "59
-[; ;Remote.c: 59:             volume--;
-[e -- _volume -> 1 `i ]
-"60
-[; ;Remote.c: 60:             found = 1;
+[; ;Remote.c: 59:             found = 1;
 [e = _found -> -> 1 `i `uc ]
-"61
-[; ;Remote.c: 61:             break;
+"60
+[; ;Remote.c: 60:             break;
 [e $U 143  ]
+"61
+[; ;Remote.c: 61:         case 272:
+[e :U 150 ]
 "62
-[; ;Remote.c: 62:     }
+[; ;Remote.c: 62:             volume--;
+[e -- _volume -> 1 `i ]
+"63
+[; ;Remote.c: 63:             found = 1;
+[e = _found -> -> 1 `i `uc ]
+"64
+[; ;Remote.c: 64:             break;
+[e $U 143  ]
+"65
+[; ;Remote.c: 65:     }
 }
 [e $U 143  ]
 [e :U 144 ]
@@ -440,10 +440,10 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 272 `i `ui 150
  143 ]
 [e :U 143 ]
-"64
-[; ;Remote.c: 64:     ir_input = 0;
+"67
+[; ;Remote.c: 67:     ir_input = 0;
 [e = _ir_input -> -> -> 0 `i `l `ul ]
-"66
-[; ;Remote.c: 66: }
+"69
+[; ;Remote.c: 69: }
 [e :UE 142 ]
 }

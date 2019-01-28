@@ -323,121 +323,121 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./Volume.h: 6: unsigned int _lastAdcResult;
 [v __lastAdcResult `ui ~T0 @X0 1 e ]
-"5 Volume.c
-[; ;Volume.c: 5: void init_adc()
+"3 Volume.c
+[; ;Volume.c: 3: void init_adc()
 [v _init_adc `(v ~T0 @X0 1 ef ]
-"6
-[; ;Volume.c: 6: {
+"4
+[; ;Volume.c: 4: {
 {
 [e :U _init_adc ]
 [f ]
-"7
-[; ;Volume.c: 7:     ADCON0bits.CHS = 0b0111;
+"5
+[; ;Volume.c: 5:     ADCON0bits.CHS = 0b0111;
 [e = . . _ADCON0bits 0 2 -> -> 7 `i `uc ]
-"8
-[; ;Volume.c: 8:     ADCON0bits.ADCS = 0b001;
+"6
+[; ;Volume.c: 6:     ADCON0bits.ADCS = 0b001;
 [e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
-"9
-[; ;Volume.c: 9:     ADCON1bits.ADFM = 1;
+"7
+[; ;Volume.c: 7:     ADCON1bits.ADFM = 1;
 [e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
-"11
-[; ;Volume.c: 11:     PIR1bits.ADIF = 0;
+"9
+[; ;Volume.c: 9:     PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"12
-[; ;Volume.c: 12:     PIE1bits.ADIE = 1;
+"10
+[; ;Volume.c: 10:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"14
-[; ;Volume.c: 14:     ADCON0bits.ADON = 1;
+"12
+[; ;Volume.c: 12:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"15
-[; ;Volume.c: 15: }
+"13
+[; ;Volume.c: 13: }
 [e :UE 138 ]
 }
-"20
-[; ;Volume.c: 20: int is_deadzone(int currentStep, int adcResult)
+"18
+[; ;Volume.c: 18: int is_deadzone(int currentStep, int adcResult)
 [v _is_deadzone `(i ~T0 @X0 1 ef2`i`i ]
-"21
-[; ;Volume.c: 21: {
+"19
+[; ;Volume.c: 19: {
 {
 [e :U _is_deadzone ]
-"20
-[; ;Volume.c: 20: int is_deadzone(int currentStep, int adcResult)
+"18
+[; ;Volume.c: 18: int is_deadzone(int currentStep, int adcResult)
 [v _currentStep `i ~T0 @X0 1 r1 ]
 [v _adcResult `i ~T0 @X0 1 r2 ]
-"21
-[; ;Volume.c: 21: {
+"19
+[; ;Volume.c: 19: {
 [f ]
-"22
-[; ;Volume.c: 22:     int turnPoint = step_size * currentStep;
+"20
+[; ;Volume.c: 20:     int turnPoint = step_size * currentStep;
 [v _turnPoint `i ~T0 @X0 1 a ]
 [e = _turnPoint * _step_size _currentStep ]
-"24
-[; ;Volume.c: 24:     int deadzoneLow = turnPoint - ((1023) * 0.01);
+"22
+[; ;Volume.c: 22:     int deadzoneLow = turnPoint - ((1023) * 0.01);
 [v _deadzoneLow `i ~T0 @X0 1 a ]
 [e = _deadzoneLow -> - -> _turnPoint `d * -> -> 1023 `i `d .0.01 `i ]
-"25
-[; ;Volume.c: 25:     int deadzoneHigh = turnPoint + ((1023) * 0.01);
+"23
+[; ;Volume.c: 23:     int deadzoneHigh = turnPoint + ((1023) * 0.01);
 [v _deadzoneHigh `i ~T0 @X0 1 a ]
 [e = _deadzoneHigh -> + -> _turnPoint `d * -> -> 1023 `i `d .0.01 `i ]
-"27
-[; ;Volume.c: 27:     return adcResult > deadzoneLow && adcResult < deadzoneHigh;
+"25
+[; ;Volume.c: 25:     return adcResult > deadzoneLow && adcResult < deadzoneHigh;
 [e ) -> && > _adcResult _deadzoneLow < _adcResult _deadzoneHigh `i ]
 [e $UE 139  ]
-"28
-[; ;Volume.c: 28: }
+"26
+[; ;Volume.c: 26: }
 [e :UE 139 ]
 }
-"30
-[; ;Volume.c: 30: void handle_potmeter()
+"28
+[; ;Volume.c: 28: void handle_potmeter()
 [v _handle_potmeter `(v ~T0 @X0 1 ef ]
-"31
-[; ;Volume.c: 31: {
+"29
+[; ;Volume.c: 29: {
 {
 [e :U _handle_potmeter ]
 [f ]
-"32
-[; ;Volume.c: 32:     unsigned int ad_result = (ADRESH << 8) + ADRESL;
+"30
+[; ;Volume.c: 30:     unsigned int ad_result = (ADRESH << 8) + ADRESL;
 [v _ad_result `ui ~T0 @X0 1 a ]
 [e = _ad_result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-"34
-[; ;Volume.c: 34:     if (ad_result == _lastAdcResult)
+"32
+[; ;Volume.c: 32:     if (ad_result == _lastAdcResult)
 [e $ ! == _ad_result __lastAdcResult 141  ]
-"35
-[; ;Volume.c: 35:         return;
+"33
+[; ;Volume.c: 33:         return;
 [e $UE 140  ]
 [e :U 141 ]
-"37
-[; ;Volume.c: 37:     if (ad_result == 0 || ad_result < step_size) {
+"35
+[; ;Volume.c: 35:     if (ad_result == 0 || ad_result < step_size) {
 [e $ ! || == _ad_result -> -> 0 `i `ui < _ad_result -> _step_size `ui 142  ]
 {
-"38
-[; ;Volume.c: 38:             volume = 0;
+"36
+[; ;Volume.c: 36:             volume = 0;
 [e = _volume -> 0 `i ]
-"39
-[; ;Volume.c: 39:     } else {
+"37
+[; ;Volume.c: 37:     } else {
 }
 [e $U 143  ]
 [e :U 142 ]
 {
-"40
-[; ;Volume.c: 40:         unsigned int currentStep = ad_result / step_size;
+"38
+[; ;Volume.c: 38:         unsigned int currentStep = ad_result / step_size;
 [v _currentStep `ui ~T0 @X0 1 a ]
 [e = _currentStep / _ad_result -> _step_size `ui ]
-"42
-[; ;Volume.c: 42:         if (!is_deadzone(currentStep, ad_result))
+"40
+[; ;Volume.c: 40:         if (!is_deadzone(currentStep, ad_result))
 [e $ ! ! != ( _is_deadzone (2 , -> _currentStep `i -> _ad_result `i -> 0 `i 144  ]
-"43
-[; ;Volume.c: 43:             volume = currentStep;
+"41
+[; ;Volume.c: 41:             volume = currentStep;
 [e = _volume -> _currentStep `i ]
 [e :U 144 ]
-"44
-[; ;Volume.c: 44:     }
+"42
+[; ;Volume.c: 42:     }
 }
 [e :U 143 ]
-"46
-[; ;Volume.c: 46:     _lastAdcResult = ad_result;
+"44
+[; ;Volume.c: 44:     _lastAdcResult = ad_result;
 [e = __lastAdcResult _ad_result ]
-"48
-[; ;Volume.c: 48: }
+"46
+[; ;Volume.c: 46: }
 [e :UE 140 ]
 }

@@ -2,7 +2,7 @@
 
 void activateSelectedRelay()
 {    
-    if (!_inputUpdateRequired) return;
+    if (!_inputUpdateRequired) return; // Do not update if no change
     
     PORTA = 0x0F; // Clear port A
     

@@ -32,8 +32,11 @@ void main(void)
         if (!ADCON0bits.GO) // Start ADC 
             ADCON0bits.GO = 1;
         
+        // Update displays
         update_volume();
         update_input();
+        
+        // Update input relay
         activateSelectedRelay();
 
         __delay_ms(10);

@@ -64,7 +64,7 @@ void display_init()
 
 void update_input(void)
 {
-    if (lastInput == _selectedInput) return;
+    if (lastInput == _selectedInput) return; // Do not update if no change
     
     _selectedDisplay = 1; // Display 1
     display_write_start();
@@ -82,7 +82,7 @@ void update_input(void)
 
 void update_volume()
 {
-    if (lastVolume == volume) return;
+    if (lastVolume == volume) return; // Do not update if no change
   
     _selectedDisplay = 0; // Display 0
     display_write_start();

@@ -25,8 +25,6 @@
 
 
 
-
-
 # 1 "./Globals.h" 1
 # 12 "./Globals.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
@@ -2513,8 +2511,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 12 "./Globals.h" 2
-
+# 13 "./Globals.h" 2
 
 
 
@@ -2533,8 +2530,7 @@ unsigned short _lastA, _lastB;
 
 
 int volume = 0;
-# 20 "main.c" 2
-
+# 19 "main.c" 2
 # 1 "./Config.h" 1
 
 
@@ -2639,8 +2635,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 3 "./Display.h" 2
-
+# 4 "./Display.h" 2
 
 
 # 1 "./Font.h" 1
@@ -2686,8 +2681,7 @@ const int font[][5] = {
     {0x61, 0x51, 0x49, 0x45, 0x43},
     {0x00, 0x00, 0x00, 0x00, 0x00},
  };
-# 6 "./Display.h" 2
-
+# 7 "./Display.h" 2
 
 char _selectedDisplay;
 int lastVolume;
@@ -2708,8 +2702,7 @@ void display_write_start(void);
 void display_write_end(void);
 
 void spiWrite(char data);
-# 4 "./Config.h" 2
-
+# 5 "./Config.h" 2
 # 1 "./Volume.h" 1
 
 
@@ -2723,8 +2716,7 @@ void init_adc(void);
 void handle_potmeter(void);
 
 int is_deadzone(int currentStep, int adcResult);
-# 5 "./Config.h" 2
-
+# 6 "./Config.h" 2
 # 1 "./Remote.h" 1
 
 
@@ -2735,12 +2727,10 @@ unsigned long ir_input = 0;
 
 void start_receive(void);
 void handle_remote(void);
-# 6 "./Config.h" 2
-
+# 7 "./Config.h" 2
 
 void config(void);
-# 21 "main.c" 2
-
+# 20 "main.c" 2
 # 1 "./Input.h" 1
 
 
@@ -2749,8 +2739,7 @@ void config(void);
 void activateSelectedRelay(void);
 
 void handle_rotary(void);
-# 22 "main.c" 2
-
+# 21 "main.c" 2
 
 
 
@@ -2793,6 +2782,5 @@ void __attribute__((picinterrupt(""))) isr()
 
         PIR1bits.ADIF = 0;
     }
-
 
 }
