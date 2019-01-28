@@ -2,6 +2,7 @@
 
 // a=(1/fosc)×192
 // 1a = (1/455000) * 192 = 421,978us  +/- 422
+// 1,5a = 633us
 // 2a = 844us
 // 3a = 1266us
 // 4a = 1688us
@@ -13,7 +14,7 @@ void start_receive(void)
 {    
     ir_input = 0;
     
-    // Wacht 3a __delay_us(633);
+    // Wacht 3a 
     __delay_us(633);
     for (int i = 0; i < 12; i++) {
         ir_input = (ir_input << 1) | !PORTBbits.RB0;
@@ -28,11 +29,7 @@ void start_receive(void)
 void handle_remote()
 {
     char found = 0;
-    
-    //unsigned int mask = 0b0000000111111111; // First 3 = code, last 9 = data;
-    
-    //unsigned int data = ir_input & mask;
-        
+
     switch (ir_input) {
         case 0x0665: // INPUT1 
             _selectedInput = 0;
