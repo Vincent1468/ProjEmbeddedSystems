@@ -28,7 +28,7 @@ unsigned short _lastA, _lastB;
 #define VOL_STEPS 40               // Total amount of volume steps 
 
 int volume = 0;
-
+char vol_motor = 0;
 
 #endif	/* GLOBALS_H */
 

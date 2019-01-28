@@ -27,6 +27,8 @@ void main(void)
 {   
     config();
  
+    
+    
     while(1)  
     {    
         if (!ADCON0bits.GO) // Start ADC 
@@ -39,6 +41,8 @@ void main(void)
         // Update input relay
         activateSelectedRelay();
 
+        update_vol_motor();
+        
         __delay_ms(10);
     }
 

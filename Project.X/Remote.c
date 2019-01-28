@@ -1,4 +1,5 @@
 #include "Remote.h"
+#include "Volume.h"
 
 // a=(1/fosc)×192
 // 1a = (1/455000) * 192 = 421,978us  +/- 422
@@ -54,10 +55,14 @@ void handle_remote()
         case 0x06A9: // VOL+ 
             volume++;
             found = 1;
+            vol_motor = 1;
+          //  update_vol_motor();
             break;
         case 0x06A5: // VOL- 
             volume--;
             found = 1;
+            vol_motor = 1;
+            // update_vol_motor();
             break;
     }
 

@@ -7,7 +7,10 @@ unsigned int _lastAdcResult;
 
 void init_adc(void);
 
+void update_vol_motor(void);
+
 void handle_potmeter(void);
+int get_volume(unsigned int);
 
 int is_deadzone(int currentStep, int adcResult);
 
