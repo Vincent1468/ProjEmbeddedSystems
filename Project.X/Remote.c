@@ -14,11 +14,11 @@ void start_receive(void)
     ir_input = 0;
     
     // Wacht 3a __delay_us(633);
-    __delay_us(844);
+    __delay_us(633);
     for (int i = 0; i < 12; i++) {
         ir_input = (ir_input << 1) | !PORTBbits.RB0;
         // Wacht 4a
-        __delay_us(844);
+        __delay_us(1266);
     }
 
     handle_remote();
@@ -29,36 +29,36 @@ void handle_remote()
 {
     char found = 0;
     
-    unsigned int mask = 0b0000000111111111; // First 3 = code, last 9 = data;
+    //unsigned int mask = 0b0000000111111111; // First 3 = code, last 9 = data;
     
-    unsigned int data = ir_input & mask;
+    //unsigned int data = ir_input & mask;
         
-    switch (data) {
-        case 72: // INPUT1 (358)
+    switch (ir_input) {
+        case 0x0665: // INPUT1 
             _selectedInput = 0;
             _inputUpdateRequired = 1;
             found = 1;
             break;
-        case 264: // INPUT2 (370)
+        case 0x06A3: // INPUT2 
             _selectedInput = 1;
             _inputUpdateRequired = 1;
             found = 1;
             break;
-        case 160: // INPUT3 (359)
+        case 0x0669: // INPUT3 
             _selectedInput = 2;
             _inputUpdateRequired = 1;
             found = 1;
             break;
-        case 136: // INPUT4 (358)
+        case 0x0663: // INPUT4
             _selectedInput = 3;
             _inputUpdateRequired = 1;
             found = 1;
             break;
-        case 288: // VOL+ (371)
+        case 0x06A9: // VOL+ 
             volume++;
             found = 1;
             break;
-        case 272: // VOL- (370)
+        case 0x06A5: // VOL- 
             volume--;
             found = 1;
             break;
