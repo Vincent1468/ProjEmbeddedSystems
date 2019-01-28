@@ -26,7 +26,7 @@ void display_init()
     // Set control word 2
     PORTDbits.RD7 = 1; // select control register
     PORTDbits.RD4 = 0; // chip enable @luisteren@ 
-    spiWrite(0b10000001); // control word 1, wake up from sleep and set brightness
+    spiWrite(0b10000011); // control word 1, wake up from sleep and set brightness
     PORTDbits.RD4 = 1;  // latch control word to register
     
     
@@ -49,7 +49,7 @@ void display_init()
     PORTCbits.RC7 = 1; // select control register
     PORTCbits.RC4 = 0; // chip enable @luisteren@
    
-    spiWrite(0b10000001); // control word 1, wake up from sleep and set brightness
+    spiWrite(0b10000011); // control word 1, wake up from sleep and set brightness
     PORTCbits.RC4 = 1;  // latch control word to register
     
     // Display 2 config done! Back to dot register
