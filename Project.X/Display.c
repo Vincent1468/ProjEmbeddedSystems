@@ -15,7 +15,7 @@ void display_init()
     PORTDbits.RD2 = 1; // set reset display on logic 1
     PORTDbits.RD6 = 0; // set blank display 1 on logic 1 is for brightness
     PORTDbits.RD4 = 1; // chip enable display 1 logic low to write data
-    PORTCbits.RC3 = 0;// sck?? is de clock, is laag dan wordt data gelatcht
+    PORTCbits.RC3 = 0; // sck?? is de clock, is laag dan wordt data gelatcht
     
     // Set control word 1
     PORTDbits.RD7 = 1; // select control register
@@ -66,7 +66,7 @@ void update_input(void)
 {
     if (lastInput == _selectedInput) return; // Do not update if no change
     
-    _selectedDisplay = 1; // Display 1
+    _selectedDisplay = 0; // Display 1
     display_write_start();
 
     write_text("INPUT");
